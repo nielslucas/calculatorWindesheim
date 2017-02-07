@@ -54,17 +54,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(160, 118);
+            this.textBox1.Location = new System.Drawing.Point(65, 48);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 20);
+            this.textBox1.Size = new System.Drawing.Size(534, 76);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // plus
             // 
-            this.plus.Location = new System.Drawing.Point(265, 202);
+            this.plus.Location = new System.Drawing.Point(394, 246);
             this.plus.Name = "plus";
-            this.plus.Size = new System.Drawing.Size(29, 23);
+            this.plus.Size = new System.Drawing.Size(99, 90);
             this.plus.TabIndex = 1;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
@@ -72,9 +73,9 @@
             // 
             // deel
             // 
-            this.deel.Location = new System.Drawing.Point(265, 144);
+            this.deel.Location = new System.Drawing.Point(499, 153);
             this.deel.Name = "deel";
-            this.deel.Size = new System.Drawing.Size(29, 23);
+            this.deel.Size = new System.Drawing.Size(100, 87);
             this.deel.TabIndex = 2;
             this.deel.Text = "/";
             this.deel.UseVisualStyleBackColor = true;
@@ -82,9 +83,9 @@
             // 
             // keer
             // 
-            this.keer.Location = new System.Drawing.Point(265, 173);
+            this.keer.Location = new System.Drawing.Point(499, 246);
             this.keer.Name = "keer";
-            this.keer.Size = new System.Drawing.Size(29, 23);
+            this.keer.Size = new System.Drawing.Size(100, 90);
             this.keer.TabIndex = 3;
             this.keer.Text = "*";
             this.keer.UseVisualStyleBackColor = true;
@@ -92,9 +93,9 @@
             // 
             // min
             // 
-            this.min.Location = new System.Drawing.Point(265, 231);
+            this.min.Location = new System.Drawing.Point(499, 342);
             this.min.Name = "min";
-            this.min.Size = new System.Drawing.Size(29, 23);
+            this.min.Size = new System.Drawing.Size(100, 92);
             this.min.TabIndex = 4;
             this.min.Text = "-";
             this.min.UseVisualStyleBackColor = true;
@@ -102,9 +103,9 @@
             // 
             // komma
             // 
-            this.komma.Location = new System.Drawing.Point(230, 260);
+            this.komma.Location = new System.Drawing.Point(394, 342);
             this.komma.Name = "komma";
-            this.komma.Size = new System.Drawing.Size(29, 23);
+            this.komma.Size = new System.Drawing.Size(99, 92);
             this.komma.TabIndex = 5;
             this.komma.Text = ",";
             this.komma.UseVisualStyleBackColor = true;
@@ -112,9 +113,9 @@
             // 
             // iss
             // 
-            this.iss.Location = new System.Drawing.Point(265, 260);
+            this.iss.Location = new System.Drawing.Point(284, 440);
             this.iss.Name = "iss";
-            this.iss.Size = new System.Drawing.Size(29, 23);
+            this.iss.Size = new System.Drawing.Size(315, 104);
             this.iss.TabIndex = 6;
             this.iss.Text = "=";
             this.iss.UseVisualStyleBackColor = true;
@@ -122,9 +123,9 @@
             // 
             // reset
             // 
-            this.reset.Location = new System.Drawing.Point(230, 144);
+            this.reset.Location = new System.Drawing.Point(394, 153);
             this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(29, 23);
+            this.reset.Size = new System.Drawing.Size(99, 87);
             this.reset.TabIndex = 7;
             this.reset.Text = "C";
             this.reset.UseVisualStyleBackColor = true;
@@ -132,9 +133,9 @@
             // 
             // nine
             // 
-            this.nine.Location = new System.Drawing.Point(230, 231);
+            this.nine.Location = new System.Drawing.Point(284, 342);
             this.nine.Name = "nine";
-            this.nine.Size = new System.Drawing.Size(29, 23);
+            this.nine.Size = new System.Drawing.Size(102, 92);
             this.nine.TabIndex = 8;
             this.nine.Text = "9";
             this.nine.UseVisualStyleBackColor = true;
@@ -142,9 +143,9 @@
             // 
             // eight
             // 
-            this.eight.Location = new System.Drawing.Point(195, 231);
+            this.eight.Location = new System.Drawing.Point(172, 342);
             this.eight.Name = "eight";
-            this.eight.Size = new System.Drawing.Size(29, 23);
+            this.eight.Size = new System.Drawing.Size(106, 92);
             this.eight.TabIndex = 9;
             this.eight.Text = "8";
             this.eight.UseVisualStyleBackColor = true;
@@ -152,9 +153,9 @@
             // 
             // seven
             // 
-            this.seven.Location = new System.Drawing.Point(160, 231);
+            this.seven.Location = new System.Drawing.Point(65, 341);
             this.seven.Name = "seven";
-            this.seven.Size = new System.Drawing.Size(29, 23);
+            this.seven.Size = new System.Drawing.Size(101, 93);
             this.seven.TabIndex = 10;
             this.seven.Text = "7";
             this.seven.UseVisualStyleBackColor = true;
@@ -162,9 +163,9 @@
             // 
             // four
             // 
-            this.four.Location = new System.Drawing.Point(160, 202);
+            this.four.Location = new System.Drawing.Point(65, 246);
             this.four.Name = "four";
-            this.four.Size = new System.Drawing.Size(29, 23);
+            this.four.Size = new System.Drawing.Size(101, 90);
             this.four.TabIndex = 11;
             this.four.Text = "4";
             this.four.UseVisualStyleBackColor = true;
@@ -172,9 +173,9 @@
             // 
             // five
             // 
-            this.five.Location = new System.Drawing.Point(195, 202);
+            this.five.Location = new System.Drawing.Point(172, 246);
             this.five.Name = "five";
-            this.five.Size = new System.Drawing.Size(29, 23);
+            this.five.Size = new System.Drawing.Size(106, 90);
             this.five.TabIndex = 12;
             this.five.Text = "5";
             this.five.UseVisualStyleBackColor = true;
@@ -182,9 +183,9 @@
             // 
             // sixs
             // 
-            this.sixs.Location = new System.Drawing.Point(230, 202);
+            this.sixs.Location = new System.Drawing.Point(284, 246);
             this.sixs.Name = "sixs";
-            this.sixs.Size = new System.Drawing.Size(29, 23);
+            this.sixs.Size = new System.Drawing.Size(102, 90);
             this.sixs.TabIndex = 13;
             this.sixs.Text = "6";
             this.sixs.UseVisualStyleBackColor = true;
@@ -192,9 +193,9 @@
             // 
             // three
             // 
-            this.three.Location = new System.Drawing.Point(230, 173);
+            this.three.Location = new System.Drawing.Point(284, 153);
             this.three.Name = "three";
-            this.three.Size = new System.Drawing.Size(29, 23);
+            this.three.Size = new System.Drawing.Size(102, 87);
             this.three.TabIndex = 14;
             this.three.Text = "3";
             this.three.UseVisualStyleBackColor = true;
@@ -202,9 +203,9 @@
             // 
             // two
             // 
-            this.two.Location = new System.Drawing.Point(195, 173);
+            this.two.Location = new System.Drawing.Point(172, 153);
             this.two.Name = "two";
-            this.two.Size = new System.Drawing.Size(29, 23);
+            this.two.Size = new System.Drawing.Size(106, 87);
             this.two.TabIndex = 15;
             this.two.Text = "2";
             this.two.UseVisualStyleBackColor = true;
@@ -212,9 +213,9 @@
             // 
             // one
             // 
-            this.one.Location = new System.Drawing.Point(160, 173);
+            this.one.Location = new System.Drawing.Point(65, 153);
             this.one.Name = "one";
-            this.one.Size = new System.Drawing.Size(29, 23);
+            this.one.Size = new System.Drawing.Size(101, 87);
             this.one.TabIndex = 16;
             this.one.Text = "1";
             this.one.UseVisualStyleBackColor = true;
@@ -223,7 +224,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(554, 153);
+            this.label1.Location = new System.Drawing.Point(706, 218);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 17;
@@ -232,7 +233,7 @@
             // nmr1
             // 
             this.nmr1.AutoSize = true;
-            this.nmr1.Location = new System.Drawing.Point(486, 101);
+            this.nmr1.Location = new System.Drawing.Point(638, 166);
             this.nmr1.Name = "nmr1";
             this.nmr1.Size = new System.Drawing.Size(53, 13);
             this.nmr1.TabIndex = 18;
@@ -242,7 +243,7 @@
             // nmr2
             // 
             this.nmr2.AutoSize = true;
-            this.nmr2.Location = new System.Drawing.Point(486, 144);
+            this.nmr2.Location = new System.Drawing.Point(638, 209);
             this.nmr2.Name = "nmr2";
             this.nmr2.Size = new System.Drawing.Size(53, 13);
             this.nmr2.TabIndex = 19;
@@ -252,7 +253,7 @@
             // op
             // 
             this.op.AutoSize = true;
-            this.op.Location = new System.Drawing.Point(486, 125);
+            this.op.Location = new System.Drawing.Point(638, 190);
             this.op.Name = "op";
             this.op.Size = new System.Drawing.Size(48, 13);
             this.op.TabIndex = 20;
@@ -260,10 +261,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(195, 260);
+            this.button1.Location = new System.Drawing.Point(172, 440);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(29, 23);
+            this.button1.Size = new System.Drawing.Size(106, 104);
             this.button1.TabIndex = 21;
             this.button1.Text = "0";
             this.button1.UseVisualStyleBackColor = true;
@@ -273,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 608);
+            this.ClientSize = new System.Drawing.Size(802, 568);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.op);
             this.Controls.Add(this.nmr2);
