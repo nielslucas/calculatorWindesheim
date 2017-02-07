@@ -79,6 +79,7 @@ namespace Unknown
         {
             if (this.number1.Length >= 1 && this.number2.Length >= 1 && this.method.ToString().Length == 1)
             {
+                //test voor jochem
                 //parse strings to ints
                 double temp1 = double.Parse(this.number1);
                 double temp2 = double.Parse(this.number2);
