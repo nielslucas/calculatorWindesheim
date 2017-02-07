@@ -12,6 +12,9 @@ namespace Unknown
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// test laurens
+        /// </summary>
 
         private string number1 = "";
         private char method = ' ';
