@@ -54,6 +54,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(65, 48);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -63,6 +64,7 @@
             // 
             // plus
             // 
+            this.plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plus.Location = new System.Drawing.Point(394, 246);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(99, 90);
@@ -73,6 +75,7 @@
             // 
             // deel
             // 
+            this.deel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deel.Location = new System.Drawing.Point(499, 153);
             this.deel.Name = "deel";
             this.deel.Size = new System.Drawing.Size(100, 87);
@@ -83,6 +86,7 @@
             // 
             // keer
             // 
+            this.keer.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keer.Location = new System.Drawing.Point(499, 246);
             this.keer.Name = "keer";
             this.keer.Size = new System.Drawing.Size(100, 90);
@@ -93,6 +97,7 @@
             // 
             // min
             // 
+            this.min.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.min.Location = new System.Drawing.Point(499, 342);
             this.min.Name = "min";
             this.min.Size = new System.Drawing.Size(100, 92);
@@ -103,6 +108,7 @@
             // 
             // komma
             // 
+            this.komma.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.komma.Location = new System.Drawing.Point(394, 342);
             this.komma.Name = "komma";
             this.komma.Size = new System.Drawing.Size(99, 92);
@@ -113,6 +119,7 @@
             // 
             // iss
             // 
+            this.iss.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iss.Location = new System.Drawing.Point(284, 440);
             this.iss.Name = "iss";
             this.iss.Size = new System.Drawing.Size(315, 104);
@@ -123,6 +130,7 @@
             // 
             // reset
             // 
+            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reset.Location = new System.Drawing.Point(394, 153);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(99, 87);
@@ -133,6 +141,7 @@
             // 
             // nine
             // 
+            this.nine.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nine.Location = new System.Drawing.Point(284, 342);
             this.nine.Name = "nine";
             this.nine.Size = new System.Drawing.Size(102, 92);
@@ -143,6 +152,7 @@
             // 
             // eight
             // 
+            this.eight.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eight.Location = new System.Drawing.Point(172, 342);
             this.eight.Name = "eight";
             this.eight.Size = new System.Drawing.Size(106, 92);
@@ -153,6 +163,7 @@
             // 
             // seven
             // 
+            this.seven.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seven.Location = new System.Drawing.Point(65, 341);
             this.seven.Name = "seven";
             this.seven.Size = new System.Drawing.Size(101, 93);
@@ -163,6 +174,7 @@
             // 
             // four
             // 
+            this.four.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.four.Location = new System.Drawing.Point(65, 246);
             this.four.Name = "four";
             this.four.Size = new System.Drawing.Size(101, 90);
@@ -173,6 +185,7 @@
             // 
             // five
             // 
+            this.five.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.five.Location = new System.Drawing.Point(172, 246);
             this.five.Name = "five";
             this.five.Size = new System.Drawing.Size(106, 90);
@@ -183,6 +196,7 @@
             // 
             // sixs
             // 
+            this.sixs.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sixs.Location = new System.Drawing.Point(284, 246);
             this.sixs.Name = "sixs";
             this.sixs.Size = new System.Drawing.Size(102, 90);
@@ -193,6 +207,7 @@
             // 
             // three
             // 
+            this.three.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.three.Location = new System.Drawing.Point(284, 153);
             this.three.Name = "three";
             this.three.Size = new System.Drawing.Size(102, 87);
@@ -203,6 +218,7 @@
             // 
             // two
             // 
+            this.two.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.two.Location = new System.Drawing.Point(172, 153);
             this.two.Name = "two";
             this.two.Size = new System.Drawing.Size(106, 87);
@@ -213,6 +229,7 @@
             // 
             // one
             // 
+            this.one.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.one.Location = new System.Drawing.Point(65, 153);
             this.one.Name = "one";
             this.one.Size = new System.Drawing.Size(101, 87);
@@ -261,6 +278,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(172, 440);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -298,7 +316,7 @@
             this.Controls.Add(this.plus);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculator Unknown";
             this.ResumeLayout(false);
             this.PerformLayout();
 
