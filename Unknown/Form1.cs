@@ -223,7 +223,7 @@ namespace Unknown
             //refresh label
             this.nmr2.Text = this.number2;
             this.textBox1.Text = this.number1;
-            calculation.Add(temp1.ToString() + "|" + this.method + "|" + temp2.ToString());
+            calculation.Add(temp1.ToString() +" " + this.method + " " + temp2.ToString()+" = "+ this.textBox1.Text);
         }
         private void save(List<string> calculations)
         {
@@ -239,12 +239,23 @@ namespace Unknown
         }
         private void load()
         {
-
+            string[] calculations = System.IO.File.ReadAllLines(@"C:\Users\Public\WriteLines.txt");
+            foreach(string calcpart in calculations)
+            {
+                label2.Text += calcpart+"\n";
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.save(this.calculation);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.load();
+        }
+
     }
 }
