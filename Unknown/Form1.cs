@@ -48,6 +48,7 @@ namespace Unknown
             this.method = ' ';
             this.number2 = "";
             this.textBox1.Text = "";
+            this.check = false;
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -218,7 +219,7 @@ namespace Unknown
         {
             //refresh nmr 1
             this.nmr1.Text = this.number1;
-            //set number 2 emty
+            //set number 2 empty
             this.number2 = "";
             //refresh label
             this.nmr2.Text = this.number2;

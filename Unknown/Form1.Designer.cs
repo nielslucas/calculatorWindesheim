@@ -130,7 +130,7 @@
             // 
             // reset
             // 
-            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.reset.Location = new System.Drawing.Point(394, 153);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(99, 87);
