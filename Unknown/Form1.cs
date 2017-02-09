@@ -32,12 +32,12 @@ namespace Unknown
             if (this.check)
             {
                 this.number2 += number.ToString();
-                this.nmr2.Text = this.number2;
+                this.textBox1.Text = this.number2;
             }
             else
             {
                 this.number1 += number.ToString();
-                this.nmr1.Text = this.number1;
+                this.textBox1.Text = this.number1;
             }
         }
 
@@ -54,28 +54,28 @@ namespace Unknown
         {
             this.method = '+';
             this.check = true;
-            this.op.Text = this.method.ToString();
+            this.textBox1.Text = this.method.ToString();
         }
 
         private void keer_Click(object sender, EventArgs e)
         {
             this.method = '*';
             this.check = true;
-            this.op.Text = this.method.ToString();
+            this.textBox1.Text = this.method.ToString();
         }
 
         private void deel_Click(object sender, EventArgs e)
         {
             this.method = '/';
             this.check = true;
-            this.op.Text = this.method.ToString();
+            this.textBox1.Text = this.method.ToString();
         }
 
         private void min_Click(object sender, EventArgs e)
         {
             this.method = '-';
             this.check = true;
-            this.op.Text = this.method.ToString();
+            this.textBox1.Text = this.method.ToString();
         }
 
         private void iss_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace Unknown
                         //show result
                         //set number 1 result
                         this.number1 = (temp1 + temp2).ToString();
-                        this.label1.Text = (temp1 + temp2).ToString();
+                        this.textBox1.Text = (temp1 + temp2).ToString();
                         this.cases(temp1, temp2);
                         break;
 
@@ -100,21 +100,21 @@ namespace Unknown
                         //show result
                         //set number 1 result
                         this.number1 = (temp1 * temp2).ToString();
-                        this.label1.Text = (temp1 * temp2).ToString();
+                        this.textBox1.Text = (temp1 * temp2).ToString();
                         this.cases(temp1, temp2);
                         break;
 
                     case '-':
                         //set number 1 result
                         this.number1 = (temp1 - temp2).ToString();
-                        this.label1.Text = (temp1 - temp2).ToString();
+                        this.textBox1.Text = (temp1 - temp2).ToString();
                         this.cases(temp1, temp2);
                         break;
 
                     case '/':
                         //set number 1 result
                         this.number1 = (temp1 / temp2).ToString();
-                        this.label1.Text = (temp1 / temp2).ToString();
+                        this.textBox1.Text = (temp1 / temp2).ToString();
                         this.cases(temp1, temp2);
                         break;
 
@@ -197,14 +197,14 @@ namespace Unknown
                 if (this.check)
                 {
                     this.number2 += ",";
-                    this.nmr2.Text = this.number2;
+                    this.textBox1.Text = this.number2;
 
                 }
                 else
                 {
 
                     this.number1 += ",";
-                    this.nmr1.Text = this.number2;
+                    this.textBox1.Text = this.number2;
                 }
             }
         }
@@ -217,11 +217,11 @@ namespace Unknown
         private void cases(double temp1, double temp2)
         {
             //refresh nmr 1
-            this.nmr1.Text = this.number1;
+            this.textBox1.Text = this.number1;
             //set number 2 empty
             this.number2 = "";
             //refresh label
-            this.nmr2.Text = this.number2;
+            this.textBox1.Text = this.number2;
             this.textBox1.Text = this.number1;
             calculation.Add(temp1.ToString() +" " + this.method + " " + temp2.ToString()+" = "+ this.textBox1.Text);
         }
