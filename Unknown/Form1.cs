@@ -19,9 +19,8 @@ namespace Unknown
         private string number1 = "";
         private char method = ' ';
         private string number2 = "";
-
-
         private bool check = false;
+        private  List<string> calculation = new List<string>();
 
         public Form1()
         {
@@ -224,6 +223,28 @@ namespace Unknown
             //refresh label
             this.textBox1.Text = this.number2;
             this.textBox1.Text = this.number1;
+            calculation.Add(temp1.ToString() + "|" + this.method + "|" + temp2.ToString());
+        }
+        private void save(List<string> calculations)
+        {
+            //System.IO.StreamWriter file = new System.IO.StreamWriter("c:\\test.txt");
+            //foreach(string calculation in calculations) { 
+            //file.WriteLine("#"+calculation);
+            //}
+            //file.Close();
+
+            System.IO.File.WriteAllLines(@"C:\Users\Public\WriteLines.txt", calculations);
+
+
+        }
+        private void load()
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.save(this.calculation);
         }
 
         private void Form1_Load(object sender, EventArgs e)
