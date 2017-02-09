@@ -45,10 +45,6 @@
             this.three = new System.Windows.Forms.Button();
             this.two = new System.Windows.Forms.Button();
             this.one = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.nmr1 = new System.Windows.Forms.Label();
-            this.nmr2 = new System.Windows.Forms.Label();
-            this.op = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -65,9 +61,9 @@
             // plus
             // 
             this.plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plus.Location = new System.Drawing.Point(394, 246);
+            this.plus.Location = new System.Drawing.Point(392, 341);
             this.plus.Name = "plus";
-            this.plus.Size = new System.Drawing.Size(99, 90);
+            this.plus.Size = new System.Drawing.Size(99, 93);
             this.plus.TabIndex = 1;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
@@ -76,7 +72,7 @@
             // deel
             // 
             this.deel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deel.Location = new System.Drawing.Point(499, 153);
+            this.deel.Location = new System.Drawing.Point(391, 246);
             this.deel.Name = "deel";
             this.deel.Size = new System.Drawing.Size(100, 87);
             this.deel.TabIndex = 2;
@@ -109,9 +105,9 @@
             // komma
             // 
             this.komma.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.komma.Location = new System.Drawing.Point(394, 342);
+            this.komma.Location = new System.Drawing.Point(498, 440);
             this.komma.Name = "komma";
-            this.komma.Size = new System.Drawing.Size(99, 92);
+            this.komma.Size = new System.Drawing.Size(101, 104);
             this.komma.TabIndex = 5;
             this.komma.Text = ",";
             this.komma.UseVisualStyleBackColor = true;
@@ -120,9 +116,9 @@
             // iss
             // 
             this.iss.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iss.Location = new System.Drawing.Point(284, 440);
+            this.iss.Location = new System.Drawing.Point(172, 440);
             this.iss.Name = "iss";
-            this.iss.Size = new System.Drawing.Size(315, 104);
+            this.iss.Size = new System.Drawing.Size(320, 104);
             this.iss.TabIndex = 6;
             this.iss.Text = "=";
             this.iss.UseVisualStyleBackColor = true;
@@ -133,7 +129,7 @@
             this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.reset.Location = new System.Drawing.Point(394, 153);
             this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(99, 87);
+            this.reset.Size = new System.Drawing.Size(205, 87);
             this.reset.TabIndex = 7;
             this.reset.Text = "C";
             this.reset.UseVisualStyleBackColor = true;
@@ -238,51 +234,13 @@
             this.one.UseVisualStyleBackColor = true;
             this.one.Click += new System.EventHandler(this.one_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(706, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 17;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // nmr1
-            // 
-            this.nmr1.AutoSize = true;
-            this.nmr1.Location = new System.Drawing.Point(638, 166);
-            this.nmr1.Name = "nmr1";
-            this.nmr1.Size = new System.Drawing.Size(53, 13);
-            this.nmr1.TabIndex = 18;
-            this.nmr1.Text = "Number1:";
-            this.nmr1.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // nmr2
-            // 
-            this.nmr2.AutoSize = true;
-            this.nmr2.Location = new System.Drawing.Point(638, 209);
-            this.nmr2.Name = "nmr2";
-            this.nmr2.Size = new System.Drawing.Size(53, 13);
-            this.nmr2.TabIndex = 19;
-            this.nmr2.Text = "Number2:";
-            this.nmr2.Click += new System.EventHandler(this.label2_Click_1);
-            // 
-            // op
-            // 
-            this.op.AutoSize = true;
-            this.op.Location = new System.Drawing.Point(638, 190);
-            this.op.Name = "op";
-            this.op.Size = new System.Drawing.Size(48, 13);
-            this.op.TabIndex = 20;
-            this.op.Text = "Operator";
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(172, 440);
+            this.button1.Location = new System.Drawing.Point(65, 440);
             this.button1.Name = "button1";
             this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(106, 104);
+            this.button1.Size = new System.Drawing.Size(101, 104);
             this.button1.TabIndex = 21;
             this.button1.Text = "0";
             this.button1.UseVisualStyleBackColor = true;
@@ -292,12 +250,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 568);
+            this.ClientSize = new System.Drawing.Size(674, 595);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.op);
-            this.Controls.Add(this.nmr2);
-            this.Controls.Add(this.nmr1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.one);
             this.Controls.Add(this.two);
             this.Controls.Add(this.three);
@@ -316,7 +270,8 @@
             this.Controls.Add(this.plus);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "Calculator Unknown";
+            this.Text = "Calculator Team Unknown";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,10 +296,6 @@
         private System.Windows.Forms.Button three;
         private System.Windows.Forms.Button two;
         private System.Windows.Forms.Button one;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label nmr1;
-        private System.Windows.Forms.Label nmr2;
-        private System.Windows.Forms.Label op;
         private System.Windows.Forms.Button button1;
     }
 }
