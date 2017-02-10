@@ -29,93 +29,93 @@ namespace Unknown
 
         private void setnumber(double number)
         {
-            if (this.check)
+            if (check)
             {
-                this.number2 += number.ToString();
-                this.textBox1.Text = this.number2;
+                number2 += number.ToString();
+                textBox1.Text = number2;
             }
             else
             {
-                this.number1 += number.ToString();
-                this.textBox1.Text = this.number1;
+                number1 += number.ToString();
+                textBox1.Text = number1;
             }
         }
 
         private void reset_Click(object sender, EventArgs e)
         {
-            this.number1 = "";
-            this.method = ' ';
-            this.number2 = "";
-            this.textBox1.Text = "";
-            this.check = false;
+            number1 = "";
+            method = ' ';
+            number2 = "";
+            textBox1.Text = "";
+            check = false;
         }
 
         private void plus_Click(object sender, EventArgs e)
         {
-            this.method = '+';
-            this.check = true;
-            this.textBox1.Text = this.method.ToString();
+            method = '+';
+            check = true;
+            textBox1.Text = method.ToString();
         }
 
         private void keer_Click(object sender, EventArgs e)
         {
-            this.method = '*';
-            this.check = true;
-            this.textBox1.Text = this.method.ToString();
+            method = '*';
+            check = true;
+            textBox1.Text = method.ToString();
         }
 
         private void deel_Click(object sender, EventArgs e)
         {
-            this.method = '/';
-            this.check = true;
-            this.textBox1.Text = this.method.ToString();
+            method = '/';
+            check = true;
+            textBox1.Text = method.ToString();
         }
 
         private void min_Click(object sender, EventArgs e)
         {
-            this.method = '-';
-            this.check = true;
-            this.textBox1.Text = this.method.ToString();
+            method = '-';
+            check = true;
+            textBox1.Text = method.ToString();
         }
 
         private void iss_Click(object sender, EventArgs e)
         {
-            if (this.number1.Length >= 1 && this.number2.Length >= 1 && this.method.ToString().Length == 1)
+            if (number1.Length >= 1 && number2.Length >= 1 && method.ToString().Length == 1)
             {
                 //parse strings to ints
-                double temp1 = double.Parse(this.number1);
-                double temp2 = double.Parse(this.number2);
+                double temp1 = double.Parse(number1);
+                double temp2 = double.Parse(number2);
                 //stars switch
-                switch (this.method)
+                switch (method)
                 {
                     case '+':
                         //show result
                         //set number 1 result
-                        this.number1 = (temp1 + temp2).ToString();
-                        this.textBox1.Text = (temp1 + temp2).ToString();
-                        this.cases(temp1, temp2);
+                        number1 = (temp1 + temp2).ToString();
+                        textBox1.Text = (temp1 + temp2).ToString();
+                        cases(temp1, temp2);
                         break;
 
                     case '*':
                         //show result
                         //set number 1 result
-                        this.number1 = (temp1 * temp2).ToString();
-                        this.textBox1.Text = (temp1 * temp2).ToString();
-                        this.cases(temp1, temp2);
+                        number1 = (temp1 * temp2).ToString();
+                        textBox1.Text = (temp1 * temp2).ToString();
+                        cases(temp1, temp2);
                         break;
 
                     case '-':
                         //set number 1 result
-                        this.number1 = (temp1 - temp2).ToString();
-                        this.textBox1.Text = (temp1 - temp2).ToString();
-                        this.cases(temp1, temp2);
+                        number1 = (temp1 - temp2).ToString();
+                        textBox1.Text = (temp1 - temp2).ToString();
+                        cases(temp1, temp2);
                         break;
 
                     case '/':
                         //set number 1 result
-                        this.number1 = (temp1 / temp2).ToString();
-                        this.textBox1.Text = (temp1 / temp2).ToString();
-                        this.cases(temp1, temp2);
+                        number1 = (temp1 / temp2).ToString();
+                        textBox1.Text = (temp1 / temp2).ToString();
+                        cases(temp1, temp2);
                         break;
 
                     default:
@@ -191,20 +191,20 @@ namespace Unknown
 
         private void komma_Click(object sender, EventArgs e)
         {
-            if (!this.number1.Contains(","))
+            if (!number1.Contains(","))
             {
 
-                if (this.check)
+                if (check)
                 {
-                    this.number2 += ",";
-                    this.textBox1.Text = this.number2;
+                    number2 += ",";
+                    textBox1.Text = number2;
 
                 }
                 else
                 {
 
-                    this.number1 += ",";
-                    this.textBox1.Text = this.number2;
+                    number1 += ",";
+                    textBox1.Text = number2;
                 }
             }
         }
@@ -217,13 +217,13 @@ namespace Unknown
         private void cases(double temp1, double temp2)
         {
             //refresh nmr 1
-            this.textBox1.Text = this.number1;
+            textBox1.Text = number1;
             //set number 2 empty
-            this.number2 = "";
+            number2 = "";
             //refresh label
-            this.textBox1.Text = this.number2;
-            this.textBox1.Text = this.number1;
-            calculation.Add(temp1.ToString() +" " + this.method + " " + temp2.ToString()+" = "+ this.textBox1.Text);
+            textBox1.Text = number2;
+            textBox1.Text = number1;
+            calculation.Add(temp1.ToString() +" " + method + " " + temp2.ToString()+" = "+ textBox1.Text);
         }
         private void save(List<string> calculations)
         {
@@ -249,12 +249,12 @@ namespace Unknown
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.save(this.calculation);
+            save(calculation);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.load();
+            load();
         }
        
     }
