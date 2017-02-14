@@ -166,7 +166,7 @@ namespace Unknown
         {
 
         }
-
+        
         private void cases(double temp1, double temp2)
         {
             //refresh nmr 1
