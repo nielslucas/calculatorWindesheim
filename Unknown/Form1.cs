@@ -16,11 +16,7 @@ namespace Unknown
         /// test laurens
         /// </summary>
 
-        private string number1 = "";
-        private char method = ' ';
-        private string number2 = "";
-        private bool check = false;
-        private  List<string> calculation = new List<string>();
+        Calculator calc = new Calculator();
 
         public Form1()
         {
@@ -29,99 +25,56 @@ namespace Unknown
 
         private void setnumber(double number)
         {
-            if (check)
+            if (calc.check)
             {
-                number2 += number.ToString();
-                textBox1.Text = number2;
+                calc.number2 += number.ToString();
+                textBox1.Text = calc.number2;
             }
             else
             {
-                number1 += number.ToString();
-                textBox1.Text = number1;
+                calc.number1 += number.ToString();
+                textBox1.Text = calc.number1;
             }
         }
 
         private void reset_Click(object sender, EventArgs e)
         {
-            number1 = "";
-            method = ' ';
-            number2 = "";
-            textBox1.Text = "";
-            check = false;
+            calc.reset();
+            this.textBox1.Text = "";
+           
         }
 
         private void plus_Click(object sender, EventArgs e)
         {
-            method = '+';
-            check = true;
-            textBox1.Text = method.ToString();
+            calc.method = '+';
+            setOperator()
         }
 
         private void keer_Click(object sender, EventArgs e)
         {
-            method = '*';
-            check = true;
-            textBox1.Text = method.ToString();
+            calc.method = '*';
+            setOperator()
         }
 
         private void deel_Click(object sender, EventArgs e)
         {
-            method = '/';
-            check = true;
-            textBox1.Text = method.ToString();
+            calc.method = '/';
+            setOperator()
         }
 
         private void min_Click(object sender, EventArgs e)
         {
-            method = '-';
-            check = true;
-            textBox1.Text = method.ToString();
+           calc.method = '-';
+            setOperator()
         }
-
+        private void setOperator()
+        {
+            calc.check = true;
+            textBox1.Text = calc.method.ToString();
+        }
         private void iss_Click(object sender, EventArgs e)
         {
-            if (number1.Length >= 1 && number2.Length >= 1 && method.ToString().Length == 1)
-            {
-                //parse strings to ints
-                double temp1 = double.Parse(number1);
-                double temp2 = double.Parse(number2);
-                //stars switch
-                switch (method)
-                {
-                    case '+':
-                        //show result
-                        //set number 1 result
-                        number1 = (temp1 + temp2).ToString();
-                        textBox1.Text = (temp1 + temp2).ToString();
-                        cases(temp1, temp2);
-                        break;
-
-                    case '*':
-                        //show result
-                        //set number 1 result
-                        number1 = (temp1 * temp2).ToString();
-                        textBox1.Text = (temp1 * temp2).ToString();
-                        cases(temp1, temp2);
-                        break;
-
-                    case '-':
-                        //set number 1 result
-                        number1 = (temp1 - temp2).ToString();
-                        textBox1.Text = (temp1 - temp2).ToString();
-                        cases(temp1, temp2);
-                        break;
-
-                    case '/':
-                        //set number 1 result
-                        number1 = (temp1 / temp2).ToString();
-                        textBox1.Text = (temp1 / temp2).ToString();
-                        cases(temp1, temp2);
-                        break;
-
-                    default:
-                        break;
-                }
-            }
+            calc.calcalute();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -191,20 +144,20 @@ namespace Unknown
 
         private void komma_Click(object sender, EventArgs e)
         {
-            if (!number1.Contains(","))
+            if (!this.number1.Contains(","))
             {
 
-                if (check)
+                if (this.check)
                 {
-                    number2 += ",";
-                    textBox1.Text = number2;
+                    this.number2 += ",";
+                    this.textBox1.Text = this.number2;
 
                 }
                 else
                 {
 
-                    number1 += ",";
-                    textBox1.Text = number2;
+                    this.number1 += ",";
+                    this.textBox1.Text = this.number2;
                 }
             }
         }
@@ -217,13 +170,13 @@ namespace Unknown
         private void cases(double temp1, double temp2)
         {
             //refresh nmr 1
-            textBox1.Text = number1;
+            textBox1.Text = this.number1;
             //set number 2 empty
-            number2 = "";
+            this.number2 = "";
             //refresh label
-            textBox1.Text = number2;
-            textBox1.Text = number1;
-            calculation.Add(temp1.ToString() +" " + method + " " + temp2.ToString()+" = "+ textBox1.Text);
+            textBox1.Text = this.number2;
+            this.textBox1.Text = this.number1;
+            calculation.Add(temp1.ToString() +" " + this.method + " " + temp2.ToString()+" = "+ this.textBox1.Text);
         }
         private void save(List<string> calculations)
         {
@@ -249,12 +202,12 @@ namespace Unknown
 
         private void button2_Click(object sender, EventArgs e)
         {
-            save(calculation);
+            this.save(this.calculation);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            load();
+            this.load();
         }
        
     }
