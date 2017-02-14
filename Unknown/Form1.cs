@@ -25,47 +25,53 @@ namespace Unknown
 
         private void setnumber(double number)
         {
-            if (calc.check)
+            if (this.check)
             {
-                calc.number2 += number.ToString();
-                textBox1.Text = calc.number2;
+                number2 += number.ToString();
+                textBox1.Text = number2;
             }
             else
             {
-                calc.number1 += number.ToString();
-                textBox1.Text = calc.number1;
+                number1 += number.ToString();
+                textBox1.Text = number1;
             }
         }
 
         private void reset_Click(object sender, EventArgs e)
         {
-            calc.reset();
-            this.textBox1.Text = "";
-           
+            number1 = "";
+            method = ' ';
+            number2 = "";
+            textBox1.Text = "";
+            check = false;
         }
 
         private void plus_Click(object sender, EventArgs e)
         {
-            calc.method = '+';
-            setOperator()
+            method = '+';
+            check = true;
+            textBox1.Text = method.ToString();
         }
 
         private void keer_Click(object sender, EventArgs e)
         {
-            calc.method = '*';
-            setOperator()
+            method = '*';
+            check = true;
+            textBox1.Text = method.ToString();
         }
 
         private void deel_Click(object sender, EventArgs e)
         {
-            calc.method = '/';
-            setOperator()
+            method = '/';
+            check = true;
+            textBox1.Text = method.ToString();
         }
 
         private void min_Click(object sender, EventArgs e)
         {
-           calc.method = '-';
-            setOperator()
+            method = '-';
+            check = true;
+            textBox1.Text = method.ToString();
         }
         private void setOperator()
         {
@@ -74,7 +80,48 @@ namespace Unknown
         }
         private void iss_Click(object sender, EventArgs e)
         {
-            calc.calcalute();
+            if (number1.Length >= 1 && number2.Length >= 1 && method.ToString().Length == 1)
+            {
+                //parse strings to ints
+                double temp1 = double.Parse(number1);
+                double temp2 = double.Parse(number2);
+                //stars switch
+                switch (method)
+                {
+                    case '+':
+                        //show result
+                        //set number 1 result
+                        number1 = (temp1 + temp2).ToString();
+                        textBox1.Text = (temp1 + temp2).ToString();
+                        cases(temp1, temp2);
+                        break;
+
+                    case '*':
+                        //show result
+                        //set number 1 result
+                        number1 = (temp1 * temp2).ToString();
+                        textBox1.Text = (temp1 * temp2).ToString();
+                        cases(temp1, temp2);
+                        break;
+
+                    case '-':
+                        //set number 1 result
+                        number1 = (temp1 - temp2).ToString();
+                        textBox1.Text = (temp1 - temp2).ToString();
+                        cases(temp1, temp2);
+                        break;
+
+                    case '/':
+                        //set number 1 result
+                        number1 = (temp1 / temp2).ToString();
+                        textBox1.Text = (temp1 / temp2).ToString();
+                        cases(temp1, temp2);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -170,13 +217,13 @@ namespace Unknown
         private void cases(double temp1, double temp2)
         {
             //refresh nmr 1
-            textBox1.Text = this.number1;
+            textBox1.Text = number1;
             //set number 2 empty
             this.number2 = "";
             //refresh label
-            textBox1.Text = this.number2;
-            this.textBox1.Text = this.number1;
-            calculation.Add(temp1.ToString() +" " + this.method + " " + temp2.ToString()+" = "+ this.textBox1.Text);
+            textBox1.Text = number2;
+            textBox1.Text = number1;
+            calculation.Add(temp1.ToString() +" " + method + " " + temp2.ToString()+" = "+ textBox1.Text);
         }
         private void save(List<string> calculations)
         {
