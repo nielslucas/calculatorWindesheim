@@ -313,7 +313,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button plus;
         private System.Windows.Forms.Button deel;
         private System.Windows.Forms.Button keer;
