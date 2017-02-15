@@ -8,19 +8,19 @@ namespace Unknown
 {
     class GraphicCalc : Calculator
     {
-        public int graphXLength;
-        public int graphYHeight;
+        public int graphXLength = 0;
+        public int graphYHeight = 0;
         List<char> methods = new List<char>();
         char[] methodsDelimiter = { '+', '-', '-', '*' };
         List<double> outcomes = new List<double>();
-        
-        public List<double> Calculation(string calc, int x)
+
+        public List<double> Calculation(string calc)
         {
-            int i = 0;
+            int y = 0;
             Calculator calculator = new Calculator();
             //split the string on the methodsdelimiter
-            string[] numbers = calc.Split(methodsDelimiter);
-            //gets all the operators
+           
+            //gets all the operators in the calculation
             foreach (char method in calc)
             {
                 if (method == '+')
@@ -32,27 +32,39 @@ namespace Unknown
                 else if (method == '*')
                     methods.Add('*');
             }
-
-            foreach (string number in numbers)
+            //for every x calculate y
+            for (int i = 0; i < graphXLength; i++)
             {
-                if (number != "x")
+                List<string> numbers = calc.Split(methodsDelimiter).ToList();
+                foreach (string number in numbers)
                 {
-                    calculator.number1 = number;
-                }
-                else
-                    calculator.number1 = x.ToString();
-                if (i < numbers.GetUpperBound(0))
-                {
-                    if (numbers[i + 1] != "x")
+                    if (number != "x")
                     {
-                        calculator.number2 = numbers[i + 1];
+                        calculator.number1 = number;
                     }
-                    else calculator.number2 = x.ToString();
-                }
+                    else
+                    {
+                        calculator.number1 = i.ToString();
+                    }
+                    if (y < numbers.Count)
+                    {
+                        if (numbers[y + 1] != "x")
+                        {
+                            calculator.number2 = numbers[y + 1];
+                        }
+                        else
+                        {
+                            calculator.number2 = i.ToString();
+                        }
+                        //removes it because it was used already
+                        numbers.RemoveAt(y);
+                    }
 
-                calculator.method = methods[i];
-                outcomes.Add(double.Parse(calculator.calculate()));
-                i++;
+                    calculator.method = methods[y];
+                    outcomes.Add(double.Parse(calculator.calculate()));
+                    y++;
+                }
+                y = 0;
             }
             return outcomes;
         }

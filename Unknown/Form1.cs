@@ -180,6 +180,11 @@ namespace Unknown
         {
             this.load();
         }
-       
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            graphicCalculator calc = new graphicCalculator();
+            calc.Show();
+        }
     }
 }

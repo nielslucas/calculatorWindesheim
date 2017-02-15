@@ -18,6 +18,7 @@ namespace Unknown
         public graphicCalculator()
         {
             InitializeComponent();
+            DrawGraph();
         }
 
 
@@ -33,16 +34,24 @@ namespace Unknown
         public void Drawvalues(string calc)
         {
 
-            graph.Calculation(calc);
-            Pen myPen;
-            myPen = new System.Drawing.Pen(System.Drawing.Color.Black);
-            System.Drawing.Graphics formGraphics = this.CreateGraphics();
-            formGraphics.DrawLine(myPen, 0, 0, 0, 0);
-            myPen.Dispose();
-            formGraphics.Dispose();
-
+           List<double> numbers= graph.Calculation(calc);
+            foreach (double number in numbers)
+            {
+                Pen myPen;
+                myPen = new System.Drawing.Pen(System.Drawing.Color.Black);
+                System.Drawing.Graphics formGraphics = this.CreateGraphics();
+                formGraphics.DrawLine(myPen, 0, 0, 0, (float)number);
+                myPen.Dispose();
+                formGraphics.Dispose();
+            }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Drawvalues(textBox1.Text);
+            graph.graphXLength = Int32.Parse(textBox2.Text);
+            graph.graphYHeight = Int32.Parse(textBox3.Text);
+        }
     }
 
 }
