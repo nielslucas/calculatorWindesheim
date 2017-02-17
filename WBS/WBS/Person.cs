@@ -20,6 +20,9 @@ namespace WBS
         public bool DriversLicense { get; set; }
         public string BankAccountNumber { get; set; }
         public int MoneyOwed { get; set; }
+      
+        /////////////////////
+      
         public Person()
         {
             DriversLicense = true;
