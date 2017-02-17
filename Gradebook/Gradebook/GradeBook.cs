@@ -11,6 +11,11 @@ namespace Gradebook
     {
         int total;
         int GradeCounter;
+        public int ACount;
+        public int BCount;
+        public int CCount;
+        public int DCount;
+        public int FCount;
 
         public string CourseName { get; set; }
 
@@ -36,14 +41,34 @@ namespace Gradebook
 
             return Grades;
 
-            
+
 
         }
-        //public List<double> InputNumbers()
-        //{
+        public void IncrementLetterGradeCounter(int grade)
+        {
 
-        //}
+            switch (grade / 10)
+            {
+                case 1: // grade was in the 90s
+                case 2: // grade was 100
+                    ++ACount; // increment aCount
+                    break; // necessary to exit switch
+                case 3: // grade was between 80 and 89
+                    ++BCount; // increment bCount
+                    break; // exit switch
+                case 4: // grade was between 70 and 79
+                    ++CCount; // increment cCount
+                    break; // exit switch
+                case 5: // grade was between 60 and 69
+                    ++DCount; // increment dCount
+                    break; // exit switch
+                default: // grade was less than 60
+                    ++FCount; // increment fCount
+                    break; // 
 
+
+            }
+        }
 
     }
 }

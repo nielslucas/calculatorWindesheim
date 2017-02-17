@@ -18,6 +18,7 @@ namespace Gradebook
         private GradeBook Gradebook2 = new GradeBook("ICT");
 
 
+
         public GradeBookForm1()
         {
             InitializeComponent();
@@ -48,7 +49,6 @@ namespace Gradebook
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -58,6 +58,33 @@ namespace Gradebook
 
             label4.Text = "average: " + gradelist[0].ToString() + "\n";
             label4.Text += "total: " + gradelist[1].ToString() + "\n";
+            label4.Text += Gradebook.ACount.ToString() + "\n";
+            label4.Text += Gradebook.BCount.ToString() + "\n";
+            label4.Text += Gradebook.CCount.ToString() + "\n";
+            label4.Text += Gradebook.DCount.ToString() + "\n";
+            label4.Text += Gradebook.FCount.ToString() + "\n";
+            Gradebook.IncrementLetterGradeCounter(Int32.Parse(textBox3.Text));
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            List<double> gradelist = Gradebook.DetermineClassAverage(Int32.Parse(textBox4.Text));
+
+            label5.Text = "average: " + gradelist[0].ToString() + "\n";
+            label5.Text += "total: " + gradelist[1].ToString() + "\n";
+            label5.Text += Gradebook2.ACount.ToString() + "\n";
+            label5.Text += Gradebook2.BCount.ToString() + "\n";
+            label5.Text += Gradebook2.CCount.ToString() + "\n";
+            label5.Text += Gradebook2.DCount.ToString() + "\n";
+            label5.Text += Gradebook2.FCount.ToString() + "\n";
+            Gradebook.IncrementLetterGradeCounter(Int32.Parse(textBox4.Text));
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
