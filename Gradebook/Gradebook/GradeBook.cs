@@ -7,18 +7,43 @@ using System.Threading.Tasks;
 namespace Gradebook
 {
     class GradeBook
+
     {
+        int total;
+        int GradeCounter;
+
         public string CourseName { get; set; }
 
 
-        public GradeBook(string CourseName)
+        public GradeBook(string courseName)
         {
-            this.CourseName = CourseName;
+            CourseName = courseName;
         }
         public string DisplayMessage()
         {
-            string message = "welcome to the grade book\n"+ CourseName;
+            string message = "welcome to the grade book\n" + CourseName;
             return message;
         }
+        public List<double> DetermineClassAverage(int grade)
+        {
+            List<double> Grades = new List<double>();
+
+            total += grade;
+            GradeCounter++;
+            int Average = total / GradeCounter;
+            Grades.Add(Average);
+            Grades.Add(total);
+
+            return Grades;
+
+            
+
+        }
+        //public List<double> InputNumbers()
+        //{
+
+        //}
+
+
     }
 }

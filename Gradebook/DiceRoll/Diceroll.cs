@@ -9,20 +9,21 @@ namespace DiceRoll
     class Diceroll
     {
         Random randomnumber = new Random();
-        int face1rolls=0;
-        int face2rolls=0;
-        int face3rolls=0;
-        int face4rolls=0;
-        int face5rolls=0;
-        int face6rolls=0;
 
-        public string rolls( int rolls)
+        public string rolls(int rolls)
         {
+            int face1rolls = 0;
+            int face2rolls = 0;
+            int face3rolls = 0;
+            int face4rolls = 0;
+            int face5rolls = 0;
+            int face6rolls = 0;
+
             string outcome = "Face\tFrequency\n";
 
             for (int i = 0; i < rolls; i++)
             {
-                
+
                 switch (randomnumber.Next(1, 7))
                 {
                     case 1:
@@ -46,7 +47,7 @@ namespace DiceRoll
                 }
 
             }
-            outcome +=String.Format("1:  \t{0}\n2:  \t{1}\n3:  \t{2}\n4:  \t{3}\n5:  \t{4}\n6:  \t{5}",face1rolls,face2rolls,face3rolls,face4rolls,face5rolls,face6rolls);
+            outcome += String.Format("1:  \t{0}\n2:  \t{1}\n3:  \t{2}\n4:  \t{3}\n5:  \t{4}\n6:  \t{5}", face1rolls, face2rolls, face3rolls, face4rolls, face5rolls, face6rolls);
             return outcome;
         }
     }

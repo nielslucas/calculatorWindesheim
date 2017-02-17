@@ -52,8 +52,8 @@ namespace WBS
         {
             int outcome;
             int.TryParse(textBox5.Text, out outcome);
-            car.gastankLit = outcome;
-            textBox5.Text = car.gastankLit.ToString();
+            car.GastankLit = outcome;
+            textBox5.Text = car.GastankLit.ToString();
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -97,14 +97,14 @@ namespace WBS
         {
             int outcome;
             int.TryParse(textBox12.Text, out outcome);
-            car.seats = outcome;
-            textBox12.Text = car.seats.ToString();
+            car.Seats = outcome;
+            textBox12.Text = car.Seats.ToString();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            car.seatscolor = textBox13.Text;
-            textBox13.Text = car.seatscolor;
+            car.Seatscolor = textBox13.Text;
+            textBox13.Text = car.Seatscolor;
         }
         private void button14_Click(object sender, EventArgs e) //checkbox button
         {
@@ -132,16 +132,16 @@ namespace WBS
         {
             int outcome;
             int.TryParse(textBox16.Text, out outcome);
-            car.parkinglocation = outcome;
-            textBox16.Text = car.parkinglocation.ToString();
+            car.Parkinglocation = outcome;
+            textBox16.Text = car.Parkinglocation.ToString();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
             int outcome;
             int.TryParse(textBox17.Text, out outcome);
-            car.lastmaintenancedate = outcome;
-            textBox17.Text = car.lastmaintenancedate.ToString();
+            car.Lastmaintenancedate = outcome;
+            textBox17.Text = car.Lastmaintenancedate.ToString();
         }
 
         private void button18_Click(object sender, EventArgs e)
