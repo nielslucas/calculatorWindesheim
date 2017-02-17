@@ -108,6 +108,8 @@ namespace WBS
             }else
                 textBox8.Text = person1.Car.Brand.ToString();
             textBox11.Text= person1.MoneyOwed.ToString();
+            person2 = new Person();
         }
+        
     }
 }

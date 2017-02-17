@@ -24,7 +24,7 @@ namespace WBS
         {
             DriversLicense = true;
         }
-        public Person(string name, string homeAddress, string workAddress, int age,string birthDay,string gender, int phoneNumber,int customerNumber,Car car)
+        public Person(string name, string homeAddress, string workAddress, int age, string birthDay, string gender, int phoneNumber, int customerNumber, Car car)
         {
             Name = name;
             HomeAddress = homeAddress;
@@ -37,17 +37,20 @@ namespace WBS
             Car = car;
             DriversLicense = true;
         }
-        public void HireCar(Car car,int carCost)
+        public void HireCar(Car car, int carCost)
         {
             Car = car;
             MoneyOwed += carCost;
         }
-        public void ReturnCar(Car car,int payment)
+        public void ReturnCar(Car car, int payment)
         {
-            if (car.Model ==Car.Model && car.Brand == Car.Brand)
+            if (Car != null)
             {
-                Car = null;
-                MoneyOwed -= payment;
+                if (car.Model == Car.Model && car.Brand == Car.Brand)
+                {
+                    Car = null;
+                    MoneyOwed -= payment;
+                }
             }
         }
     }
