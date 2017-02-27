@@ -40,9 +40,7 @@ namespace Gradebook
             Grades.Add(total);
 
             return Grades;
-
-
-
+            
         }
         public void IncrementLetterGradeCounter(int grade)
         {
@@ -65,7 +63,6 @@ namespace Gradebook
                 default: // grade was less than 60
                     ++FCount; // increment fCount
                     break; // 
-
 
             }
         }

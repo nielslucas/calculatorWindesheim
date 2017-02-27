@@ -47,11 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CarForm.Designer.cs">
+      <DependentUpon>CarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hoofdmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hoofdmenu.Designer.cs">
+      <DependentUpon>Hoofdmenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="PersonForm.cs">
@@ -62,8 +68,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CarForm.resx">
+      <DependentUpon>CarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hoofdmenu.resx">
+      <DependentUpon>Hoofdmenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonForm.resx">
       <DependentUpon>PersonForm.cs</DependentUpon>

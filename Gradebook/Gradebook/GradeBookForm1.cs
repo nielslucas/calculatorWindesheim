@@ -17,8 +17,7 @@ namespace Gradebook
         private GradeBook Gradebook = new GradeBook("ADSD");
         private GradeBook Gradebook2 = new GradeBook("ICT");
 
-
-
+        
         public GradeBookForm1()
         {
             InitializeComponent();
@@ -47,10 +46,6 @@ namespace Gradebook
             label2.Text = Gradebook2.DisplayMessage();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -64,8 +59,7 @@ namespace Gradebook
             label4.Text += Gradebook.DCount.ToString() + "\n";
             label4.Text += Gradebook.FCount.ToString() + "\n";
             Gradebook.IncrementLetterGradeCounter(Int32.Parse(textBox3.Text));
-
-
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -83,9 +77,16 @@ namespace Gradebook
             Gradebook.IncrementLetterGradeCounter(Int32.Parse(textBox4.Text));
         }
 
+        ///////////////////////////////////////////////
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+        }
+
     }
 }

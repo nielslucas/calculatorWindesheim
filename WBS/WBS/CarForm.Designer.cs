@@ -1,6 +1,6 @@
 ﻿namespace WBS
 {
-    partial class Form1
+    partial class CarForm
     {
         /// <summary>
         /// Required designer variable.

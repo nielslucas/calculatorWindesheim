@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace WBS
 {
-    public partial class Form1 : Form
+    public partial class CarForm : Form
     {
         Car car = new Car();
 
-        public Form1()
+        public CarForm()
         {
             InitializeComponent();
             textBox1.Text = car.Brand;
