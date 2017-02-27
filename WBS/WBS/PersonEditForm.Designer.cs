@@ -1,6 +1,6 @@
 ﻿namespace WBS
 {
-    partial class PersonForm
+    partial class PersonEditForm
     {
         /// <summary>
         /// Required designer variable.

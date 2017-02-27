@@ -1,6 +1,6 @@
 ﻿namespace WBS
 {
-    partial class CarForm
+    partial class CarEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -70,6 +70,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,7 +171,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(327, 402);
+            this.checkBox1.Location = new System.Drawing.Point(334, 399);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(67, 17);
             this.checkBox1.TabIndex = 30;
@@ -182,14 +183,16 @@
             // 
             this.textBox14.Location = new System.Drawing.Point(214, 365);
             this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(100, 20);
             this.textBox14.TabIndex = 32;
             this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(322, 365);
+            this.textBox15.Location = new System.Drawing.Point(334, 362);
             this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(100, 20);
             this.textBox15.TabIndex = 33;
             this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
@@ -213,18 +216,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(211, 349);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 39;
-            this.label1.Text = "Horizontal";
+            this.label1.Text = "Horizontal(read-only)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(317, 349);
+            this.label2.Location = new System.Drawing.Point(332, 346);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Vertical";
+            this.label2.Text = "Vertical(read-only)";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -240,7 +243,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(214, 35);
+            this.label4.Location = new System.Drawing.Point(26, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 15);
             this.label4.TabIndex = 42;
@@ -412,6 +415,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox15);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(461, 536);
@@ -427,16 +433,16 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(479, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(419, 536);
+            this.groupBox3.Size = new System.Drawing.Size(210, 536);
             this.groupBox3.TabIndex = 64;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Laatste gereden km berekening";
             // 
-            // CarForm
+            // CarEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 543);
+            this.ClientSize = new System.Drawing.Size(695, 543);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -453,13 +459,10 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button19);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox17);
             this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox15);
             this.Controls.Add(this.textBox14);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox2);
@@ -477,9 +480,11 @@
             this.Controls.Add(this.groupBox3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CarForm";
+            this.Name = "CarEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarForm";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);

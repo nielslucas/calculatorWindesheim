@@ -47,12 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
-    <Compile Include="CarForm.cs">
+    <Compile Include="CarEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarForm.Designer.cs">
-      <DependentUpon>CarForm.cs</DependentUpon>
+    <Compile Include="CarEditForm.Designer.cs">
+      <DependentUpon>CarEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GPSCoordinates.cs" />
     <Compile Include="Hoofdmenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,22 +61,22 @@
       <DependentUpon>Hoofdmenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
-    <Compile Include="PersonForm.cs">
+    <Compile Include="PersonEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonForm.Designer.cs">
-      <DependentUpon>PersonForm.cs</DependentUpon>
+    <Compile Include="PersonEditForm.Designer.cs">
+      <DependentUpon>PersonEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CarForm.resx">
-      <DependentUpon>CarForm.cs</DependentUpon>
+    <EmbeddedResource Include="CarEditForm.resx">
+      <DependentUpon>CarEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hoofdmenu.resx">
       <DependentUpon>Hoofdmenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonForm.resx">
-      <DependentUpon>PersonForm.cs</DependentUpon>
+    <EmbeddedResource Include="PersonEditForm.resx">
+      <DependentUpon>PersonEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

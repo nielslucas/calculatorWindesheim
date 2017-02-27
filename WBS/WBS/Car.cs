@@ -22,21 +22,23 @@ namespace WBS
         public string Licenseplate { get; set; } //kentekenplaat
         public int Seats { get; set; } //stoelen
         public string Seatscolor { get; set; }//stoelkleur
-        public int Lastmaintenancedate { get; set; } // onderhoudsdatum
-        public int GPShoriz { get; set; }// gpslocatie/tracking HO
-        public int GPSvertic { get; set; }// gpslocatie/tracking VE
+        public int Lastmaintenancedate { get; set; } // onderhoudsdatum                        
         public int Parkinglocation { get; set; }//parkeerspot
         public bool Manual { get; set; } //manual or not(automatic)
         public bool Maintenance { get; set; } // maintenance
         public int Kilometers { get; set; }//km stand, zie  private kilometers
-    
+
+        //old - Laurens
+        // public int GPShoriz { get; set; }// gpslocatie/tracking HO
+        // public int GPSvertic { get; set; }// gpslocatie/tracking VE
+        /////////////////////////////////////////////////////////////////////////
+        //public void LocateWithGPS(int hor, int ver)
+        //{
+        //    GPShoriz = hor;
+        //    GPSvertic = ver;
+        //}
         /////////////////////////////////////////////////////////////////////////
 
-        public void LocateWithGPS(int hor, int ver)
-        {
-            GPShoriz = hor;
-            GPSvertic = ver;
-        }
         public void PlanMaintenance()
         {
             //gepland onderhoud
@@ -58,9 +60,9 @@ namespace WBS
             if ((Kilometers / 100) > 100)
             {
                 ///
+
             }
         }
-
-        ///////////////////////////////////////////////////////////////////////////////
     }
 }
+

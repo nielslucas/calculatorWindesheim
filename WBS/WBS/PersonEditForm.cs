@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WBS
 {
-    public partial class PersonForm : Form
+    public partial class PersonEditForm : Form
     {
-        public PersonForm()
+        public PersonEditForm()
         {
             InitializeComponent();
         }

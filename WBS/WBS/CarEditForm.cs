@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace WBS
 {
-    public partial class CarForm : Form
+    public partial class CarEditForm : Form
     {
         Car car = new Car();
+        GPSCoordinates GPSnumbers = new GPSCoordinates();
 
-        public CarForm()
+        public CarEditForm()
         {
             InitializeComponent();
             textBox1.Text = car.Brand;
@@ -23,7 +24,7 @@ namespace WBS
         {
 
             int outcome;
-            int outcome2;
+            int outcome2; 
 
             car.Brand = textBox1.Text;
             textBox1.Text = car.Brand;
@@ -79,11 +80,20 @@ namespace WBS
                 checkBox1.Checked = false;
             }
             ///checkbox end
-            int.TryParse(textBox14.Text, out outcome);
-            int.TryParse(textBox15.Text, out outcome2);
-            car.LocateWithGPS(outcome, outcome2);
-            textBox14.Text = car.GPShoriz.ToString();
-            textBox15.Text = car.GPSvertic.ToString();
+
+            //Laurens update -> GPSCoordinates ->remove input???
+            int.TryParse(textBox14.Text, out outcome); //remove?
+            int.TryParse(textBox15.Text, out outcome2); //remove?
+            GPSnumbers.GetGPSLocation(outcome, outcome2);// replace/remove?
+            textBox14.Text = GPSnumbers.GPSLatitude.ToString();
+            textBox15.Text = GPSnumbers.GPSLongtitude.ToString();
+
+            //old before update (look up)-Laurens
+            // int.TryParse(textBox14.Text, out outcome);
+            // int.TryParse(textBox15.Text, out outcome2);
+            //car.LocateWithGPS(outcome, outcome2);
+            //textBox14.Text = car.GPShoriz.ToString();
+            //textBox15.Text = car.GPSvertic.ToString();
 
             int.TryParse(textBox16.Text, out outcome);
             car.Parkinglocation = outcome;
@@ -110,7 +120,6 @@ namespace WBS
             }
             label4.Text += String.Format("\n------\n{0}", totalDriven);
         }
-
 
         //////////////////////////////////////////////////////////////
 

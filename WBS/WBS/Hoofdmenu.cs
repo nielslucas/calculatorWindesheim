@@ -19,13 +19,13 @@ namespace WBS
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            CarForm form = new CarForm();
+            CarEditForm form = new CarEditForm();
             form.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            PersonForm form = new PersonForm();
+            PersonEditForm form = new PersonEditForm();
             form.Show();
         }
 
