@@ -16,5 +16,19 @@ namespace WBS
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            CarForm form = new CarForm();
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PersonForm form = new PersonForm();
+            form.Show();
+        }
+
     }
 }
+

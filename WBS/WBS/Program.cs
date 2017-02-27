@@ -12,14 +12,14 @@ namespace WBS
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main() 
+        static void Main()
         {
-            // automatisch opstarten .cs, files -> remove/update - Laurens
+           
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Hoofdmenu());
-            Application.Run(new CarForm());
-            Application.Run( new PersonForm()); 
+            //  Application.Run(new CarForm()); - Laurens
+            //  Application.Run(new PersonForm()); -Laurens
         }
     }
 }

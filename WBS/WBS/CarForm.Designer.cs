@@ -478,6 +478,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CarForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarForm";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

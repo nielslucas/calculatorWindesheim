@@ -57,8 +57,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -307,6 +307,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Car info";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(14, 178);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(97, 23);
+            this.button4.TabIndex = 25;
+            this.button4.Text = "Hire new Car";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button2);
@@ -316,15 +325,6 @@
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add new Person";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(14, 178);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 23);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "Hire new Car";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // PersonForm
             // 
@@ -363,6 +363,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PersonForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PersonForm";
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
