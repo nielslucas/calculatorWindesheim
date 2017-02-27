@@ -432,7 +432,7 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Laatste gereden km berekening";
             // 
-            // Form1
+            // CarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -477,8 +477,8 @@
             this.Controls.Add(this.groupBox3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "CarForm";
+            this.Text = "CarForm";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);

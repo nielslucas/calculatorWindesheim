@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form2
+            // Hoofdmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 512);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "Hoofdmenu";
+            this.Text = "Hoofdmenu";
             this.ResumeLayout(false);
 
         }
