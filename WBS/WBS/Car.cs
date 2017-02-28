@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace WBS
 {
-    class Car
+    public class Car
     {
         public List<int> KMaddedssincelastride = new List<int>();
-
         public string Brand { get; set; } //merk
         public string Model { get; set; } // merk
         public int BuildYear { get; set; } //bouwjaar, duh

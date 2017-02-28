@@ -19,8 +19,8 @@ namespace WBS
 
         private void button1_Click(object sender, System.EventArgs e)
         {   
-            Car car = new Car();
-            CarEditForm form = new CarEditForm();
+            Car car = new Car("BMW","whatever",1009,500,"Red","Yellow",5,"sport",50,"ADSL3",4,"Purple",20,54,true,false,200);
+            CarEditForm form = new CarEditForm(car);
             form.Show();
         }
 

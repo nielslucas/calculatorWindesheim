@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WBS
 {
-    class Person
+    public class Person
     {
         public string Name { get; set; }
         public string HomeAddress { get; set; }
