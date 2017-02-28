@@ -24,7 +24,7 @@ namespace WBS
         {
 
             int outcome;
-            int outcome2; 
+            int outcome2;
 
             car.Brand = textBox1.Text;
             textBox1.Text = car.Brand;
@@ -103,7 +103,18 @@ namespace WBS
             int.TryParse(textBox17.Text, out outcome);
             car.Lastmaintenancedate = outcome;
             textBox17.Text = car.Lastmaintenancedate.ToString();
+
+           }
+
+        //save button -> verwijzing
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hoofdmenu form = new Hoofdmenu(car);
+            form.Show();
         }
+
+
+
         ////////////////////////////////////////////////////////////////////
 
         private void button18_Click(object sender, EventArgs e)/// list button -> km
@@ -168,6 +179,8 @@ namespace WBS
         {
 
         }
+
+       
     }
 }
 

@@ -12,6 +12,7 @@ namespace WBS
 {
     public partial class Hoofdmenu : Form
     {
+
         public Hoofdmenu()
         {
             InitializeComponent();
@@ -29,6 +30,11 @@ namespace WBS
             form.Show();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+                 
+        }
     }
 }
 
