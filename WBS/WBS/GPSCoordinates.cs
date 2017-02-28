@@ -17,7 +17,7 @@ namespace WBS
             return random.Next(min, max);
         }
 
-        public void GetGPSLocation(int min, int max)
+        public void GetGPSLocation()
         {
             GPSLongtitude = getRandomint(-10000000, 10000000);
             GPSLatitude = getRandomint(-1000000, 10000000);
