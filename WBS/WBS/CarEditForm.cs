@@ -14,13 +14,13 @@ namespace WBS
     {
         Car Car = new Car();
         GPSCoordinates GPSnumbers = new GPSCoordinates();
-
+        public Hoofdmenu Hoofdmenu;
         public CarEditForm()
         {
             InitializeComponent();
             textBox1.Text = Car.Brand;
         }
-        public CarEditForm(Car car)
+        public CarEditForm(Car car, Hoofdmenu hoofdmenu)
         {
             InitializeComponent();
             Car = car;
@@ -39,6 +39,8 @@ namespace WBS
             textBox13.Text = Car.SeatsColor;
             textBox16.Text = Car.ParkingLocation.ToString();
             textBox17.Text = Car.LastMaintenanceDate.ToString();
+            Hoofdmenu = hoofdmenu;
+            Hoofdmenu.SetLabels(Car);
         }
         private void button19_Click(object sender, EventArgs e)
         {
@@ -143,7 +145,9 @@ namespace WBS
 
         private void button1_Click(object sender, EventArgs e)/// list button -> km
         {
-
+            //  Hoofdmenu form = new Hoofdmenu(Car);
+            //form.Show();
+            Hoofdmenu.SetLabels(Car);
         }
         
         //////////////////////////////////////////////////////////////
