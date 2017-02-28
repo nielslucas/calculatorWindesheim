@@ -12,11 +12,32 @@ namespace WBS
 {
     public partial class PersonEditForm : Form
     {
+        public Hoofdmenu Hoofdmenu;
         public PersonEditForm()
         {
             InitializeComponent();
         }
-        Person Person1 = new Person();
+
+        Person Person;
+
+        public PersonEditForm(Person person1, Hoofdmenu hoofdmenu)
+        {
+            InitializeComponent();
+            Person = person1;
+            textBox1.Text = Person.Name.ToString();
+            textBox2.Text = Person.HomeAddress;
+            textBox3.Text = Person.WorkAddress;
+            textBox4.Text = Person.Age.ToString();
+            textBox5.Text = Person.BirthDay;
+            textBox6.Text = Person.PhoneNumber.ToString();
+            textBox7.Text = Person.CustomerNumber.ToString();
+            checkBox1.Checked = Person.DriversLicense;
+           // textBox9.Text = Person.BankAccountNumber.ToString();
+           // textBox10.Text = Person.MoneyOwed.ToString();
+            textBox12.Text = Person.Gender;
+            Hoofdmenu = hoofdmenu;
+        }
+        
         Person Person2;
         private bool TextBoxCheck(TextBox box)
         {
@@ -26,76 +47,78 @@ namespace WBS
         {
             if (TextBoxCheck(textBox1))
             {
-                Person1.Name = textBox1.Text;
-                textBox1.Text = Person1.Name;
+                Person.Name = textBox1.Text;
+                textBox1.Text = Person.Name;
             }
 
             if (TextBoxCheck(textBox2))
             {
-                Person1.HomeAddress = textBox2.Text;
-                textBox2.Text = Person1.HomeAddress;
+                Person.HomeAddress = textBox2.Text;
+                textBox2.Text = Person.HomeAddress;
             }
             if (TextBoxCheck(textBox3))
             {
-                Person1.WorkAddress = textBox3.Text;
-                textBox3.Text = Person1.WorkAddress;
+                Person.WorkAddress = textBox3.Text;
+                textBox3.Text = Person.WorkAddress;
             }
             if (TextBoxCheck(textBox4))
             {
                 int value = 18;
                 int.TryParse(textBox4.Text, out value);
-                Person1.Age = value;
-                textBox4.Text = Person1.Age.ToString();
+                Person.Age = value;
+                textBox4.Text = Person.Age.ToString();
             }
             if (TextBoxCheck(textBox5))
             {
-                Person1.BirthDay = textBox5.Text;
-                textBox5.Text = Person1.BirthDay;
+                Person.BirthDay = textBox5.Text;
+                textBox5.Text = Person.BirthDay;
             }
 
             if (TextBoxCheck(textBox6))
             {
                 int value = 0;
                 int.TryParse(textBox6.Text, out value);
-                Person1.PhoneNumber = value;
-                textBox6.Text = Person1.PhoneNumber.ToString();
+                Person.PhoneNumber = value;
+                textBox6.Text = Person.PhoneNumber.ToString();
             }
             if (TextBoxCheck(textBox7))
             {
                 int value = 0;
                 int.TryParse(textBox7.Text, out value);
-                Person1.CustomerNumber = value;
-                textBox7.Text = Person1.CustomerNumber.ToString();
+                Person.CustomerNumber = value;
+                textBox7.Text = Person.CustomerNumber.ToString();
             }
             if (TextBoxCheck(textBox8))
             {
                 Car car = new Car();
                 car.Brand = textBox8.Text;
                 car.Model = "default";
-                Person1.Car = car;
-                textBox8.Text = Person1.Car.Brand;
+                Person.Car = car;
+                textBox8.Text = Person.Car.Brand;
             }
             if (checkBox1.Checked)
             {
-                Person1.DriversLicense = true;
+                Person.DriversLicense = true;
 
             }
             else if (!checkBox1.Checked)
             {
-                Person1.DriversLicense = false;
+                Person.DriversLicense = false;
             }
             if (TextBoxCheck(textBox10))
             {
-                Person1.BankAccountNumber = textBox10.Text;
-                textBox10.Text = Person1.BankAccountNumber;
+                Person.BankAccountNumber = textBox10.Text;
+                textBox10.Text = Person.BankAccountNumber;
             }
             if (TextBoxCheck(textBox11))
             {
                 int value = 0;
                 int.TryParse(textBox11.Text, out value);
-                Person1.MoneyOwed = value;
-                textBox11.Text = Person1.MoneyOwed.ToString();
+                Person.MoneyOwed = value;
+                textBox11.Text = Person.MoneyOwed.ToString();
             }
+
+            Hoofdmenu.SetLabels(Person);
 
         }
 
@@ -103,14 +126,14 @@ namespace WBS
         {
             int value = 0;
             int.TryParse(textBox9.Text, out value);
-            Person1.ReturnCar(Person1.Car, value);
-            if (Person1.Car == null)
+            Person.ReturnCar(Person.Car, value);
+            if (Person.Car == null)
             {
                 textBox8.Text = "";
             }
             else
-                textBox8.Text = Person1.Car.Brand.ToString();
-            textBox11.Text = Person1.MoneyOwed.ToString();
+                textBox8.Text = Person.Car.Brand.ToString();
+            textBox11.Text = Person.MoneyOwed.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)

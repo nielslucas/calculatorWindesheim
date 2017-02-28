@@ -26,8 +26,7 @@ namespace WBS
         public bool Manual { get; set; } //manual or not(automatic)
         public bool Maintenance { get; set; } // maintenance
         public int Kilometers { get; set; }//km stand, zie  private kilometers
-        public GPSCoordinates 
-
+        public GPSCoordinates GpsCoords = new GPSCoordinates();
         //old - Laurens
         // public int GPShoriz { get; set; }// gpslocatie/tracking HO
         // public int GPSvertic { get; set; }// gpslocatie/tracking VE
