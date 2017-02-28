@@ -18,7 +18,8 @@ namespace WBS
         }
 
         private void button1_Click(object sender, System.EventArgs e)
-        {
+        {   
+            Car car = new Car();
             CarEditForm form = new CarEditForm();
             form.Show();
         }

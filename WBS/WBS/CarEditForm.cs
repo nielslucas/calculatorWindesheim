@@ -12,13 +12,18 @@ namespace WBS
 {
     public partial class CarEditForm : Form
     {
-        Car car = new Car();
+        Car Car = new Car();
         GPSCoordinates GPSnumbers = new GPSCoordinates();
 
         public CarEditForm()
         {
             InitializeComponent();
-            textBox1.Text = car.Brand;
+            textBox1.Text = Car.Brand;
+        }
+         CarEditForm(Car car)
+        {
+            InitializeComponent();
+            Car = car;
         }
         private void button19_Click(object sender, EventArgs e)
         {
@@ -26,50 +31,50 @@ namespace WBS
             int outcome;
             int outcome2; 
 
-            car.Brand = textBox1.Text;
-            textBox1.Text = car.Brand;
+            Car.Brand = textBox1.Text;
+            textBox1.Text = Car.Brand;
 
-            car.Model = textBox2.Text;
-            textBox2.Text = car.Model;
+            Car.Model = textBox2.Text;
+            textBox2.Text = Car.Model;
 
             int.TryParse(textBox3.Text, out outcome);
-            car.Buildyear = outcome;
-            textBox3.Text = car.Buildyear.ToString();
+            Car.BuildYear = outcome;
+            textBox3.Text = Car.BuildYear.ToString();
 
             int.TryParse(textBox4.Text, out outcome);
-            car.Kilometers = outcome;
-            textBox4.Text = car.Kilometers.ToString();
+            Car.Kilometers = outcome;
+            textBox4.Text = Car.Kilometers.ToString();
 
             int.TryParse(textBox5.Text, out outcome);
-            car.GastankLit = outcome;
-            textBox5.Text = car.GastankLit.ToString();
+            Car.GastankLit = outcome;
+            textBox5.Text = Car.GastankLit.ToString();
 
-            car.Licenseplate = textBox6.Text;
-            textBox6.Text = car.Licenseplate;
+            Car.Licenseplate = textBox6.Text;
+            textBox6.Text = Car.Licenseplate;
 
-            car.Chassiscolorprimary = textBox7.Text;
-            textBox7.Text = car.Chassiscolorprimary;
+            Car.Chassiscolorprimary = textBox7.Text;
+            textBox7.Text = Car.Chassiscolorprimary;
 
-            car.Chassiscolorsecondary = textBox8.Text;
-            textBox8.Text = car.Chassiscolorsecondary;
+            Car.Chassiscolorsecondary = textBox8.Text;
+            textBox8.Text = Car.Chassiscolorsecondary;
 
             int.TryParse(textBox9.Text, out outcome);
-            car.Banden = outcome;
-            textBox9.Text = car.Banden.ToString();
+            Car.Tires = outcome;
+            textBox9.Text = Car.Tires.ToString();
 
-            car.Bandtype = textBox10.Text;
-            textBox10.Text = car.Bandtype;
+            Car.TireType = textBox10.Text;
+            textBox10.Text = Car.TireType;
 
             int.TryParse(textBox11.Text, out outcome);
-            car.Horsepower = outcome;
-            textBox11.Text = car.Horsepower.ToString();
+            Car.Horsepower = outcome;
+            textBox11.Text = Car.Horsepower.ToString();
 
             int.TryParse(textBox12.Text, out outcome);
-            car.Seats = outcome;
-            textBox12.Text = car.Seats.ToString();
+            Car.Seats = outcome;
+            textBox12.Text = Car.Seats.ToString();
 
-            car.Seatscolor = textBox13.Text;
-            textBox13.Text = car.Seatscolor;
+            Car.Seatscolor = textBox13.Text;
+            textBox13.Text = Car.Seatscolor;
             ///checkbox start
             if (checkBox1.Checked)
             {
@@ -96,13 +101,13 @@ namespace WBS
             //textBox15.Text = car.GPSvertic.ToString();
 
             int.TryParse(textBox16.Text, out outcome);
-            car.Parkinglocation = outcome;
-            textBox16.Text = car.Parkinglocation.ToString();
+            Car.Parkinglocation = outcome;
+            textBox16.Text = Car.Parkinglocation.ToString();
 
 
             int.TryParse(textBox17.Text, out outcome);
-            car.Lastmaintenancedate = outcome;
-            textBox17.Text = car.Lastmaintenancedate.ToString();
+            Car.Lastmaintenancedate = outcome;
+            textBox17.Text = Car.Lastmaintenancedate.ToString();
         }
         ////////////////////////////////////////////////////////////////////
 
@@ -110,9 +115,9 @@ namespace WBS
         {
             label4.Text = ""; int outcome;
             int.TryParse(textBox18.Text, out outcome);
-            car.Driven(outcome);
+            Car.Driven(outcome);
             int totalDriven = 0;
-            foreach (int km in car.KMaddedssincelastride)
+            foreach (int km in Car.KMaddedssincelastride)
             {
 
                 label4.Text += km.ToString() + "\n";
