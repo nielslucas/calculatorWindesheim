@@ -13,7 +13,6 @@ namespace WBS
     public partial class CarEditForm : Form
     {
         Car Car = new Car();
-        GPSCoordinates GPSnumbers = new GPSCoordinates();
         public Hoofdmenu Hoofdmenu;
         public CarEditForm()
         {
@@ -104,11 +103,10 @@ namespace WBS
             ///checkbox end
 
             //Laurens update -> GPSCoordinates ->remove input???
-            int.TryParse(textBox14.Text, out outcome); //remove?
-            int.TryParse(textBox15.Text, out outcome2); //remove?
-            GPSnumbers.GetGPSLocation(outcome, outcome2);// replace/remove?
-            textBox14.Text = GPSnumbers.GPSLatitude.ToString();
-            textBox15.Text = GPSnumbers.GPSLongtitude.ToString();
+           
+            Car.GpsCoords.GetGPSLocation();// replace/remove?
+            textBox14.Text = Car.GpsCoords.GPSLatitude.ToString();
+            textBox15.Text = Car.GpsCoords.GPSLongtitude.ToString();
 
             //old before update (look up)-Laurens
             // int.TryParse(textBox14.Text, out outcome);

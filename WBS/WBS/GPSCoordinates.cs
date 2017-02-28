@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WBS
 {
-    class GPSCoordinates
+    public class GPSCoordinates
     {    
         public int GPSLongtitude { get; set; } // gpslocatie/tracking LO
         public int GPSLatitude { get; set; }   // gpslocatie/tracking LA
@@ -16,7 +16,7 @@ namespace WBS
             Random random = new Random();
             return random.Next(min, max);
         }
-        public void GetGPSLocation(int min, int max)
+        public void GetGPSLocation()
         {
             GPSLongtitude = GetRandomint(-10000000, 10000000);
             GPSLatitude = GetRandomint(-1000000, 10000000);
