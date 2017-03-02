@@ -47,7 +47,7 @@ namespace WBS
             ChassisColorPrimary = chassisColorPrimary;
             ChassisColorSecondary = chassisColorSecondary;
             Tires = tires;
-            TireType = TireType;
+            TireType = tireType;
             HorsePower = horsePower;
             LicensePlate = licensePlate;
             Seats = seats;

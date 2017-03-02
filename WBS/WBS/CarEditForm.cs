@@ -123,6 +123,7 @@ namespace WBS
             int.TryParse(textBox17.Text, out outcome);
             Car.LastMaintenanceDate = outcome;
             textBox17.Text = Car.LastMaintenanceDate.ToString();
+            Hoofdmenu.SetLabels(Car);
         }
         ////////////////////////////////////////////////////////////////////
 
@@ -141,13 +142,14 @@ namespace WBS
             label4.Text += String.Format("\n------\n{0}", totalDriven);
         }
 
-        private void button1_Click(object sender, EventArgs e)/// list button -> km
+      
+        private void button2_Click(object sender, EventArgs e)
         {
-            //  Hoofdmenu form = new Hoofdmenu(Car);
-            //form.Show();
-            Hoofdmenu.SetLabels(Car);
+            Car.GpsCoords.GetGPSLocation();
+            textBox14.Text = Car.GpsCoords.GPSLatitude.ToString();
+            textBox15.Text = Car.GpsCoords.GPSLongtitude.ToString();
+            Hoofdmenu.setGPS();
         }
-        
         //////////////////////////////////////////////////////////////
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -195,6 +197,8 @@ namespace WBS
         {
 
         }
+
+       
     }
 }
 

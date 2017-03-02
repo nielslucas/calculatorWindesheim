@@ -38,8 +38,14 @@ namespace WBS
             label13.Text = Car.SeatsColor;
             label14.Text = Car.ParkingLocation.ToString();
             label15.Text = Car.LastMaintenanceDate.ToString();
+            label56.Text = Car.GpsCoords.GPSLatitude.ToString();
+            label57.Text = Car.GpsCoords.GPSLongtitude.ToString();
         }
-
+        public void setGPS()
+        {
+            label56.Text = Car.GpsCoords.GPSLatitude.ToString();
+            label57.Text = Car.GpsCoords.GPSLongtitude.ToString();
+        }
         public void SetLabels(Person Person)
         {
             label16.Text = Person.Name;
@@ -62,7 +68,7 @@ namespace WBS
             CarEditForm form = new CarEditForm(Car, this);
         
             form.Show();
-            this.Hide();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
