@@ -17,13 +17,13 @@ namespace WBS
         public Hoofdmenu()
         {
             InitializeComponent();
-            SetLabels(Car);
-            SetLabels(Person);
+            refreshLabels();
+           // SetLabels(Person);
         }
 
-        public void SetLabels(Car Car)
+        public void refreshLabels()
         {
-            label1.Text = Car.Brand;
+            label1.Text = Car.Brand; 
             label2.Text = Car.Model;
             label3.Text = Car.BuildYear.ToString();
             label4.Text = Car.Kilometers.ToString();
@@ -40,14 +40,6 @@ namespace WBS
             label15.Text = Car.LastMaintenanceDate.ToString();
             label56.Text = Car.GpsCoords.GPSLatitude.ToString();
             label57.Text = Car.GpsCoords.GPSLongtitude.ToString();
-        }
-        public void setGPS()
-        {
-            label56.Text = Car.GpsCoords.GPSLatitude.ToString();
-            label57.Text = Car.GpsCoords.GPSLongtitude.ToString();
-        }
-        public void SetLabels(Person Person)
-        {
             label16.Text = Person.Name;
             label17.Text = Person.HomeAddress;
             label18.Text = Person.WorkAddress;
@@ -60,6 +52,25 @@ namespace WBS
             label25.Text = Person.BankAccountNumber;
             label26.Text = Person.MoneyOwed.ToString();
         }
+        public void setGPS()
+        {
+            label56.Text = Car.GpsCoords.GPSLatitude.ToString();
+            label57.Text = Car.GpsCoords.GPSLongtitude.ToString();
+        }
+        //public void SetLabels(Person Person)
+        //{
+        //    label16.Text = Person.Name;
+        //    label17.Text = Person.HomeAddress;
+        //    label18.Text = Person.WorkAddress;
+        //    label19.Text = Person.Age.ToString();
+        //    label20.Text = Person.BirthDay.ToString();
+        //    label21.Text = Person.Gender;
+        //    label22.Text = Person.PhoneNumber.ToString();
+        //    label23.Text = Person.CustomerNumber.ToString();
+        //    label24.Text = Person.DriversLicense.ToString();
+        //    label25.Text = Person.BankAccountNumber;
+        //    label26.Text = Person.MoneyOwed.ToString();
+        //}
 
 
         private void button1_Click(object sender, System.EventArgs e)

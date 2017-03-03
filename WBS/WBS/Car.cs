@@ -57,7 +57,6 @@ namespace WBS
             Manual = manual;
             Maintenance = maintance;
             Kilometers = kilometers;
-
             
         }
         public void PlanMaintenance()

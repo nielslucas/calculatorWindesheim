@@ -39,7 +39,7 @@ namespace WBS
             textBox16.Text = Car.ParkingLocation.ToString();
             textBox17.Text = Car.LastMaintenanceDate.ToString();
             Hoofdmenu = hoofdmenu;
-            Hoofdmenu.SetLabels(Car);
+            Hoofdmenu.refreshLabels();
         }
         private void button19_Click(object sender, EventArgs e)
         {
@@ -123,7 +123,7 @@ namespace WBS
             int.TryParse(textBox17.Text, out outcome);
             Car.LastMaintenanceDate = outcome;
             textBox17.Text = Car.LastMaintenanceDate.ToString();
-            Hoofdmenu.SetLabels(Car);
+            Hoofdmenu.refreshLabels();
         }
         ////////////////////////////////////////////////////////////////////
 

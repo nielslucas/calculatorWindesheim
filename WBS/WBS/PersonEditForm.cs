@@ -118,7 +118,7 @@ namespace WBS
                 textBox11.Text = Person.MoneyOwed.ToString();
             }
 
-            Hoofdmenu.SetLabels(Person);
+            Hoofdmenu.refreshLabels();
 
         }
 
