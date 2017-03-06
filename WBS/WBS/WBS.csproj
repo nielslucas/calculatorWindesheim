@@ -54,11 +54,11 @@
       <DependentUpon>CarEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GPSCoordinates.cs" />
-    <Compile Include="Hoofdmenu.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Hoofdmenu.Designer.cs">
-      <DependentUpon>Hoofdmenu.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="PersonEditForm.cs">
@@ -72,8 +72,8 @@
     <EmbeddedResource Include="CarEditForm.resx">
       <DependentUpon>CarEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Hoofdmenu.resx">
-      <DependentUpon>Hoofdmenu.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonEditForm.resx">
       <DependentUpon>PersonEditForm.cs</DependentUpon>

@@ -12,7 +12,7 @@ namespace WBS
 {
     public partial class PersonEditForm : Form
     {
-        public Hoofdmenu Hoofdmenu;
+        public MainForm Hoofdmenu;
         public PersonEditForm()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace WBS
 
         Person person;
 
-        public PersonEditForm(Person person1, Hoofdmenu hoofdmenu)
+        public PersonEditForm(Person person1, MainForm hoofdmenu)
         {
             InitializeComponent();
             person = person1;

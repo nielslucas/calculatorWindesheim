@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace WBS
 {
-    public partial class Hoofdmenu : Form
+    public partial class MainForm : Form
     {
         Car car = new Car("BMW", "whatever", 1009, 500, "Red", "Yellow", 5, "sport", 50, "ADSL3", 4, "Purple", 20, 54, true, false, 200);
+        Car car1 = new Car("Audi", "whatever", 1008, 400, "Green", "Blue", 5, "coupe", 50, "blah", 2, "Magenta", 18, 20, true, false, 100);
         Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
-        public Hoofdmenu()
+        public MainForm()
         {
             InitializeComponent();
             refreshLabels();
-           // SetLabels(Person);
         }
 
         public void refreshLabels()
         {
-            label1.Text = car.Brand; 
+            label1.Text = car.Brand;
             label2.Text = car.Model;
             label3.Text = car.BuildYear.ToString();
             label4.Text = car.Kilometers.ToString();
@@ -72,14 +72,13 @@ namespace WBS
         //    label26.Text = Person.MoneyOwed.ToString();
         //}
 
-
         private void button1_Click(object sender, System.EventArgs e)
-        {   
-           
+        {
+
             CarEditForm form = new CarEditForm(car, this);
-        
+
             form.Show();
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -87,13 +86,34 @@ namespace WBS
             PersonEditForm form = new PersonEditForm(person, this);
             form.Show();
         }
+        private void button7_Click(object sender, EventArgs e) // UPDATE CAR LISTBUTTON - Laurens
+        {
+            ListViewItem carlist = new ListViewItem(car.Brand); //TEST// - 0 - Laurens
+            carlist.SubItems.Add(car.Model); // 1 etc
+            listView1.Items.Add(carlist);
+
+        }
+
         //////////////////////////////////////
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
-                 
+
+
         }
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 

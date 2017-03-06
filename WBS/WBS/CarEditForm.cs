@@ -13,13 +13,13 @@ namespace WBS
     public partial class CarEditForm : Form
     {
         Car car = new Car();
-        public Hoofdmenu Hoofdmenu;
+        public MainForm Hoofdmenu;
         public CarEditForm()
         {
             InitializeComponent();
             textBox1.Text = car.Brand;
         }
-        public CarEditForm(Car car, Hoofdmenu hoofdmenu)
+        public CarEditForm(Car car, MainForm hoofdmenu)
         {
             InitializeComponent();
             this.car = car;
@@ -45,7 +45,7 @@ namespace WBS
         {
 
             int outcome;
-            int outcome2; 
+            // int outcome2;  - laurens -> not used anywhere?
 
             car.Brand = textBox1.Text;
             textBox1.Text = car.Brand;
@@ -91,7 +91,8 @@ namespace WBS
 
             car.SeatsColor = textBox13.Text;
             textBox13.Text = car.SeatsColor;
-            ///checkbox start
+
+            ///checkbox start - Laurens
             if (checkBox1.Checked)
             {
                 checkBox1.Checked = true;
@@ -101,19 +102,10 @@ namespace WBS
                 checkBox1.Checked = false;
             }
             ///checkbox end
-
-            //Laurens update -> GPSCoordinates ->remove input???
-           
-            car.GpsCoords.GetGPSLocation();// replace/remove?
+            
+            car.GpsCoords.GetGPSLocation();
             textBox14.Text = car.GpsCoords.GPSLatitude.ToString();
             textBox15.Text = car.GpsCoords.GPSLongtitude.ToString();
-
-            //old before update (look up)-Laurens
-            // int.TryParse(textBox14.Text, out outcome);
-            // int.TryParse(textBox15.Text, out outcome2);
-            //car.LocateWithGPS(outcome, outcome2);
-            //textBox14.Text = car.GPShoriz.ToString();
-            //textBox15.Text = car.GPSvertic.ToString();
 
             int.TryParse(textBox16.Text, out outcome);
             car.ParkingLocation = outcome;
@@ -125,9 +117,9 @@ namespace WBS
             textBox17.Text = car.LastMaintenanceDate.ToString();
             Hoofdmenu.refreshLabels();
         }
-        ////////////////////////////////////////////////////////////////////
+        /////////////////////////List Driven KM///////////////////////////////////////////
 
-        private void button18_Click(object sender, EventArgs e)/// list button -> km
+        private void button18_Click(object sender, EventArgs e)/// list button "Driven"
         {
             label4.Text = ""; int outcome;
             int.TryParse(textBox18.Text, out outcome);
@@ -142,7 +134,6 @@ namespace WBS
             label4.Text += String.Format("\n------\n{0}", totalDriven);
         }
 
-      
         private void button2_Click(object sender, EventArgs e)
         {
             car.GpsCoords.GetGPSLocation();
@@ -150,55 +141,46 @@ namespace WBS
             textBox15.Text = car.GpsCoords.GPSLongtitude.ToString();
             Hoofdmenu.setGPS();
         }
-        //////////////////////////////////////////////////////////////
+        //////////////////////////JUNK//////////////////////////////////// -Laurens
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox13_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox14_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox15_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label18_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-       
+
     }
 }
 

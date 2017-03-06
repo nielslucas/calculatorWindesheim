@@ -17,7 +17,7 @@ namespace WBS
            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hoofdmenu());
+            Application.Run(new MainForm());
             //  Application.Run(new CarForm()); - Laurens
             //  Application.Run(new PersonForm()); -Laurens
         }
