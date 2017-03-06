@@ -19,6 +19,8 @@ namespace WBS
         {
             InitializeComponent();
             refreshLabels();
+            ListCar();
+            ListPerson();
         }
 
         public void refreshLabels()
@@ -57,6 +59,7 @@ namespace WBS
             label56.Text = car.GpsCoords.GPSLatitude.ToString();
             label57.Text = car.GpsCoords.GPSLongtitude.ToString();
         }
+
         //public void SetLabels(Person Person)
         //{
         //    label16.Text = Person.Name;
@@ -86,15 +89,38 @@ namespace WBS
             PersonEditForm form = new PersonEditForm(person, this);
             form.Show();
         }
-        private void button7_Click(object sender, EventArgs e) // UPDATE CAR LISTBUTTON - Laurens
+
+
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - Laurens Listview testing
+        private void button7_Click(object sender, EventArgs e) // UPDATE CAR LISTBUTTON, MANUAL ADDING - Laurens
         {
             ListViewItem carlist = new ListViewItem(car.Brand); //TEST// - 0 - Laurens
-            carlist.SubItems.Add(car.Model); // 1 etc
+            carlist.SubItems.Add(car.Model); // 1
+            carlist.SubItems.Add(car.BuildYear.ToString()); // 2 etc
             listView1.Items.Add(carlist);
 
         }
 
-        //////////////////////////////////////
+        public void ListCar() ///function - Laurens
+        {
+            string[] mydata = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString() };
+
+            ListViewItem carlist = new ListViewItem(mydata); //TEST// - Laurens
+            listView1.Items.Add(carlist);
+
+        }
+        public void ListPerson() ///function - Laurens
+        {
+            string[] mydata = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
+
+            ListViewItem carlist = new ListViewItem(mydata); //TEST// - Laurens
+            listView2.Items.Add(carlist);
+
+        }
+
+        /////////////////////////TRASH///////////////////////////
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -103,6 +129,7 @@ namespace WBS
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
 
         }
         private void MainForm_Load(object sender, EventArgs e)
