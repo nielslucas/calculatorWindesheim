@@ -59,7 +59,6 @@ namespace WBS
             label56.Text = car.GpsCoords.GPSLatitude.ToString();
             label57.Text = car.GpsCoords.GPSLongtitude.ToString();
         }
-
         //public void SetLabels(Person Person)
         //{
         //    label16.Text = Person.Name;
@@ -77,32 +76,22 @@ namespace WBS
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-
             CarEditForm form = new CarEditForm(car, this);
-
             form.Show();
-
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             PersonEditForm form = new PersonEditForm(person, this);
             form.Show();
         }
-
-
-
-
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - Laurens Listview testing
-        private void button7_Click(object sender, EventArgs e) // UPDATE CAR LISTBUTTON, MANUAL ADDING - Laurens
+        private void button7_Click(object sender, EventArgs e) // UPDATE CAR LISTBUTTON, MANUAL ADDING, REMOVE, ONLY for testing - Laurens
         {
             ListViewItem carlist = new ListViewItem(car.Brand); //TEST// - 0 - Laurens
             carlist.SubItems.Add(car.Model); // 1
             carlist.SubItems.Add(car.BuildYear.ToString()); // 2 etc
             listView1.Items.Add(carlist);
-
         }
-
         public void ListCar() ///function - Laurens
         {
             string[] mydata = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString() };
@@ -119,9 +108,7 @@ namespace WBS
             listView2.Items.Add(carlist);
 
         }
-
         /////////////////////////TRASH///////////////////////////
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
