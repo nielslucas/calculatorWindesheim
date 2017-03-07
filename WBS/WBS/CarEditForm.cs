@@ -42,7 +42,6 @@ namespace WBS
             textBox16.Text = this.car.ParkingLocation.ToString();
             textBox17.Text = this.car.LastMaintenanceDate.ToString();
             Hoofdmenu = hoofdmenu;
-            Hoofdmenu.refreshLabels();
         }
         private void button19_Click(object sender, EventArgs e)
         {
@@ -118,7 +117,7 @@ namespace WBS
             int.TryParse(textBox17.Text, out outcome);
             car.LastMaintenanceDate = outcome;
             textBox17.Text = car.LastMaintenanceDate.ToString();
-            Hoofdmenu.refreshLabels();
+           // Hoofdmenu.refreshLabels();
         }
         /////////////////////////List Driven KM///////////////////////////////////////////
 
@@ -142,7 +141,7 @@ namespace WBS
             car.GpsCoords.GetGPSLocation();
             textBox14.Text = car.GpsCoords.GPSLatitude.ToString();
             textBox15.Text = car.GpsCoords.GPSLongtitude.ToString();
-            Hoofdmenu.setGPS();
+          //  Hoofdmenu.setGPS();
         }
         //////////////////////////JUNK//////////////////////////////////// -Laurens
 
