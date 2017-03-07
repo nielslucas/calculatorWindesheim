@@ -70,6 +70,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            //this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -247,6 +250,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.button7);
@@ -354,6 +358,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button13);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.button9);
             this.groupBox5.Controls.Add(this.button8);
@@ -383,6 +388,26 @@
             this.button10.Text = "select car";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(218, 33);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 41;
+            this.button12.Text = "Delete selected car";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(218, 29);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 45;
+            this.button13.Text = "Delete";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // MainForm
             // 
@@ -451,5 +476,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }
