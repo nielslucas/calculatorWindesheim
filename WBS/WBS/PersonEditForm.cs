@@ -40,7 +40,7 @@ namespace WBS
             this.persons = persons;
         }
         
-        Person Person2;
+        //Person Person2;
         private bool TextBoxCheck(TextBox box)
         {
             return (box.Text != null);
@@ -119,8 +119,6 @@ namespace WBS
                 person.MoneyOwed = value;
                 textBox11.Text = person.MoneyOwed.ToString();
             }
-
-          //  Hoofdmenu.refreshLabels();
 
         }
 

@@ -13,7 +13,6 @@ namespace WBS
     public partial class MainForm : Form
     {
         Car car = new Car("BMW", "whatever", 1009, 500, "Red", "Yellow", 5, "sport", 50, "ADSL3", 4, "Purple", 20, 54, true, false, 200);
-        Car car1 = new Car("Audi", "whatever", 1008, 400, "Green", "Blue", 5, "coupe", 50, "blah", 2, "Magenta", 18, 20, true, false, 100);
         Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
 
         List<Car> cars = new List<Car>();
@@ -22,7 +21,6 @@ namespace WBS
         public MainForm()
         {
             InitializeComponent();
-            // refreshLabels();
             ListCar();
             ListPerson();
         }
@@ -36,31 +34,13 @@ namespace WBS
             PersonEditForm form = new PersonEditForm(person, this, persons);
             form.Show();
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - Laurens Listview testing
-        private void button7_Click(object sender, EventArgs e) // UPDATE CAR LISTBUTTON, MANUAL ADDING, REMOVE, ONLY for testing - Laurens
+
+        private void button7_Click(object sender, EventArgs e)
         {
             listView1.Items.Clear();
             foreach (Car car in cars)
             {
-                // car.GpsCoords.GetGPSLocation();
-                string[] carData = {
-                    car.Brand,
-                    car.Model,
-                    car.BuildYear.ToString(),
-                    car.Kilometers.ToString(),
-                    car.GastankLit.ToString(),
-                    car.LicensePlate,
-                    car.ChassisColorPrimary,
-                    car.ChassisColorSecondary,
-                    car.Tires.ToString(),
-                    car.Seats.ToString(),
-                    car.HorsePower.ToString(),
-                    car.ParkingLocation.ToString(),
-                    car.LastMaintenanceDate.ToString(),
-
-                    car.GpsCoords.GPSLatitude.ToString(),
-                    car.GpsCoords.GPSLongtitude.ToString()
-                };
+                string[] carData = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString(), car.LicensePlate, car.ChassisColorPrimary, car.ChassisColorSecondary, car.Tires.ToString(), car.Seats.ToString(), car.HorsePower.ToString(), car.ParkingLocation.ToString(), car.LastMaintenanceDate.ToString(), car.GpsCoords.GPSLatitude.ToString(), car.GpsCoords.GPSLongtitude.ToString() };
                 ListViewItem carList = new ListViewItem(carData);
                 listView1.Items.Add(carList);
             }
@@ -72,36 +52,36 @@ namespace WBS
             foreach (Person person in persons)
             {
                 string[] mydata = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
-                ListViewItem carlist = new ListViewItem(mydata); //TEST// - Laurens
+                ListViewItem carlist = new ListViewItem(mydata); 
                 listView2.Items.Add(carlist);
             }
         }
         private void button9_Click(object sender, EventArgs e)
         {
             Person person = persons.ElementAt(listView2.SelectedIndices[0]);
-            PersonEditForm form = new PersonEditForm(person, this, persons);//cleanup? add new constructor for edit
+            PersonEditForm form = new PersonEditForm(person, this, persons);
             form.Show();
         }
-        public void ListCar() ///function - Laurens
+        public void ListCar() 
         {
             listView1.Items.Clear();
             foreach (Car car in cars)
             {
                 string[] mycar = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString() };
 
-                ListViewItem carlist = new ListViewItem(mycar); //TEST// - Laurens
+                ListViewItem carlist = new ListViewItem(mycar); 
                 listView1.Items.Add(carlist);
             }
 
         }
-        public void ListPerson() ///function - Laurens
+        public void ListPerson() 
         {
             listView2.Items.Clear();
             foreach (Person person in persons)
             {
                 string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
 
-                ListViewItem personlist = new ListViewItem(myperson); //TEST// - Laurens
+                ListViewItem personlist = new ListViewItem(myperson); 
                 listView2.Items.Add(personlist);
             }
         }
@@ -145,7 +125,12 @@ namespace WBS
             cars = new List<Car>(caronquery.ToArray());
             ListCar();
         }
-
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Car car = cars.ElementAt(listView1.SelectedIndices[0]);
+            CarEditForm form = new CarEditForm(car, this, cars);
+            form.Show();
+        }
         /////////////////////////TRASH///////////////////////////
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -165,24 +150,17 @@ namespace WBS
         {
 
         }
-        //Car gone?
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+        }
         private void button10_Click(object sender, EventArgs e)
         {
-            
-        }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            Car car = cars.ElementAt(listView1.SelectedIndices[0]);
-            CarEditForm form = new CarEditForm(car, this, cars);//cleanup? add new constructor for edit
-            form.Show();
         }
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-
 
     }
 }

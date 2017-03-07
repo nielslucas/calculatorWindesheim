@@ -27,15 +27,7 @@ namespace WBS
         public bool Maintenance { get; set; } // maintenance
         public int Kilometers { get; set; }//km stand, zie  private kilometers
         public GPSCoordinates GpsCoords = new GPSCoordinates();
-        //old - Laurens
-        // public int GPShoriz { get; set; }// gpslocatie/tracking HO
-        // public int GPSvertic { get; set; }// gpslocatie/tracking VE
-        /////////////////////////////////////////////////////////////////////////
-        //public void LocateWithGPS(int hor, int ver)
-        //{
-        //    GPShoriz = hor;
-        //    GPSvertic = ver;
-        //}
+       
         /////////////////////////////////////////////////////////////////////////
         public Car() { }
 

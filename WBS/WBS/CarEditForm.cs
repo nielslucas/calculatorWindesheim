@@ -45,9 +45,7 @@ namespace WBS
         }
         private void button19_Click(object sender, EventArgs e)
         {
-
             int outcome;
-            // int outcome2;  - laurens -> not used anywhere?
 
             car.Brand = textBox1.Text;
             textBox1.Text = car.Brand;
@@ -117,7 +115,7 @@ namespace WBS
             int.TryParse(textBox17.Text, out outcome);
             car.LastMaintenanceDate = outcome;
             textBox17.Text = car.LastMaintenanceDate.ToString();
-           // Hoofdmenu.refreshLabels();
+        
         }
         /////////////////////////List Driven KM///////////////////////////////////////////
 
@@ -141,7 +139,7 @@ namespace WBS
             car.GpsCoords.GetGPSLocation();
             textBox14.Text = car.GpsCoords.GPSLatitude.ToString();
             textBox15.Text = car.GpsCoords.GPSLongtitude.ToString();
-          //  Hoofdmenu.setGPS();
+
         }
         //////////////////////////JUNK//////////////////////////////////// -Laurens
 
