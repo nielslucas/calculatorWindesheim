@@ -87,7 +87,6 @@
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
             this.label57 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // button1
@@ -623,21 +622,11 @@
             this.label57.TabIndex = 31;
             this.label57.Text = "Latitude";
             // 
-            // listView1
-            // 
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(554, 23);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
-            this.listView1.TabIndex = 32;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // Hoofdmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 588);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label57);
             this.Controls.Add(this.label56);
             this.Controls.Add(this.label55);
@@ -768,6 +757,5 @@
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.ListView listView1;
     }
 }

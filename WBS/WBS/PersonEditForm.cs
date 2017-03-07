@@ -18,23 +18,23 @@ namespace WBS
             InitializeComponent();
         }
 
-        Person person;
+        Person Person;
 
         public PersonEditForm(Person person1, Hoofdmenu hoofdmenu)
         {
             InitializeComponent();
-            person = person1;
-            textBox1.Text = person.Name.ToString();
-            textBox2.Text = person.HomeAddress;
-            textBox3.Text = person.WorkAddress;
-            textBox4.Text = person.Age.ToString();
-            textBox5.Text = person.BirthDay;
-            textBox6.Text = person.PhoneNumber.ToString();
-            textBox7.Text = person.CustomerNumber.ToString();
-            checkBox1.Checked = person.DriversLicense;
+            Person = person1;
+            textBox1.Text = Person.Name.ToString();
+            textBox2.Text = Person.HomeAddress;
+            textBox3.Text = Person.WorkAddress;
+            textBox4.Text = Person.Age.ToString();
+            textBox5.Text = Person.BirthDay;
+            textBox6.Text = Person.PhoneNumber.ToString();
+            textBox7.Text = Person.CustomerNumber.ToString();
+            checkBox1.Checked = Person.DriversLicense;
            // textBox9.Text = Person.BankAccountNumber.ToString();
            // textBox10.Text = Person.MoneyOwed.ToString();
-            textBox12.Text = person.Gender;
+            textBox12.Text = Person.Gender;
             Hoofdmenu = hoofdmenu;
         }
         
@@ -47,75 +47,75 @@ namespace WBS
         {
             if (TextBoxCheck(textBox1))
             {
-                person.Name = textBox1.Text;
-                textBox1.Text = person.Name;
+                Person.Name = textBox1.Text;
+                textBox1.Text = Person.Name;
             }
 
             if (TextBoxCheck(textBox2))
             {
-                person.HomeAddress = textBox2.Text;
-                textBox2.Text = person.HomeAddress;
+                Person.HomeAddress = textBox2.Text;
+                textBox2.Text = Person.HomeAddress;
             }
             if (TextBoxCheck(textBox3))
             {
-                person.WorkAddress = textBox3.Text;
-                textBox3.Text = person.WorkAddress;
+                Person.WorkAddress = textBox3.Text;
+                textBox3.Text = Person.WorkAddress;
             }
             if (TextBoxCheck(textBox4))
             {
                 int value = 18;
                 int.TryParse(textBox4.Text, out value);
-                person.Age = value;
-                textBox4.Text = person.Age.ToString();
+                Person.Age = value;
+                textBox4.Text = Person.Age.ToString();
             }
             if (TextBoxCheck(textBox5))
             {
-                person.BirthDay = textBox5.Text;
-                textBox5.Text = person.BirthDay;
+                Person.BirthDay = textBox5.Text;
+                textBox5.Text = Person.BirthDay;
             }
 
             if (TextBoxCheck(textBox6))
             {
                 int value = 0;
                 int.TryParse(textBox6.Text, out value);
-                person.PhoneNumber = value;
-                textBox6.Text = person.PhoneNumber.ToString();
+                Person.PhoneNumber = value;
+                textBox6.Text = Person.PhoneNumber.ToString();
             }
             if (TextBoxCheck(textBox7))
             {
                 int value = 0;
                 int.TryParse(textBox7.Text, out value);
-                person.CustomerNumber = value;
-                textBox7.Text = person.CustomerNumber.ToString();
+                Person.CustomerNumber = value;
+                textBox7.Text = Person.CustomerNumber.ToString();
             }
             if (TextBoxCheck(textBox8))
             {
                 Car car = new Car();
                 car.Brand = textBox8.Text;
                 car.Model = "default";
-                person.Car = car;
-                textBox8.Text = person.Car.Brand;
+                Person.Car = car;
+                textBox8.Text = Person.Car.Brand;
             }
             if (checkBox1.Checked)
             {
-                person.DriversLicense = true;
+                Person.DriversLicense = true;
 
             }
             else if (!checkBox1.Checked)
             {
-                person.DriversLicense = false;
+                Person.DriversLicense = false;
             }
             if (TextBoxCheck(textBox10))
             {
-                person.BankAccountNumber = textBox10.Text;
-                textBox10.Text = person.BankAccountNumber;
+                Person.BankAccountNumber = textBox10.Text;
+                textBox10.Text = Person.BankAccountNumber;
             }
             if (TextBoxCheck(textBox11))
             {
                 int value = 0;
                 int.TryParse(textBox11.Text, out value);
-                person.MoneyOwed = value;
-                textBox11.Text = person.MoneyOwed.ToString();
+                Person.MoneyOwed = value;
+                textBox11.Text = Person.MoneyOwed.ToString();
             }
 
             Hoofdmenu.refreshLabels();
@@ -126,14 +126,14 @@ namespace WBS
         {
             int value = 0;
             int.TryParse(textBox9.Text, out value);
-            person.ReturnCar(person.Car, value);
-            if (person.Car == null)
+            Person.ReturnCar(Person.Car, value);
+            if (Person.Car == null)
             {
                 textBox8.Text = "";
             }
             else
-                textBox8.Text = person.Car.Brand.ToString();
-            textBox11.Text = person.MoneyOwed.ToString();
+                textBox8.Text = Person.Car.Brand.ToString();
+            textBox11.Text = Person.MoneyOwed.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -141,7 +141,7 @@ namespace WBS
             Car car = new Car();
             car.Brand = textBox8.Text;
             Person2 = new Person(textBox1.Text, textBox2.Text, textBox3.Text, Int32.Parse(textBox4.Text), textBox5.Text, "default", Int32.Parse(textBox6.Text), Int32.Parse(textBox7.Text), car);
-            //add Person2 to list of persons
+
 
         }
         
