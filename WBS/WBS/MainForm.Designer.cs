@@ -127,28 +127,31 @@
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(117, 22);
+            this.button1.Location = new System.Drawing.Point(32, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(86, 36);
             this.button1.TabIndex = 0;
-            this.button1.Text = "OPEN Edit car";
+            this.button1.Text = "Add New Car";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(315, 22);
+            this.button2.Location = new System.Drawing.Point(32, 20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 36);
             this.button2.TabIndex = 1;
-            this.button2.Text = "OPEN Edit person";
+            this.button2.Text = "Add New Person";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -799,7 +802,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 23);
             this.button3.TabIndex = 36;
-            this.button3.Text = "Lastname";
+            this.button3.Text = "Name";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -848,16 +851,19 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(495, 114);
+            this.button7.Location = new System.Drawing.Point(807, 20);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(130, 30);
             this.button7.TabIndex = 40;
-            this.button7.Text = "Update Listview Car";
+            this.button7.Text = "Update List Car";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button11);
+            this.groupBox4.Controls.Add(this.button1);
+            this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.Location = new System.Drawing.Point(463, 90);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(957, 241);
@@ -867,11 +873,11 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(495, 363);
+            this.button8.Location = new System.Drawing.Point(807, 19);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(130, 30);
             this.button8.TabIndex = 42;
-            this.button8.Text = "Update Listview Person";
+            this.button8.Text = "Update List Person";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -897,7 +903,7 @@
             this.listView2.TabIndex = 41;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
-            //this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+           // this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged_1);
             // 
             // columnHeader16
             // 
@@ -953,7 +959,9 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.button9);
+            this.groupBox5.Controls.Add(this.button8);
             this.groupBox5.Location = new System.Drawing.Point(463, 339);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(957, 241);
@@ -963,23 +971,39 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(168, 24);
+            this.button9.Location = new System.Drawing.Point(395, 17);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(130, 30);
+            this.button9.Size = new System.Drawing.Size(130, 36);
             this.button9.TabIndex = 44;
-            this.button9.Text = "select person";
+            this.button9.Text = "Edit Selected Person";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(333, 24);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(130, 30);
+            this.button10.TabIndex = 45;
+            this.button10.Text = "select car";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(395, 19);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(130, 34);
+            this.button11.TabIndex = 40;
+            this.button11.Text = "Edit Selected Car";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1422, 586);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.groupBox5);
@@ -1031,6 +1055,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1138,5 +1163,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader26;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
     }
 }
