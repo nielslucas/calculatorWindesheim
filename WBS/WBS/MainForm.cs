@@ -123,6 +123,7 @@ namespace WBS
         }
         public void ListPerson() ///function - Laurens
         {
+
             foreach (Person person in persons)
             {
                 
@@ -143,10 +144,6 @@ namespace WBS
             var personquery = from per in persons
                          orderby per.Name
                          select per;
-
-            listView2.Items.Clear();
-           // List<Person> personresult = new List<Person>(personquery.ToArray());
-          //ListPerson(new List<Person>(personquery.ToArray()));
             persons = new List<Person>(personquery.ToArray());
             ListPerson();
 
