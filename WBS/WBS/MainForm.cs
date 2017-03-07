@@ -87,7 +87,19 @@ namespace WBS
             listView1.Items.Clear();
             foreach (Car car in cars)
             {
-                string[] mycar = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString() };
+                string[] mycar = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString(), car.LicensePlate };
+
+                ListViewItem carlist = new ListViewItem(mycar); //TEST// - Laurens
+                listView1.Items.Add(carlist);
+            }
+
+        }
+        public void ListCar(List<Car> cars) ///function - Laurens
+        {
+            listView1.Items.Clear();
+            foreach (Car car in cars)
+            {
+                string[] mycar = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString(), car.LicensePlate};
 
                 ListViewItem carlist = new ListViewItem(mycar); //TEST// - Laurens
                 listView1.Items.Add(carlist);
@@ -130,12 +142,12 @@ namespace WBS
         {
             
             var caronquery = from crs in cars
-                             where crs.LicensePlate.Substring(0,0).ToCharArray()[0] >'e' 
+                             where crs.LicensePlate.Substring(0,1).ToCharArray()[0] >'e' 
                              orderby crs.LicensePlate
                              select crs;
 
-            cars = caronquery.ToList();
-            ListCar();
+            
+            ListCar(caronquery.ToList());
         }
 
         private void button6_Click(object sender, EventArgs e)//parkinglocation - Laurens

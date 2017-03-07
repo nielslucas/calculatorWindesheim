@@ -196,9 +196,9 @@
             // 
             this.button4.Location = new System.Drawing.Point(477, 25);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 23);
+            this.button4.Size = new System.Drawing.Size(101, 49);
             this.button4.TabIndex = 37;
-            this.button4.Text = "Licenseplate";
+            this.button4.Text = "Cars licenseplates starting with f or bigger";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
