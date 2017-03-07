@@ -128,6 +128,12 @@ namespace WBS
                 listView2.Items.Add(carlist);
             }
         }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Person person = persons.ElementAt(listView2.SelectedIndices[0]);
+            PersonEditForm form = new PersonEditForm(person, this, persons);//cleanup? add new constructor for edit
+            form.Show();
+        }
         public void ListCar() ///function - Laurens
         {
             string[] mydata = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString() };
@@ -147,7 +153,42 @@ namespace WBS
                 listView2.Items.Add(carlist);
             }
         }
-        
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)//Lastname - Laurens
+        {
+            var personquery = from per in persons
+                         orderby per.Name
+                         select per;
+
+            listView2.Items.Clear();
+           // List<Person> personresult = new List<Person>(personquery.ToArray());
+          //ListPerson(new List<Person>(personquery.ToArray()));
+            persons = new List<Person>(personquery.ToArray());
+            ListPerson();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)//Brand Car - Laurens
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)//Licenseplate - Laurens
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)//parkinglocation - Laurens
+        {
+
+        }
+
+
         /////////////////////////TRASH///////////////////////////
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -168,14 +209,8 @@ namespace WBS
 
         }
 
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Person person = new Person();
-               person.Name = this.listView2.SelectedItems[0].SubItems[0].ToString();
-               person.HomeAddress= this.listView2.SelectedItems[0].SubItems[1].ToString();
-            PersonEditForm form = new PersonEditForm(person, this, persons);
-            form.Show();
-        }
+       
+
     }
 }
 

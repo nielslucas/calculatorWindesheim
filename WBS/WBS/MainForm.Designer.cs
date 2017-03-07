@@ -126,8 +126,10 @@
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -799,6 +801,7 @@
             this.button3.TabIndex = 36;
             this.button3.Text = "Lastname";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -808,6 +811,7 @@
             this.button4.TabIndex = 37;
             this.button4.Text = "Licenseplate";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox3
             // 
@@ -830,6 +834,7 @@
             this.button6.TabIndex = 39;
             this.button6.Text = "ParkingLocation";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -839,6 +844,7 @@
             this.button5.TabIndex = 38;
             this.button5.Text = "Brand Car";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button7
             // 
@@ -885,12 +891,13 @@
             this.columnHeader26});
             this.listView2.GridLines = true;
             this.listView2.Location = new System.Drawing.Point(495, 401);
+            this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(905, 165);
             this.listView2.TabIndex = 41;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
-            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            //this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             // 
             // columnHeader16
             // 
@@ -946,6 +953,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button9);
             this.groupBox5.Location = new System.Drawing.Point(463, 339);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(957, 241);
@@ -953,11 +961,21 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "List Persons";
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(168, 24);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(130, 30);
+            this.button9.TabIndex = 44;
+            this.button9.Text = "select person";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 586);
+            this.ClientSize = new System.Drawing.Size(1422, 586);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button8);
@@ -1013,6 +1031,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1118,5 +1137,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader25;
         private System.Windows.Forms.ColumnHeader columnHeader26;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button button9;
     }
 }
