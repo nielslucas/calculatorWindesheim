@@ -53,6 +53,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
@@ -68,11 +69,9 @@
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            //this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -187,21 +186,21 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(193, 25);
+            this.button3.Location = new System.Drawing.Point(7, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 23);
+            this.button3.Size = new System.Drawing.Size(210, 49);
             this.button3.TabIndex = 36;
-            this.button3.Text = "Name";
+            this.button3.Text = "Sort Person by Name";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(477, 25);
+            this.button4.Location = new System.Drawing.Point(451, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(101, 49);
+            this.button4.Size = new System.Drawing.Size(244, 49);
             this.button4.TabIndex = 37;
-            this.button4.Text = "Cars licenseplates starting with f or bigger";
+            this.button4.Text = "Sort Cars licenseplates with f or bigger";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -220,21 +219,21 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(607, 25);
+            this.button6.Location = new System.Drawing.Point(701, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 23);
+            this.button6.Size = new System.Drawing.Size(236, 49);
             this.button6.TabIndex = 39;
-            this.button6.Text = "ParkingLocation";
+            this.button6.Text = "Sort Cars by ParkingLocation";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(333, 25);
+            this.button5.Location = new System.Drawing.Point(227, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 23);
+            this.button5.Size = new System.Drawing.Size(215, 49);
             this.button5.TabIndex = 38;
-            this.button5.Text = "Brand Car";
+            this.button5.Text = "Sort Cars by Brand";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -260,6 +259,16 @@
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "List Cars";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(218, 33);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 41;
+            this.button12.Text = "Delete selected car";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
@@ -369,6 +378,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "List Persons";
             // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(218, 29);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 45;
+            this.button13.Text = "Delete";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(395, 17);
@@ -388,26 +407,6 @@
             this.button10.Text = "select car";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(218, 33);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 41;
-            this.button12.Text = "Delete selected car";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(218, 29);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 45;
-            this.button13.Text = "Delete";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // MainForm
             // 
