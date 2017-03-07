@@ -81,7 +81,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(32, 17);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 36);
+            this.button1.Size = new System.Drawing.Size(112, 36);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add New Car";
             this.button1.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(32, 20);
+            this.button2.Location = new System.Drawing.Point(32, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 36);
             this.button2.TabIndex = 1;
@@ -200,7 +200,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(244, 49);
             this.button4.TabIndex = 37;
-            this.button4.Text = "Sort Cars licenseplates with f or bigger";
+            this.button4.Text = "Sort Cars licenseplates with \"f\" or bigger";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -239,9 +239,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(807, 20);
+            this.button7.Location = new System.Drawing.Point(538, 16);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(130, 30);
+            this.button7.Size = new System.Drawing.Size(157, 36);
             this.button7.TabIndex = 40;
             this.button7.Text = "Update List Car";
             this.button7.UseVisualStyleBackColor = true;
@@ -262,9 +262,9 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(218, 33);
+            this.button12.Location = new System.Drawing.Point(796, 18);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.Size = new System.Drawing.Size(141, 34);
             this.button12.TabIndex = 41;
             this.button12.Text = "Delete selected car";
             this.button12.UseVisualStyleBackColor = true;
@@ -272,9 +272,9 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(395, 19);
+            this.button11.Location = new System.Drawing.Point(262, 16);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(130, 34);
+            this.button11.Size = new System.Drawing.Size(147, 34);
             this.button11.TabIndex = 40;
             this.button11.Text = "Edit Selected Car";
             this.button11.UseVisualStyleBackColor = true;
@@ -282,9 +282,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(807, 19);
+            this.button8.Location = new System.Drawing.Point(538, 13);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(130, 30);
+            this.button8.Size = new System.Drawing.Size(157, 39);
             this.button8.TabIndex = 42;
             this.button8.Text = "Update List Person";
             this.button8.UseVisualStyleBackColor = true;
@@ -380,9 +380,9 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(218, 29);
+            this.button13.Location = new System.Drawing.Point(796, 14);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.Size = new System.Drawing.Size(141, 37);
             this.button13.TabIndex = 45;
             this.button13.Text = "Delete";
             this.button13.UseVisualStyleBackColor = true;
@@ -390,9 +390,9 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(395, 17);
+            this.button9.Location = new System.Drawing.Point(262, 13);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(130, 36);
+            this.button9.Size = new System.Drawing.Size(147, 38);
             this.button9.TabIndex = 44;
             this.button9.Text = "Edit Selected Person";
             this.button9.UseVisualStyleBackColor = true;
@@ -422,7 +422,7 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Hoofdmenu";
+            this.Text = "Team Unknown WBS, Jerzy, Laurens, Niels";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
