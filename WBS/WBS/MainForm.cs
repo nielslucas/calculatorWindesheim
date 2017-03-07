@@ -132,7 +132,37 @@ namespace WBS
                 listView2.Items.Add(carlist);
             }
         }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Person person = new Person();
+            person.Name = this.listView2.SelectedItems[0].SubItems[0].ToString();
+            person.HomeAddress = this.listView2.SelectedItems[0].SubItems[1].ToString();
+            PersonEditForm form = new PersonEditForm(person, this, persons);
+            form.Show();
+        }
         
+        private void button3_Click(object sender, EventArgs e)//Lastname - Laurens
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)//Brand Car - Laurens
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)//Licenseplate - Laurens
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)//parkinglocation - Laurens
+        {
+
+        }
+
+
         /////////////////////////TRASH///////////////////////////
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -153,16 +183,8 @@ namespace WBS
 
         }
 
-        //private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    Person person = new Person();
-        //       person.Name = this.listView2.SelectedItems[0].SubItems[0].ToString();
-        //       person.HomeAddress= this.listView2.SelectedItems[0].SubItems[1].ToString();
-        //    PersonEditForm form = new PersonEditForm(person, this, persons);
-        //    form.Show();
-        //}
-
        
+
     }
 }
 
