@@ -145,6 +145,10 @@ namespace WBS
             CarEditForm form = new CarEditForm(car, this, cars);
             form.Show();
         }
+        private void button14_Click_1(object sender, EventArgs e)// exit button - Laurens
+        {
+            Application.Exit();
+        }        
         /////////////////////////TRASH///////////////////////////
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -185,6 +189,8 @@ namespace WBS
         {
             listView2.SelectedItems[0].Remove();
         }
+
+     
     }
 }
 
