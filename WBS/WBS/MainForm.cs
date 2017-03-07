@@ -16,9 +16,9 @@ namespace WBS
         Car car1 = new Car("Audi", "whatever", 1008, 400, "Green", "Blue", 5, "coupe", 50, "blah", 2, "Magenta", 18, 20, true, false, 100);
         Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
 
-        List<Car> cars= new List<Car>();
-        List<Person> persons=new List<Person>();
-        
+        List<Car> cars = new List<Car>();
+        List<Person> persons = new List<Person>();
+
         public MainForm()
         {
             InitializeComponent();
@@ -85,7 +85,7 @@ namespace WBS
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            PersonEditForm form = new PersonEditForm(person, this,persons);
+            PersonEditForm form = new PersonEditForm(person, this, persons);
             form.Show();
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - Laurens Listview testing
@@ -123,30 +123,22 @@ namespace WBS
         }
         public void ListPerson() ///function - Laurens
         {
+            listView2.Items.Clear();
             foreach (Person person in persons)
             {
-                
+
                 string[] mydata = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
 
                 ListViewItem carlist = new ListViewItem(mydata); //TEST// - Laurens
                 listView2.Items.Add(carlist);
             }
         }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)//Lastname - Laurens
+        private void button3_Click(object sender, EventArgs e)//Lastname 
         {
             var personquery = from per in persons
-                         orderby per.Name
-                         select per;
+                              orderby per.Name
+                              select per;
 
-            listView2.Items.Clear();
-           // List<Person> personresult = new List<Person>(personquery.ToArray());
-          //ListPerson(new List<Person>(personquery.ToArray()));
             persons = new List<Person>(personquery.ToArray());
             ListPerson();
 
@@ -159,14 +151,13 @@ namespace WBS
 
         private void button4_Click(object sender, EventArgs e)//Licenseplate - Laurens
         {
-
+       
         }
 
         private void button6_Click(object sender, EventArgs e)//parkinglocation - Laurens
         {
 
         }
-
 
         /////////////////////////TRASH///////////////////////////
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -187,9 +178,14 @@ namespace WBS
         {
 
         }
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-       
+        }
+        private void listView2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 
