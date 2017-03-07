@@ -867,6 +867,7 @@
             this.button8.TabIndex = 42;
             this.button8.Text = "Update Listview Person";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // listView2
             // 
@@ -889,6 +890,7 @@
             this.listView2.TabIndex = 41;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             // 
             // columnHeader16
             // 
@@ -955,7 +957,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1427, 586);
+            this.ClientSize = new System.Drawing.Size(1362, 586);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button8);

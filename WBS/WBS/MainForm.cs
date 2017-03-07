@@ -15,6 +15,10 @@ namespace WBS
         Car car = new Car("BMW", "whatever", 1009, 500, "Red", "Yellow", 5, "sport", 50, "ADSL3", 4, "Purple", 20, 54, true, false, 200);
         Car car1 = new Car("Audi", "whatever", 1008, 400, "Green", "Blue", 5, "coupe", 50, "blah", 2, "Magenta", 18, 20, true, false, 100);
         Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
+
+        List<Car> cars= new List<Car>();
+        List<Person> persons=new List<Person>();
+        
         public MainForm()
         {
             InitializeComponent();
@@ -81,7 +85,7 @@ namespace WBS
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            PersonEditForm form = new PersonEditForm(person, this);
+            PersonEditForm form = new PersonEditForm(person, this,persons);
             form.Show();
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - Laurens Listview testing
@@ -91,6 +95,17 @@ namespace WBS
             carlist.SubItems.Add(car.Model); // 1
             carlist.SubItems.Add(car.BuildYear.ToString()); // 2 etc
             listView1.Items.Add(carlist);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            listView2.Items.Clear();
+            foreach (Person person in persons)
+            {
+                string[] mydata = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
+                ListViewItem carlist = new ListViewItem(mydata); //TEST// - Laurens
+                listView2.Items.Add(carlist);
+            }
         }
         public void ListCar() ///function - Laurens
         {
@@ -102,12 +117,16 @@ namespace WBS
         }
         public void ListPerson() ///function - Laurens
         {
-            string[] mydata = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
+            foreach (Person person in persons)
+            {
+                
+                string[] mydata = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
 
-            ListViewItem carlist = new ListViewItem(mydata); //TEST// - Laurens
-            listView2.Items.Add(carlist);
-
+                ListViewItem carlist = new ListViewItem(mydata); //TEST// - Laurens
+                listView2.Items.Add(carlist);
+            }
         }
+        
         /////////////////////////TRASH///////////////////////////
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -128,6 +147,14 @@ namespace WBS
 
         }
 
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Person person = new Person();
+               person.Name = this.listView2.SelectedItems[0].SubItems[0].ToString();
+               person.HomeAddress= this.listView2.SelectedItems[0].SubItems[1].ToString();
+            PersonEditForm form = new PersonEditForm(person, this, persons);
+            form.Show();
+        }
     }
 }
 

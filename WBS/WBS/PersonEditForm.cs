@@ -13,6 +13,7 @@ namespace WBS
     public partial class PersonEditForm : Form
     {
         public MainForm Hoofdmenu;
+        List<Person> persons;
         public PersonEditForm()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace WBS
 
         Person person;
 
-        public PersonEditForm(Person person1, MainForm hoofdmenu)
+        public PersonEditForm(Person person1, MainForm hoofdmenu,List<Person> persons)
         {
             InitializeComponent();
             person = person1;
@@ -36,6 +37,7 @@ namespace WBS
            // textBox10.Text = Person.MoneyOwed.ToString();
             textBox12.Text = person.Gender;
             Hoofdmenu = hoofdmenu;
+            this.persons = persons;
         }
         
         Person Person2;
@@ -140,8 +142,8 @@ namespace WBS
         {
             Car car = new Car();
             car.Brand = textBox8.Text;
-            Person2 = new Person(textBox1.Text, textBox2.Text, textBox3.Text, Int32.Parse(textBox4.Text), textBox5.Text, "default", Int32.Parse(textBox6.Text), Int32.Parse(textBox7.Text), car);
-
+           Person tempPerson2 = new Person(textBox1.Text, textBox2.Text, textBox3.Text, Int32.Parse(textBox4.Text), textBox5.Text, "default", Int32.Parse(textBox6.Text), Int32.Parse(textBox7.Text), car);
+            persons.Add(tempPerson2);
 
         }
         
