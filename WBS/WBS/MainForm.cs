@@ -107,6 +107,12 @@ namespace WBS
                 listView2.Items.Add(carlist);
             }
         }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Person person = persons.ElementAt(listView2.SelectedIndices[0]);
+            PersonEditForm form = new PersonEditForm(person, this, persons);//cleanup? add new constructor for edit
+            form.Show();
+        }
         public void ListCar() ///function - Laurens
         {
             string[] mydata = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString() };
@@ -147,14 +153,16 @@ namespace WBS
 
         }
 
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Person person = new Person();
-               person.Name = this.listView2.SelectedItems[0].SubItems[0].ToString();
-               person.HomeAddress= this.listView2.SelectedItems[0].SubItems[1].ToString();
-            PersonEditForm form = new PersonEditForm(person, this, persons);
-            form.Show();
-        }
+        //private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    Person person = new Person();
+        //       person.Name = this.listView2.SelectedItems[0].SubItems[0].ToString();
+        //       person.HomeAddress= this.listView2.SelectedItems[0].SubItems[1].ToString();
+        //    PersonEditForm form = new PersonEditForm(person, this, persons);
+        //    form.Show();
+        //}
+
+       
     }
 }
 
