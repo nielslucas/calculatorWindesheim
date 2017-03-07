@@ -215,8 +215,15 @@ namespace WBS
 
         }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            listView1.SelectedItems[0].Remove();
+        }
 
-
+        private void button13_Click(object sender, EventArgs e)
+        {
+            listView2.SelectedItems[0].Remove();
+        }
     }
 }
 
