@@ -120,7 +120,7 @@ namespace WBS
                 textBox11.Text = person.MoneyOwed.ToString();
             }
 
-            Hoofdmenu.refreshLabels();
+          //  Hoofdmenu.refreshLabels();
 
         }
 
