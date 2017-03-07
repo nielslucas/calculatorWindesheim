@@ -165,6 +165,18 @@ namespace WBS
         {
 
         }
+        //Car gone?
+        private void button10_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Car car = cars.ElementAt(listView1.SelectedIndices[0]);
+            CarEditForm form = new CarEditForm(car, this, cars);//cleanup? add new constructor for edit
+            form.Show();
+        }
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
