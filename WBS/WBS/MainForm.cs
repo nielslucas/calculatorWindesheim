@@ -16,8 +16,8 @@ namespace WBS
         Car car1 = new Car("Audi", "whatever", 1008, 400, "Green", "Blue", 5, "coupe", 50, "blah", 2, "Magenta", 18, 20, true, false, 100);
         Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
 
-        List<Car> cars= new List<Car>();
-        List<Person> persons=new List<Person>();
+        List<Car> cars = new List<Car>();
+        List<Person> persons =new List<Person>();
         
         public MainForm()
         {
@@ -80,21 +80,42 @@ namespace WBS
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            CarEditForm form = new CarEditForm(car, this);
+            CarEditForm form = new CarEditForm(car, this, cars);
             form.Show();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            PersonEditForm form = new PersonEditForm(person, this,persons);
+            PersonEditForm form = new PersonEditForm(person, this, persons);
             form.Show();
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// - Laurens Listview testing
         private void button7_Click(object sender, EventArgs e) // UPDATE CAR LISTBUTTON, MANUAL ADDING, REMOVE, ONLY for testing - Laurens
         {
-            ListViewItem carlist = new ListViewItem(car.Brand); //TEST// - 0 - Laurens
-            carlist.SubItems.Add(car.Model); // 1
-            carlist.SubItems.Add(car.BuildYear.ToString()); // 2 etc
-            listView1.Items.Add(carlist);
+            //ListViewItem carlist = new ListViewItem(car.Brand); //TEST// - 0 - Laurens
+            //carlist.SubItems.Add(car.Model); // 1
+            //carlist.SubItems.Add(car.BuildYear.ToString()); // 2 etc
+            //listView1.Items.Add(carlist);
+            listView1.Items.Clear();
+            foreach(Car car in cars)
+            {
+                string[] carData = {
+                    car.Brand,
+                    car.Model,
+                    car.BuildYear.ToString(),
+                    car.Kilometers.ToString(),
+                    car.GastankLit.ToString(),
+                    car.LicensePlate,
+                    car.ChassisColorPrimary,
+                    car.ChassisColorSecondary,
+                    car.Tires.ToString(),
+                    car.Seats.ToString(),
+                    car.HorsePower.ToString(),
+                    car.ParkingLocation.ToString(),
+                    car.LastMaintenanceDate.ToString()
+                };
+                ListViewItem carList = new ListViewItem(carData);
+                listView1.Items.Add(carList);
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
