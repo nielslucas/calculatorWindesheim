@@ -72,8 +72,11 @@
             this.label20 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.AddCar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -466,16 +469,37 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Location = new System.Drawing.Point(479, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(210, 536);
+            this.groupBox3.Size = new System.Drawing.Size(210, 430);
             this.groupBox3.TabIndex = 64;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Last driven";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.AddCar);
+            this.groupBox2.Location = new System.Drawing.Point(479, 439);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.TabIndex = 65;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // AddCar
+            // 
+            this.AddCar.Location = new System.Drawing.Point(7, 60);
+            this.AddCar.Name = "AddCar";
+            this.AddCar.Size = new System.Drawing.Size(75, 23);
+            this.AddCar.TabIndex = 0;
+            this.AddCar.Text = "Add Car";
+            this.AddCar.UseVisualStyleBackColor = true;
+            this.AddCar.Click += new System.EventHandler(this.AddCar_Click);
             // 
             // CarEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 543);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -510,6 +534,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,6 +586,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button AddCar;
     }
 }
 
