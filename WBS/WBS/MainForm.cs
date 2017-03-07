@@ -135,15 +135,20 @@ namespace WBS
 
         private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Person person = new Person();
-            person.Name = this.listView2.SelectedItems[0].SubItems[0].ToString();
-            person.HomeAddress = this.listView2.SelectedItems[0].SubItems[1].ToString();
-            PersonEditForm form = new PersonEditForm(person, this, persons);
-            form.Show();
+
         }
-        
+
         private void button3_Click(object sender, EventArgs e)//Lastname - Laurens
         {
+            var personquery = from per in persons
+                         orderby per.Name
+                         select per;
+
+            listView2.Items.Clear();
+           // List<Person> personresult = new List<Person>(personquery.ToArray());
+          //ListPerson(new List<Person>(personquery.ToArray()));
+            persons = new List<Person>(personquery.ToArray());
+            ListPerson();
 
         }
 
