@@ -128,7 +128,9 @@ namespace WBS
 
         private void button4_Click(object sender, EventArgs e)//Licenseplate - Laurens
         {
+            
             var caronquery = from crs in cars
+                             where crs.LicensePlate.Substring(0,0).ToCharArray()[0] >'e' 
                              orderby crs.LicensePlate
                              select crs;
 
