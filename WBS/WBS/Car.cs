@@ -57,6 +57,8 @@ namespace WBS
             Manual = manual;
             Maintenance = maintance;
             Kilometers = kilometers;
+            GpsCoords.GetGPSLocation();
+            
             
         }
         public void PlanMaintenance()

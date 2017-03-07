@@ -22,46 +22,9 @@ namespace WBS
         public MainForm()
         {
             InitializeComponent();
-            refreshLabels();
+            // refreshLabels();
             ListCar();
             ListPerson();
-        }
-
-        public void refreshLabels()
-        {
-            label1.Text = car.Brand;
-            label2.Text = car.Model;
-            label3.Text = car.BuildYear.ToString();
-            label4.Text = car.Kilometers.ToString();
-            label5.Text = car.GastankLit.ToString();
-            label6.Text = car.LicensePlate;
-            label7.Text = car.ChassisColorPrimary;
-            label8.Text = car.ChassisColorSecondary;
-            label9.Text = car.Tires.ToString();
-            label10.Text = car.TireType;
-            label11.Text = car.HorsePower.ToString();
-            label12.Text = car.Seats.ToString();
-            label13.Text = car.SeatsColor;
-            label14.Text = car.ParkingLocation.ToString();
-            label15.Text = car.LastMaintenanceDate.ToString();
-            label56.Text = car.GpsCoords.GPSLatitude.ToString();
-            label57.Text = car.GpsCoords.GPSLongtitude.ToString();
-            label16.Text = person.Name;
-            label17.Text = person.HomeAddress;
-            label18.Text = person.WorkAddress;
-            label19.Text = person.Age.ToString();
-            label20.Text = person.BirthDay.ToString();
-            label21.Text = person.Gender;
-            label22.Text = person.PhoneNumber.ToString();
-            label23.Text = person.CustomerNumber.ToString();
-            label24.Text = person.DriversLicense.ToString();
-            label25.Text = person.BankAccountNumber;
-            label26.Text = person.MoneyOwed.ToString();
-        }
-        public void setGPS()
-        {
-            label56.Text = car.GpsCoords.GPSLatitude.ToString();
-            label57.Text = car.GpsCoords.GPSLongtitude.ToString();
         }
         private void button1_Click(object sender, System.EventArgs e)
         {
@@ -79,6 +42,7 @@ namespace WBS
             listView1.Items.Clear();
             foreach (Car car in cars)
             {
+                // car.GpsCoords.GetGPSLocation();
                 string[] carData = {
                     car.Brand,
                     car.Model,
@@ -92,7 +56,10 @@ namespace WBS
                     car.Seats.ToString(),
                     car.HorsePower.ToString(),
                     car.ParkingLocation.ToString(),
-                    car.LastMaintenanceDate.ToString()
+                    car.LastMaintenanceDate.ToString(),
+
+                    car.GpsCoords.GPSLatitude.ToString(),
+                    car.GpsCoords.GPSLongtitude.ToString()
                 };
                 ListViewItem carList = new ListViewItem(carData);
                 listView1.Items.Add(carList);
@@ -141,9 +108,10 @@ namespace WBS
         private void button3_Click(object sender, EventArgs e)//Name filter - Laurens
         {
             var personquery = from per in persons
-                         orderby per.Name
-                         select per;
-            persons = new List<Person>(personquery.ToArray());
+                              orderby per.Name
+                              select per;
+
+            persons = personquery.ToList();
             ListPerson();
 
         }
@@ -151,10 +119,10 @@ namespace WBS
         private void button5_Click(object sender, EventArgs e)//Brand Car - Laurens
         {
             var caronquery = from crs in cars
-                              orderby crs.Brand
-                              select crs;
+                             orderby crs.Brand
+                             select crs;
 
-            cars = new List<Car>(caronquery.ToArray());
+            cars = caronquery.ToList();
             ListCar();
         }
 
@@ -166,7 +134,7 @@ namespace WBS
                              orderby crs.LicensePlate
                              select crs;
 
-            cars = new List<Car>(caronquery.ToArray());
+            cars = caronquery.ToList();
             ListCar();
         }
 
@@ -179,7 +147,7 @@ namespace WBS
             cars = new List<Car>(caronquery.ToArray());
             ListCar();
         }
-        
+
         /////////////////////////TRASH///////////////////////////
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
