@@ -107,6 +107,12 @@ namespace WBS
                 listView2.Items.Add(carlist);
             }
         }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Person person = persons.ElementAt(listView2.SelectedIndices[0]);
+            PersonEditForm form = new PersonEditForm(person, this, persons);//cleanup? add new constructor for edit
+            form.Show();
+        }
         public void ListCar() ///function - Laurens
         {
             string[] mydata = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString() };
