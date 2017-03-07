@@ -69,9 +69,9 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -237,9 +237,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(23, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 13);
+            this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 41;
-            this.label3.Text = "Laatst gereden km";
+            this.label3.Text = "Last ride -> km";
             // 
             // label4
             // 
@@ -247,9 +247,9 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Location = new System.Drawing.Point(26, 175);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 15);
+            this.label4.Size = new System.Drawing.Size(88, 15);
             this.label4.TabIndex = 42;
-            this.label4.Text = "Lijst gereden km";
+            this.label4.Text = "List Driven -> km";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox18
@@ -275,7 +275,7 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(102, 23);
             this.button18.TabIndex = 44;
-            this.button18.Text = "Laatst gereden km";
+            this.button18.Text = "Last Ride -> km";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
@@ -293,9 +293,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(211, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 47;
-            this.label6.Text = "Banden";
+            this.label6.Text = "Tires";
             // 
             // label7
             // 
@@ -432,12 +432,31 @@
             this.groupBox1.Controls.Add(this.textBox17);
             this.groupBox1.Controls.Add(this.textBox14);
             this.groupBox1.Controls.Add(this.textBox16);
-            this.groupBox1.Location = new System.Drawing.Point(12, 3);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 536);
+            this.groupBox1.Size = new System.Drawing.Size(470, 536);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Autoupdaten";
+            this.groupBox1.Text = "Update car";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(199, 337);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(69, 13);
+            this.label20.TabIndex = 67;
+            this.label20.Text = "GPS location";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(334, 327);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 23);
+            this.button2.TabIndex = 66;
+            this.button2.Text = "Update gps";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
             // 
@@ -450,26 +469,7 @@
             this.groupBox3.Size = new System.Drawing.Size(210, 536);
             this.groupBox3.TabIndex = 64;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Laatste gereden km berekening";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(334, 327);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 23);
-            this.button2.TabIndex = 66;
-            this.button2.Text = "Update gps";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(199, 337);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(69, 13);
-            this.label20.TabIndex = 67;
-            this.label20.Text = "GPS location";
+            this.groupBox3.Text = "Last driven";
             // 
             // CarEditForm
             // 
