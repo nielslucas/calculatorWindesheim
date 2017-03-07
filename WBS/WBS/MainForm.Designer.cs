@@ -53,6 +53,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,8 +70,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-         
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            //this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -197,9 +199,9 @@
             // 
             this.button4.Location = new System.Drawing.Point(477, 25);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 23);
+            this.button4.Size = new System.Drawing.Size(101, 49);
             this.button4.TabIndex = 37;
-            this.button4.Text = "Licenseplate";
+            this.button4.Text = "Cars licenseplates starting with f or bigger";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -248,6 +250,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.button7);
@@ -257,6 +260,16 @@
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "List Cars";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(395, 19);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(130, 34);
+            this.button11.TabIndex = 40;
+            this.button11.Text = "Edit Selected Car";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button8
             // 
@@ -345,6 +358,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button13);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.button9);
             this.groupBox5.Controls.Add(this.button8);
@@ -375,15 +389,25 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // button11
+            // button12
             // 
-            this.button11.Location = new System.Drawing.Point(395, 19);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(130, 34);
-            this.button11.TabIndex = 40;
-            this.button11.Text = "Edit Selected Car";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.button12.Location = new System.Drawing.Point(218, 33);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 41;
+            this.button12.Text = "Delete selected car";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(218, 29);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 45;
+            this.button13.Text = "Delete";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // MainForm
             // 
@@ -452,5 +476,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }
