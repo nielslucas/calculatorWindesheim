@@ -13,19 +13,26 @@ namespace WBS
     public partial class CarEditForm : Form
     {
         Car car = new Car();
-        public MainForm Hoofdmenu;
+        //public MainForm Hoofdmenu;
         List<Car> listCars;
 
         public CarEditForm()
         {
             InitializeComponent();
-            textBox1.Text = car.Brand;
+
         }
-        public CarEditForm(Car car, MainForm hoofdmenu, List<Car> cars)
+        public CarEditForm(List<Car> cars)//add car constructor
         {
             InitializeComponent();
+            listCars = cars;
+            button19.Hide();
+        }
+        public CarEditForm(Car car)//edit car constructor
+        {
+            InitializeComponent();
+            AddCar.Hide();
             this.car = car;
-            this.listCars = cars;
+            //this.listCars = cars;
             textBox1.Text = this.car.Brand;
             textBox2.Text = this.car.Model;
             textBox3.Text = this.car.BuildYear.ToString();
@@ -41,7 +48,31 @@ namespace WBS
             textBox13.Text = this.car.SeatsColor;
             textBox16.Text = this.car.ParkingLocation.ToString();
             textBox17.Text = this.car.LastMaintenanceDate.ToString();
-            Hoofdmenu = hoofdmenu;
+         //   Hoofdmenu = hoofdmenu;
+        }
+        //Niels
+        private void AddCar_Click(object sender, EventArgs e)
+        {
+            Car tempCar = new Car(
+                textBox1.Text, //brand
+                textBox2.Text, //modal
+                Int32.Parse(textBox3.Text),//buildyear
+                Int32.Parse(textBox5.Text), //Benzine
+                textBox7.Text, //chassisPrimary
+                textBox8.Text, //ChassisSecondary
+                Int32.Parse(textBox9.Text), //Tires
+                textBox10.Text, //BandType
+                Int32.Parse(textBox11.Text), //HorsePower
+                textBox6.Text, //Licenseplate
+                Int32.Parse(textBox12.Text), //SeatBets
+                textBox13.Text, //SeatColor
+                Int32.Parse(textBox17.Text), //LastMaintence
+                Int32.Parse(textBox16.Text), //ParkingLocation
+                true,
+                false,
+                Int32.Parse(textBox4.Text) //KM
+                );
+            listCars.Add(tempCar);
         }
         private void button19_Click(object sender, EventArgs e)
         {
@@ -180,30 +211,7 @@ namespace WBS
 
         }
 
-        //Niels
-        private void AddCar_Click(object sender, EventArgs e)
-        {
-            Car tempCar = new Car(
-                textBox1.Text, //brand
-                textBox2.Text, //modal
-                Int32.Parse(textBox3.Text),//buildyear
-                Int32.Parse(textBox5.Text), //Benzine
-                textBox7.Text, //chassisPrimary
-                textBox8.Text, //ChassisSecondary
-                Int32.Parse(textBox9.Text), //Tires
-                textBox10.Text, //BandType
-                Int32.Parse(textBox11.Text), //HorsePower
-                textBox6.Text, //Licenseplate
-                Int32.Parse(textBox12.Text), //SeatBets
-                textBox13.Text, //SeatColor
-                Int32.Parse(textBox17.Text), //LastMaintence
-                Int32.Parse(textBox16.Text), //ParkingLocation
-                true,
-                false,
-                Int32.Parse(textBox4.Text) //KM
-                );
-            listCars.Add(tempCar);
-        }
+        
     }
 }
 

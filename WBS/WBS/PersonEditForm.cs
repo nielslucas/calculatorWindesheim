@@ -17,13 +17,21 @@ namespace WBS
         public PersonEditForm()
         {
             InitializeComponent();
+
         }
 
         Person person;
-
-        public PersonEditForm(Person person1, MainForm hoofdmenu,List<Person> persons)
+        public PersonEditForm(List<Person> persons)//add person constructor
         {
             InitializeComponent();
+            button1.Hide();
+            this.persons = persons;
+            checkBox1.Checked = true;
+        }
+        public PersonEditForm(Person person1)//edit person constructor
+        {
+            InitializeComponent();
+            button2.Hide();
             person = person1;
             textBox1.Text = person.Name.ToString();
             textBox2.Text = person.HomeAddress;
@@ -36,8 +44,7 @@ namespace WBS
            // textBox9.Text = Person.BankAccountNumber.ToString();
            // textBox10.Text = Person.MoneyOwed.ToString();
             textBox12.Text = person.Gender;
-            Hoofdmenu = hoofdmenu;
-            this.persons = persons;
+            
         }
         
         //Person Person2;
