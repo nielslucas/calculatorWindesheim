@@ -26,40 +26,28 @@ namespace WBS
         }
         private void button1_Click(object sender, System.EventArgs e)
         {
-            CarEditForm form = new CarEditForm(car, this, cars);
-            form.Show();
+            CarEditForm form = new CarEditForm(cars);
+           form.Show();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            PersonEditForm form = new PersonEditForm(person, this, persons);
+            PersonEditForm form = new PersonEditForm(persons);
             form.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
-            foreach (Car car in cars)
-            {
-                string[] carData = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString(), car.LicensePlate, car.ChassisColorPrimary, car.ChassisColorSecondary, car.Tires.ToString(), car.Seats.ToString(), car.HorsePower.ToString(), car.ParkingLocation.ToString(), car.LastMaintenanceDate.ToString(), car.GpsCoords.GPSLatitude.ToString(), car.GpsCoords.GPSLongtitude.ToString() };
-                ListViewItem carList = new ListViewItem(carData);
-                listView1.Items.Add(carList);
-            }
+            ListCar();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            listView2.Items.Clear();
-            foreach (Person person in persons)
-            {
-                string[] mydata = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
-                ListViewItem carlist = new ListViewItem(mydata); 
-                listView2.Items.Add(carlist);
-            }
+            ListPerson();
         }
         private void button9_Click(object sender, EventArgs e)
         {
             Person person = persons.ElementAt(listView2.SelectedIndices[0]);
-            PersonEditForm form = new PersonEditForm(person, this, persons);
+            PersonEditForm form = new PersonEditForm(person);
             form.Show();
         }
         public void ListCar() 
@@ -91,7 +79,7 @@ namespace WBS
             listView2.Items.Clear();
             foreach (Person person in persons)
             {
-                string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString() };
+                string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString(), person.BirthDay, person.Gender, person.PhoneNumber.ToString(), person.CustomerNumber.ToString(), person.DriversLicense.ToString(), person.BankAccountNumber, person.MoneyOwed.ToString() };
 
                 ListViewItem personlist = new ListViewItem(myperson); 
                 listView2.Items.Add(personlist);
@@ -142,9 +130,13 @@ namespace WBS
         private void button11_Click(object sender, EventArgs e)
         {
             Car car = cars.ElementAt(listView1.SelectedIndices[0]);
-            CarEditForm form = new CarEditForm(car, this, cars);
+            CarEditForm form = new CarEditForm(car);
             form.Show();
         }
+        private void button14_Click_1(object sender, EventArgs e)// exit button - Laurens
+        {
+            Application.Exit();
+        }        
         /////////////////////////TRASH///////////////////////////
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -185,6 +177,8 @@ namespace WBS
         {
             listView2.SelectedItems[0].Remove();
         }
+
+     
     }
 }
 
