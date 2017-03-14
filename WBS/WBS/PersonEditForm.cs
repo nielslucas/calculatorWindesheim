@@ -13,7 +13,7 @@ namespace WBS
     public partial class PersonEditForm : Form
     {
         public MainForm Hoofdmenu;
-        List<Person> persons;
+        WBSEntities1 db;
         public PersonEditForm()
         {
             InitializeComponent();
@@ -21,19 +21,20 @@ namespace WBS
         }
 
         Person person;
-        public PersonEditForm(List<Person> persons)//add person constructor
+        public PersonEditForm(WBSEntities1 db)//add person constructor
         {
             InitializeComponent();
             button1.Hide();
-            this.persons = persons;
+            this.db = db;
             checkBox1.Checked = true;
         }
-        public PersonEditForm(Person person1)//edit person constructor
+        public PersonEditForm(Person person, WBSEntities1 db)//edit person constructor
         {
             InitializeComponent();
             button2.Hide();
-            person = person1;
-            textBox1.Text = person.Name.ToString();
+            this.person = person;
+            this.db = db;
+            textBox1.Text = person.Name;
             textBox2.Text = person.HomeAddress;
             textBox3.Text = person.WorkAddress;
             textBox4.Text = person.Age.ToString();
@@ -126,7 +127,7 @@ namespace WBS
                 person.MoneyOwed = value;
                 textBox11.Text = person.MoneyOwed.ToString();
             }
-
+            db.SaveChanges();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -147,9 +148,9 @@ namespace WBS
         {
             Car car = new Car();
             car.Brand = textBox8.Text;
-           Person tempPerson2 = new Person(textBox1.Text, textBox2.Text, textBox3.Text, Int32.Parse(textBox4.Text), DateTime.Parse(textBox5.Text), "default", Int32.Parse(textBox6.Text), Int32.Parse(textBox7.Text), car);
-            persons.Add(tempPerson2);
-
+           Person tempPerson2 = new Person(textBox1.Text, textBox2.Text, textBox3.Text, Int32.Parse(textBox4.Text), DateTime.Parse(textBox5.Text), "default", Int32.Parse(textBox6.Text), Int32.Parse(textBox7.Text),textBox10.Text);
+            db.Persons.Add(tempPerson2);
+            db.SaveChanges();
         }
         
     }

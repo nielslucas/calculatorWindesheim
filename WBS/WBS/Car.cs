@@ -34,7 +34,7 @@ namespace WBS
         public Nullable<int> Kilometers { get; set; }
         public Nullable<int> GPSLongtitude { get; set; }
         public Nullable<int> GPSLatitude { get; set; }
-        public int Owner { get; set; }
+        public Nullable<int> Owner { get; set; }
     
         public virtual Person Person { get; set; }
     }

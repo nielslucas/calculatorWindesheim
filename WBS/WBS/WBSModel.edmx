@@ -8,7 +8,6 @@
         <EntityType Name="Car">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="Owner" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Brand" Type="nvarchar" MaxLength="50" />
@@ -30,7 +29,7 @@
           <Property Name="Kilometers" Type="int" />
           <Property Name="GPSLongtitude" Type="int" />
           <Property Name="GPSLatitude" Type="int" />
-          <Property Name="Owner" Type="int" Nullable="false" />
+          <Property Name="Owner" Type="int" />
         </EntityType>
         <EntityType Name="Persons">
           <Key>
@@ -50,7 +49,7 @@
           <Property Name="MoneyOwed" Type="int" />
         </EntityType>
         <Association Name="CarOwner">
-          <End Role="Persons" Type="Self.Persons" Multiplicity="1" />
+          <End Role="Persons" Type="Self.Persons" Multiplicity="0..1" />
           <End Role="Car" Type="Self.Car" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Persons">
@@ -74,35 +73,16 @@
     <edmx:ConceptualModels>
       <Schema Namespace="WBSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="WBSEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Persons" EntityType="WBSModel.Person" />
           <EntitySet Name="Cars" EntityType="WBSModel.Car" />
+          <EntitySet Name="Persons" EntityType="WBSModel.Person" />
           <AssociationSet Name="CarOwner" Association="WBSModel.CarOwner">
             <End Role="Person" EntitySet="Persons" />
             <End Role="Car" EntitySet="Cars" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Person">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="HomeAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="WorkAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="Birthday" Type="DateTime" Precision="0" />
-          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-          <Property Name="CustomerNumber" Type="Int32" Nullable="false" />
-          <Property Name="DriversLicense" Type="Byte" Nullable="false" />
-          <Property Name="BankAccountNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MoneyOwed" Type="Int32" />
-          <NavigationProperty Name="Cars" Relationship="WBSModel.CarOwner" FromRole="Person" ToRole="Car" />
-        </EntityType>
         <EntityType Name="Car">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="Owner" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -124,11 +104,29 @@
           <Property Name="Kilometers" Type="Int32" />
           <Property Name="GPSLongtitude" Type="Int32" />
           <Property Name="GPSLatitude" Type="Int32" />
-          <Property Name="Owner" Type="Int32" Nullable="false" />
+          <Property Name="Owner" Type="Int32" />
           <NavigationProperty Name="Person" Relationship="WBSModel.CarOwner" FromRole="Car" ToRole="Person" />
         </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HomeAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+          <Property Name="CustomerNumber" Type="Int32" Nullable="false" />
+          <Property Name="DriversLicense" Type="Byte" Nullable="false" />
+          <Property Name="BankAccountNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MoneyOwed" Type="Int32" />
+          <NavigationProperty Name="Cars" Relationship="WBSModel.CarOwner" FromRole="Person" ToRole="Car" />
+        </EntityType>
         <Association Name="CarOwner">
-          <End Type="WBSModel.Person" Role="Person" Multiplicity="1" />
+          <End Type="WBSModel.Person" Role="Person" Multiplicity="0..1" />
           <End Type="WBSModel.Car" Role="Car" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Person">
@@ -145,24 +143,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="WBSModelStoreContainer" CdmEntityContainer="WBSEntities1">
-          <EntitySetMapping Name="Persons">
-            <EntityTypeMapping TypeName="WBSModel.Person">
-              <MappingFragment StoreEntitySet="Persons">
-                <ScalarProperty Name="MoneyOwed" ColumnName="MoneyOwed" />
-                <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
-                <ScalarProperty Name="DriversLicense" ColumnName="DriversLicense" />
-                <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
-                <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Cars">
             <EntityTypeMapping TypeName="WBSModel.Car">
               <MappingFragment StoreEntitySet="Car">
@@ -186,6 +166,24 @@
                 <ScalarProperty Name="BuildYear" ColumnName="BuildYear" />
                 <ScalarProperty Name="Model" ColumnName="Model" />
                 <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persons">
+            <EntityTypeMapping TypeName="WBSModel.Person">
+              <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="MoneyOwed" ColumnName="MoneyOwed" />
+                <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+                <ScalarProperty Name="DriversLicense" ColumnName="DriversLicense" />
+                <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
+                <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

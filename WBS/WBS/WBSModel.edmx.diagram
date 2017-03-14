@@ -5,8 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2a5e09a5f69648a5ae14f27169374076" Name="Diagram1">
-        <EntityTypeShape EntityType="WBSModel.Person" Width="1.5" PointX="3.25" PointY="2.375" />
-        <EntityTypeShape EntityType="WBSModel.Car" Width="1.5" PointX="5.5" PointY="1.5" />
+        <EntityTypeShape EntityType="WBSModel.Car" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="WBSModel.Person" Width="1.5" PointX="0.75" PointY="2" />
         <AssociationConnector Association="WBSModel.CarOwner" />
       </Diagram>
     </edmx:Diagrams>

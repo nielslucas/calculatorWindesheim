@@ -23,7 +23,7 @@ namespace WBS
       
         /////////////////////
       
-        public Person(string name, string homeAddress, string workAddress, int age, DateTime birthDay, string gender, int phoneNumber, int customerNumber, Car car)
+        public Person(string name, string homeAddress, string workAddress, int age, DateTime birthDay, string gender, int phoneNumber, int customerNumber,string bankaccountNumber)
         {
             Name = name;
             HomeAddress = homeAddress;
@@ -33,7 +33,8 @@ namespace WBS
             Gender = gender;
             PhoneNumber = phoneNumber;
             CustomerNumber = customerNumber;
-            Car = car;
+            MoneyOwed = 0;
+            BankAccountNumber = bankaccountNumber;
             DriversLicense = 1;
         }
         public void HireCar(Car car, int carCost)

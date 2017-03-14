@@ -15,8 +15,10 @@ namespace WBS
         //Car car = new Car("BMW", "whatever", 1009, 500, "Red", "Yellow", 5, "sport", 50, "ADSL3", 4, "Purple", 20, 54, true, false, 200);
         //Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
 
-        List<Car> cars = new List<Car>();
-        List<Person> persons = new List<Person>();
+        //List<Car> cars = new List<Car>();
+        //List<Person> persons = new List<Person>();
+
+        WBSEntities1 db = new WBSEntities1();
 
         public MainForm()
         {
@@ -26,12 +28,12 @@ namespace WBS
         }
         private void button1_Click(object sender, System.EventArgs e)
         {
-            CarEditForm form = new CarEditForm(cars);
+            CarEditForm form = new CarEditForm(db);
            form.Show();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            PersonEditForm form = new PersonEditForm(persons);
+            PersonEditForm form = new PersonEditForm(db);
             form.Show();
         }
 
@@ -46,18 +48,21 @@ namespace WBS
         }
         private void button9_Click(object sender, EventArgs e)
         {
-            Person person = persons.ElementAt(listView2.SelectedIndices[0]);
-            PersonEditForm form = new PersonEditForm(person);
+            int outcome = 1;
+            int.TryParse(listView2.SelectedItems[0].Name, out outcome);
+            Person person = db.Persons.Find(outcome);
+            PersonEditForm form = new PersonEditForm(person,db);
             form.Show();
         }
         public void ListCar() 
         {
             listView1.Items.Clear();
-            foreach (Car car in cars)
+            foreach (Car car in db.Cars)
             {
                 string[] mycar = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString(), car.LicensePlate };
 
-                ListViewItem carlist = new ListViewItem(mycar); 
+                ListViewItem carlist = new ListViewItem(mycar);
+                carlist.Name = car.id.ToString(); 
                 listView1.Items.Add(carlist);
             }
 
@@ -77,40 +82,51 @@ namespace WBS
         public void ListPerson() ///function - Laurens
         {
             listView2.Items.Clear();
+            foreach (Person person in db.Persons)
+            {
+                string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString(), person.Birthday.ToString(), person.Gender, person.PhoneNumber.ToString(), person.CustomerNumber.ToString(), person.DriversLicense.ToString(), person.BankAccountNumber, person.MoneyOwed.ToString() };
+
+                ListViewItem personlist = new ListViewItem(myperson);
+                personlist.Name = person.id.ToString();
+                listView2.Items.Add(personlist);
+            }
+        }
+        public void ListPerson(List<Person> persons) ///function - Laurens
+        {
+            listView2.Items.Clear();
             foreach (Person person in persons)
             {
                 string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString(), person.Birthday.ToString(), person.Gender, person.PhoneNumber.ToString(), person.CustomerNumber.ToString(), person.DriversLicense.ToString(), person.BankAccountNumber, person.MoneyOwed.ToString() };
 
-                ListViewItem personlist = new ListViewItem(myperson); 
+                ListViewItem personlist = new ListViewItem(myperson);
+                personlist.Name = person.id.ToString();
                 listView2.Items.Add(personlist);
             }
         }
         private void button3_Click(object sender, EventArgs e)//Name filter - Laurens
         {
-            var personquery = from per in persons
-                              orderby per.Name
-                              select per;
+            var personquery = from persons in db.Persons
+                              orderby persons.Name
+                              select persons;
 
-            persons = personquery.ToList();
-            ListPerson();
+            ListPerson(personquery.ToList());
 
         }
 
         private void button5_Click(object sender, EventArgs e)//Brand Car - Laurens
         {
-            var caronquery = from crs in cars
+            var caronquery = from crs in db.Cars
                              orderby crs.Brand
                              select crs;
 
-            cars = caronquery.ToList();
-            ListCar();
+            ListCar(caronquery.ToList());
         }
 
         private void button4_Click(object sender, EventArgs e)//Licenseplate - Laurens
         {
             
-            var caronquery = from crs in cars
-                             where crs.LicensePlate.Substring(0,1).ToCharArray()[0] >'e' 
+            var caronquery = from crs in db.Cars
+                             //where crs.LicensePlate.Substring(0,1).ToCharArray()[0] >'e' 
                              orderby crs.LicensePlate
                              select crs;
 
@@ -120,17 +136,17 @@ namespace WBS
 
         private void button6_Click(object sender, EventArgs e)//parkinglocation - Laurens
         {
-            var caronquery = from crs in cars
-                             orderby crs.ParkingLocation
+            var caronquery = from crs in db.Cars
+                             orderby crs.LicensePlate
                              select crs;
-
-            cars = new List<Car>(caronquery.ToArray());
-            ListCar();
+            ListCar(caronquery.ToList());
         }
         private void button11_Click(object sender, EventArgs e)
         {
-            Car car = cars.ElementAt(listView1.SelectedIndices[0]);
-            CarEditForm form = new CarEditForm(car);
+            int outcome = 1;
+            int.TryParse(listView1.SelectedItems[0].Name, out outcome);
+            Car car = db.Cars.Find(outcome);
+            CarEditForm form = new CarEditForm(car,db);
             form.Show();
         }
         private void button14_Click_1(object sender, EventArgs e)// exit button - Laurens
@@ -170,12 +186,20 @@ namespace WBS
 
         private void button12_Click(object sender, EventArgs e)
         {
-            listView1.SelectedItems[0].Remove();
+            int outcome = 1;
+            int.TryParse(listView1.SelectedItems[0].Name, out outcome);
+            Car car = db.Cars.Find(outcome);
+            db.Cars.Remove(car);
+            db.SaveChanges();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            listView2.SelectedItems[0].Remove();
+            int outcome = 1;
+            int.TryParse(listView2.SelectedItems[0].Name, out outcome);
+            Person person = db.Persons.Find(outcome);
+            db.Persons.Remove(person);
+            db.SaveChanges();
         }
 
      
