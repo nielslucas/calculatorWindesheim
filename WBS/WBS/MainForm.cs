@@ -12,8 +12,8 @@ namespace WBS
 {
     public partial class MainForm : Form
     {
-        Car car = new Car("BMW", "whatever", 1009, 500, "Red", "Yellow", 5, "sport", 50, "ADSL3", 4, "Purple", 20, 54, true, false, 200);
-        Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
+        //Car car = new Car("BMW", "whatever", 1009, 500, "Red", "Yellow", 5, "sport", 50, "ADSL3", 4, "Purple", 20, 54, true, false, 200);
+        //Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
 
         List<Car> cars = new List<Car>();
         List<Person> persons = new List<Person>();
@@ -79,7 +79,7 @@ namespace WBS
             listView2.Items.Clear();
             foreach (Person person in persons)
             {
-                string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString(), person.BirthDay, person.Gender, person.PhoneNumber.ToString(), person.CustomerNumber.ToString(), person.DriversLicense.ToString(), person.BankAccountNumber, person.MoneyOwed.ToString() };
+                string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString(), person.Birthday.ToString(), person.Gender, person.PhoneNumber.ToString(), person.CustomerNumber.ToString(), person.DriversLicense.ToString(), person.BankAccountNumber, person.MoneyOwed.ToString() };
 
                 ListViewItem personlist = new ListViewItem(myperson); 
                 listView2.Items.Add(personlist);

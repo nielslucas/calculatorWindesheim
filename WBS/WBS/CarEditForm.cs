@@ -66,7 +66,7 @@ namespace WBS
                 textBox6.Text, //Licenseplate
                 Int32.Parse(textBox12.Text), //SeatBets
                 textBox13.Text, //SeatColor
-                Int32.Parse(textBox17.Text), //LastMaintence
+                DateTime.Parse(textBox17.Text), //LastMaintence
                 Int32.Parse(textBox16.Text), //ParkingLocation
                 true,
                 false,
@@ -143,8 +143,8 @@ namespace WBS
             textBox16.Text = car.ParkingLocation.ToString();
 
 
-            int.TryParse(textBox17.Text, out outcome);
-            car.LastMaintenanceDate = outcome;
+            //int.TryParse(textBox17.Text, out outcome);
+            car.LastMaintenanceDate = DateTime.Parse(textBox17.Text);
             textBox17.Text = car.LastMaintenanceDate.ToString();
         
         }

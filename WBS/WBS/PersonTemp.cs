@@ -8,37 +8,33 @@ namespace WBS
 {
     public partial class Person
     {
-        public string Name { get; set; }
-        public string HomeAddress { get; set; }
-        public string WorkAddress { get; set; }
-        public int Age { get; set; }
-        public string BirthDay { get; set; }
-        public string Gender { get; set; }
-        public int PhoneNumber { get; set; }
-        public int CustomerNumber { get; set; }
+        //public string Name { get; set; }
+        //public string HomeAddress { get; set; }
+        //public string WorkAddress { get; set; }
+        //public int Age { get; set; }
+        //public string BirthDay { get; set; }
+        //public string Gender { get; set; }
+        //public int PhoneNumber { get; set; }
+        //public int CustomerNumber { get; set; }
         public Car Car;
-        public bool DriversLicense { get; set; }
-        public string BankAccountNumber { get; set; }
-        public int MoneyOwed { get; set; }
+        //public bool DriversLicense { get; set; }
+        //public string BankAccountNumber { get; set; }
+        //public int MoneyOwed { get; set; }
       
         /////////////////////
       
-        public Person()
-        {
-            DriversLicense = true;
-        }
-        public Person(string name, string homeAddress, string workAddress, int age, string birthDay, string gender, int phoneNumber, int customerNumber, Car car)
+        public Person(string name, string homeAddress, string workAddress, int age, DateTime birthDay, string gender, int phoneNumber, int customerNumber, Car car)
         {
             Name = name;
             HomeAddress = homeAddress;
             WorkAddress = workAddress;
             Age = age;
-            BirthDay = birthDay;
+            Birthday = birthDay;
             Gender = gender;
             PhoneNumber = phoneNumber;
             CustomerNumber = customerNumber;
             Car = car;
-            DriversLicense = true;
+            DriversLicense = 1;
         }
         public void HireCar(Car car, int carCost)
         {

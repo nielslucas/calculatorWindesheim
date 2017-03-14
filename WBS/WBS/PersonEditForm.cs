@@ -37,10 +37,10 @@ namespace WBS
             textBox2.Text = person.HomeAddress;
             textBox3.Text = person.WorkAddress;
             textBox4.Text = person.Age.ToString();
-            textBox5.Text = person.BirthDay;
+            textBox5.Text = person.Birthday.ToString();
             textBox6.Text = person.PhoneNumber.ToString();
             textBox7.Text = person.CustomerNumber.ToString();
-            checkBox1.Checked = person.DriversLicense;
+            checkBox1.Checked = Convert.ToBoolean(person.DriversLicense);
            // textBox9.Text = Person.BankAccountNumber.ToString();
            // textBox10.Text = Person.MoneyOwed.ToString();
             textBox12.Text = person.Gender;
@@ -79,8 +79,8 @@ namespace WBS
             }
             if (TextBoxCheck(textBox5))
             {
-                person.BirthDay = textBox5.Text;
-                textBox5.Text = person.BirthDay;
+                person.Birthday = DateTime.Parse(textBox5.Text);
+                textBox5.Text = person.Birthday.ToString();
             }
 
             if (TextBoxCheck(textBox6))
@@ -107,12 +107,12 @@ namespace WBS
             }
             if (checkBox1.Checked)
             {
-                person.DriversLicense = true;
+                person.DriversLicense = 1;
 
             }
             else if (!checkBox1.Checked)
             {
-                person.DriversLicense = false;
+                person.DriversLicense = 0;
             }
             if (TextBoxCheck(textBox10))
             {
@@ -147,7 +147,7 @@ namespace WBS
         {
             Car car = new Car();
             car.Brand = textBox8.Text;
-           Person tempPerson2 = new Person(textBox1.Text, textBox2.Text, textBox3.Text, Int32.Parse(textBox4.Text), textBox5.Text, "default", Int32.Parse(textBox6.Text), Int32.Parse(textBox7.Text), car);
+           Person tempPerson2 = new Person(textBox1.Text, textBox2.Text, textBox3.Text, Int32.Parse(textBox4.Text), DateTime.Parse(textBox5.Text), "default", Int32.Parse(textBox6.Text), Int32.Parse(textBox7.Text), car);
             persons.Add(tempPerson2);
 
         }

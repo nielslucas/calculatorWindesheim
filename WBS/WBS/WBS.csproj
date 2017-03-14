@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Car.cs">
+      <DependentUpon>WBSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CarTemp.cs" />
     <Compile Include="CarEditForm.cs">
       <SubType>Form</SubType>
@@ -69,6 +74,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>WBSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PersonTemp.cs" />
     <Compile Include="PersonEditForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +86,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WBSModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WBSModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WBSModel.cs" />
+    <Compile Include="WBSModel.Designer.cs">
+      <DependentUpon>WBSModel.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="WBSModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WBSModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CarEditForm.resx">
       <DependentUpon>CarEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,9 +130,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="WBSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WBSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="WBSModel.edmx.diagram">
+      <DependentUpon>WBSModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WBSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WBSModel.edmx</DependentUpon>
+      <LastGenOutput>WBSModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WBSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WBSModel.edmx</DependentUpon>
+      <LastGenOutput>WBSModel1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
