@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WBS
 {
-    public class Car
+    public partial class Car
     {
         public List<int> KMaddedssincelastride = new List<int>();
         public string Brand { get; set; } //merk
