@@ -47,6 +47,7 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -68,14 +69,13 @@
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader25 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader26 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button13 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button14 = new System.Windows.Forms.Button();
-            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +119,7 @@
             this.columnHeader14,
             this.columnHeader15,
             this.columnHeader27});
+            this.LVCars.FullRowSelect = true;
             this.LVCars.GridLines = true;
             this.LVCars.Location = new System.Drawing.Point(6, 56);
             this.LVCars.Name = "LVCars";
@@ -193,6 +194,10 @@
             this.columnHeader15.Text = "GPS Longtitude";
             this.columnHeader15.Width = 79;
             // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "OwnerID";
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -258,7 +263,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(125, 213);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(998, 233);
+            this.groupBox4.Size = new System.Drawing.Size(945, 233);
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "List Cars";
@@ -308,6 +313,7 @@
             this.columnHeader25,
             this.columnHeader26,
             this.columnHeader28});
+            this.LVPersons.FullRowSelect = true;
             this.LVPersons.GridLines = true;
             this.LVPersons.Location = new System.Drawing.Point(6, 57);
             this.LVPersons.MultiSelect = false;
@@ -369,6 +375,10 @@
             // 
             this.columnHeader26.Text = "MoneyOwned";
             this.columnHeader26.Width = 80;
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Text = "Hiredcar licenseplate";
             // 
             // groupBox5
             // 
@@ -441,14 +451,6 @@
             this.button14.TabIndex = 45;
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click_1);
-            // 
-            // columnHeader27
-            // 
-            this.columnHeader27.Text = "OwnerID";
-            // 
-            // columnHeader28
-            // 
-            this.columnHeader28.Text = "Hiredcar licenseplate";
             // 
             // MainForm
             // 
