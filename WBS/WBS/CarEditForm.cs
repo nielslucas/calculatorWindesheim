@@ -14,7 +14,7 @@ namespace WBS
     {
         Car car = new Car();
         //public MainForm Hoofdmenu;
-        WBSEntities1 db; 
+        WBSEntities1 db;
 
         public CarEditForm()
         {
@@ -46,6 +46,8 @@ namespace WBS
             textBox11.Text = this.car.HorsePower.ToString();
             textBox12.Text = this.car.Seats.ToString();
             textBox13.Text = this.car.SeatsColor;
+            textBox14.Text = this.car.GPSLatitude.ToString();
+            textBox15.Text = this.car.GPSLongtitude.ToString();
             textBox16.Text = this.car.ParkingLocation.ToString();
             textBox17.Text = this.car.LastMaintenanceDate.ToString();
             //   Hoofdmenu = hoofdmenu;
@@ -78,7 +80,7 @@ namespace WBS
         }
         private void button19_Click(object sender, EventArgs e)
         {
-            
+
             int outcome;
 
             car.Brand = textBox1.Text;
@@ -136,10 +138,15 @@ namespace WBS
                 checkBox1.Checked = false;
             }
             ///checkbox end
+            if (textBox14.Text == "" && textBox15.Text == "")
+            {
+                car.GpsCoords.GetGPSLocation();
+                textBox14.Text = car.GpsCoords.GPSLatitude.ToString();
+                textBox15.Text = car.GpsCoords.GPSLongtitude.ToString();
+            }
 
-            car.GpsCoords.GetGPSLocation();
-            textBox14.Text = car.GpsCoords.GPSLatitude.ToString();
-            textBox15.Text = car.GpsCoords.GPSLongtitude.ToString();
+            car.GPSLongtitude = car.GpsCoords.GPSLongtitude;
+            car.GPSLatitude = car.GpsCoords.GPSLatitude;
 
             int.TryParse(textBox16.Text, out outcome);
             car.ParkingLocation = outcome;

@@ -63,17 +63,20 @@ namespace WBS
         }
         private void button9_Click(object sender, EventArgs e)
         {
-            int outcome = 1;
-            int.TryParse(LVPersons.SelectedItems[0].Name, out outcome);
-            Person person = db.Persons.Find(outcome);
-            PersonEditForm form = new PersonEditForm(person, db);
-            form.Show();
+            if (LVPersons.SelectedItems.Count > 0)
+            {
+                int outcome = 1;
+                int.TryParse(LVPersons.SelectedItems[0].Name, out outcome);
+                Person person = db.Persons.Find(outcome);
+                PersonEditForm form = new PersonEditForm(person, db);
+                form.Show();
+            }
         }
         public void ListCar(Car car)
         {
-            
+            //bug: does not refresh ownerID after removing owner. Owner still removed in db
             string[] mycar = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString(), car.LicensePlate, car.ChassisColorPrimary, car.ChassisColorSecondary, car.Tires.ToString(), car.Seats.ToString(), car.HorsePower.ToString(), car.ParkingLocation.ToString(), car.LastMaintenanceDate.Value.ToShortDateString(), car.GPSLatitude.ToString(), car.GPSLongtitude.ToString(), car.Owner.ToString() };
-
+            
             ListViewItem carlist = new ListViewItem(mycar);
             carlist.Name = car.id.ToString();
             LVCars.Items.Add(carlist);
@@ -188,11 +191,13 @@ namespace WBS
         }
         private void button11_Click(object sender, EventArgs e)
         {
+            if(LVCars.SelectedItems.Count > 0) { 
             int outcome = 1;
             int.TryParse(LVCars.SelectedItems[0].Name, out outcome);
             Car car = db.Cars.Find(outcome);
             CarEditForm form = new CarEditForm(car, db);
             form.Show();
+            }
         }
         private void button14_Click_1(object sender, EventArgs e)// exit button - Laurens
         {
