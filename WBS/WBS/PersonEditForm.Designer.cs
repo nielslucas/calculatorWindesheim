@@ -39,28 +39,31 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.TBName = new System.Windows.Forms.TextBox();
+            this.TBHomeAddress = new System.Windows.Forms.TextBox();
+            this.TBWorkAddress = new System.Windows.Forms.TextBox();
+            this.TBAge = new System.Windows.Forms.TextBox();
+            this.TBPhoneNumber = new System.Windows.Forms.TextBox();
+            this.TBCustomerNumber = new System.Windows.Forms.TextBox();
+            this.TBBankAccount = new System.Windows.Forms.TextBox();
+            this.TBMoneyOwed = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.CBDriverslicense = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.TBGender = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DTPBirthday = new System.Windows.Forms.DateTimePicker();
+            this.LVCar = new System.Windows.Forms.ListView();
+            this.CHBrand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 183);
+            this.label4.Location = new System.Drawing.Point(23, 235);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 3;
@@ -105,7 +108,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 239);
+            this.label5.Location = new System.Drawing.Point(23, 279);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 4;
@@ -114,7 +117,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 278);
+            this.label6.Location = new System.Drawing.Point(23, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 5;
@@ -132,7 +135,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(156, 76);
+            this.label8.Location = new System.Drawing.Point(282, 29);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 13);
             this.label8.TabIndex = 7;
@@ -141,7 +144,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(150, 138);
+            this.label9.Location = new System.Drawing.Point(145, 101);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 13);
             this.label9.TabIndex = 8;
@@ -150,7 +153,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(150, 183);
+            this.label10.Location = new System.Drawing.Point(145, 143);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 13);
             this.label10.TabIndex = 9;
@@ -159,81 +162,67 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(149, 239);
+            this.label12.Location = new System.Drawing.Point(145, 183);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(70, 13);
             this.label12.TabIndex = 11;
             this.label12.Text = "Money Owed";
             // 
-            // textBox1
+            // TBName
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
+            this.TBName.Location = new System.Drawing.Point(31, 45);
+            this.TBName.Name = "TBName";
+            this.TBName.Size = new System.Drawing.Size(100, 20);
+            this.TBName.TabIndex = 12;
             // 
-            // textBox2
+            // TBHomeAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(31, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 13;
+            this.TBHomeAddress.Location = new System.Drawing.Point(31, 104);
+            this.TBHomeAddress.Name = "TBHomeAddress";
+            this.TBHomeAddress.Size = new System.Drawing.Size(100, 20);
+            this.TBHomeAddress.TabIndex = 13;
             // 
-            // textBox3
+            // TBWorkAddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(31, 154);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 14;
+            this.TBWorkAddress.Location = new System.Drawing.Point(31, 154);
+            this.TBWorkAddress.Name = "TBWorkAddress";
+            this.TBWorkAddress.Size = new System.Drawing.Size(100, 20);
+            this.TBWorkAddress.TabIndex = 14;
             // 
-            // textBox4
+            // TBAge
             // 
-            this.textBox4.Location = new System.Drawing.Point(31, 203);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 15;
+            this.TBAge.Location = new System.Drawing.Point(26, 251);
+            this.TBAge.Name = "TBAge";
+            this.TBAge.Size = new System.Drawing.Size(100, 20);
+            this.TBAge.TabIndex = 15;
             // 
-            // textBox5
+            // TBPhoneNumber
             // 
-            this.textBox5.Location = new System.Drawing.Point(31, 255);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 16;
+            this.TBPhoneNumber.Location = new System.Drawing.Point(26, 199);
+            this.TBPhoneNumber.Name = "TBPhoneNumber";
+            this.TBPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.TBPhoneNumber.TabIndex = 17;
             // 
-            // textBox6
+            // TBCustomerNumber
             // 
-            this.textBox6.Location = new System.Drawing.Point(31, 294);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 17;
+            this.TBCustomerNumber.Location = new System.Drawing.Point(153, 45);
+            this.TBCustomerNumber.Name = "TBCustomerNumber";
+            this.TBCustomerNumber.Size = new System.Drawing.Size(100, 20);
+            this.TBCustomerNumber.TabIndex = 18;
             // 
-            // textBox7
+            // TBBankAccount
             // 
-            this.textBox7.Location = new System.Drawing.Point(153, 45);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 18;
+            this.TBBankAccount.Location = new System.Drawing.Point(148, 159);
+            this.TBBankAccount.Name = "TBBankAccount";
+            this.TBBankAccount.Size = new System.Drawing.Size(100, 20);
+            this.TBBankAccount.TabIndex = 21;
             // 
-            // textBox8
+            // TBMoneyOwed
             // 
-            this.textBox8.Location = new System.Drawing.Point(153, 104);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 19;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(153, 203);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 21;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(153, 255);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 22;
+            this.TBMoneyOwed.Location = new System.Drawing.Point(148, 199);
+            this.TBMoneyOwed.Name = "TBMoneyOwed";
+            this.TBMoneyOwed.Size = new System.Drawing.Size(100, 20);
+            this.TBMoneyOwed.TabIndex = 22;
             // 
             // button1
             // 
@@ -255,15 +244,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox1
+            // CBDriverslicense
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(153, 157);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.Text = "Yes?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.CBDriverslicense.AutoSize = true;
+            this.CBDriverslicense.Location = new System.Drawing.Point(148, 117);
+            this.CBDriverslicense.Name = "CBDriverslicense";
+            this.CBDriverslicense.Size = new System.Drawing.Size(50, 17);
+            this.CBDriverslicense.TabIndex = 25;
+            this.CBDriverslicense.Text = "Yes?";
+            this.CBDriverslicense.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -293,14 +282,26 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TBBankAccount);
+            this.groupBox1.Controls.Add(this.TBPhoneNumber);
+            this.groupBox1.Controls.Add(this.CBDriverslicense);
+            this.groupBox1.Controls.Add(this.LVCar);
+            this.groupBox1.Controls.Add(this.DTPBirthday);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.TBMoneyOwed);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.TBGender);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.TBAge);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(5, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 398);
+            this.groupBox1.Size = new System.Drawing.Size(412, 398);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal info";
@@ -308,18 +309,18 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(149, 278);
+            this.label13.Location = new System.Drawing.Point(145, 235);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 32;
             this.label13.Text = "Gender";
             // 
-            // textBox12
+            // TBGender
             // 
-            this.textBox12.Location = new System.Drawing.Point(148, 294);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 32;
+            this.TBGender.Location = new System.Drawing.Point(148, 251);
+            this.TBGender.Name = "TBGender";
+            this.TBGender.Size = new System.Drawing.Size(100, 20);
+            this.TBGender.TabIndex = 32;
             // 
             // groupBox2
             // 
@@ -327,7 +328,7 @@
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.textBox9);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(301, 0);
+            this.groupBox2.Location = new System.Drawing.Point(423, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(146, 223);
             this.groupBox2.TabIndex = 30;
@@ -342,39 +343,60 @@
             this.button4.TabIndex = 25;
             this.button4.Text = "Hire new Car";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Location = new System.Drawing.Point(301, 229);
+            this.groupBox3.Location = new System.Drawing.Point(423, 225);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(146, 169);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add new Person";
             // 
+            // DTPBirthday
+            // 
+            this.DTPBirthday.Location = new System.Drawing.Point(26, 308);
+            this.DTPBirthday.Name = "DTPBirthday";
+            this.DTPBirthday.Size = new System.Drawing.Size(195, 20);
+            this.DTPBirthday.TabIndex = 33;
+            // 
+            // LVCar
+            // 
+            this.LVCar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CHBrand,
+            this.columnHeader1,
+            this.columnHeader2});
+            this.LVCar.Location = new System.Drawing.Point(285, 45);
+            this.LVCar.Name = "LVCar";
+            this.LVCar.Size = new System.Drawing.Size(121, 97);
+            this.LVCar.TabIndex = 34;
+            this.LVCar.UseCompatibleStateImageBehavior = false;
+            this.LVCar.View = System.Windows.Forms.View.Details;
+            // 
+            // CHBrand
+            // 
+            this.CHBrand.Text = "Brand";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "LicensePlate";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Parkinglocation";
+            // 
             // PersonEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 406);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.ClientSize = new System.Drawing.Size(570, 406);
+            this.Controls.Add(this.TBCustomerNumber);
+            this.Controls.Add(this.TBWorkAddress);
+            this.Controls.Add(this.TBHomeAddress);
+            this.Controls.Add(this.TBName);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -409,19 +431,17 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox TBName;
+        private System.Windows.Forms.TextBox TBHomeAddress;
+        private System.Windows.Forms.TextBox TBWorkAddress;
+        private System.Windows.Forms.TextBox TBAge;
+        private System.Windows.Forms.TextBox TBPhoneNumber;
+        private System.Windows.Forms.TextBox TBCustomerNumber;
+        private System.Windows.Forms.TextBox TBBankAccount;
+        private System.Windows.Forms.TextBox TBMoneyOwed;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox CBDriverslicense;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
@@ -430,6 +450,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox TBGender;
+        private System.Windows.Forms.DateTimePicker DTPBirthday;
+        private System.Windows.Forms.ListView LVCar;
+        private System.Windows.Forms.ColumnHeader CHBrand;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

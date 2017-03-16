@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.LVCars = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -56,7 +56,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.LVPersons = new System.Windows.Forms.ListView();
             this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -74,6 +74,8 @@
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button14 = new System.Windows.Forms.Button();
+            this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -98,9 +100,9 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // listView1
+            // LVCars
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LVCars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -115,15 +117,16 @@
             this.columnHeader12,
             this.columnHeader13,
             this.columnHeader14,
-            this.columnHeader15});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(6, 56);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(937, 165);
-            this.listView1.TabIndex = 34;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.columnHeader15,
+            this.columnHeader27});
+            this.LVCars.GridLines = true;
+            this.LVCars.Location = new System.Drawing.Point(6, 56);
+            this.LVCars.Name = "LVCars";
+            this.LVCars.Size = new System.Drawing.Size(937, 165);
+            this.LVCars.TabIndex = 34;
+            this.LVCars.UseCompatibleStateImageBehavior = false;
+            this.LVCars.View = System.Windows.Forms.View.Details;
+            this.LVCars.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -250,19 +253,19 @@
             this.groupBox4.Controls.Add(this.button12);
             this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Controls.Add(this.listView1);
+            this.groupBox4.Controls.Add(this.LVCars);
             this.groupBox4.Controls.Add(this.button7);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(125, 213);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(950, 233);
+            this.groupBox4.Size = new System.Drawing.Size(998, 233);
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "List Cars";
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(804, 13);
+            this.button12.Location = new System.Drawing.Point(802, 13);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(141, 37);
             this.button12.TabIndex = 41;
@@ -290,9 +293,9 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // listView2
+            // LVPersons
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.LVPersons.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader16,
             this.columnHeader17,
             this.columnHeader18,
@@ -303,15 +306,16 @@
             this.columnHeader23,
             this.columnHeader24,
             this.columnHeader25,
-            this.columnHeader26});
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(6, 57);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(937, 165);
-            this.listView2.TabIndex = 41;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.columnHeader26,
+            this.columnHeader28});
+            this.LVPersons.GridLines = true;
+            this.LVPersons.Location = new System.Drawing.Point(6, 57);
+            this.LVPersons.MultiSelect = false;
+            this.LVPersons.Name = "LVPersons";
+            this.LVPersons.Size = new System.Drawing.Size(937, 165);
+            this.LVPersons.TabIndex = 41;
+            this.LVPersons.UseCompatibleStateImageBehavior = false;
+            this.LVPersons.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader16
             // 
@@ -321,7 +325,7 @@
             // columnHeader17
             // 
             this.columnHeader17.Text = "HomeAdress";
-            this.columnHeader17.Width = 107;
+            this.columnHeader17.Width = 93;
             // 
             // columnHeader18
             // 
@@ -370,7 +374,7 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Transparent;
             this.groupBox5.Controls.Add(this.button13);
-            this.groupBox5.Controls.Add(this.listView2);
+            this.groupBox5.Controls.Add(this.LVPersons);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.button9);
             this.groupBox5.Controls.Add(this.button8);
@@ -438,6 +442,14 @@
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click_1);
             // 
+            // columnHeader27
+            // 
+            this.columnHeader27.Text = "OwnerID";
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Text = "Hiredcar licenseplate";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,7 +470,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Team Unknown WBS, Jerzy, Laurens, Niels";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -469,7 +481,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView LVCars;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -492,7 +504,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView LVPersons;
         private System.Windows.Forms.ColumnHeader columnHeader16;
         private System.Windows.Forms.ColumnHeader columnHeader17;
         private System.Windows.Forms.ColumnHeader columnHeader18;
@@ -512,5 +524,7 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.ColumnHeader columnHeader27;
+        private System.Windows.Forms.ColumnHeader columnHeader28;
     }
 }

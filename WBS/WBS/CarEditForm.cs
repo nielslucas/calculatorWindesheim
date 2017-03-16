@@ -14,7 +14,7 @@ namespace WBS
     {
         Car car = new Car();
         //public MainForm Hoofdmenu;
-        WBSEntities1 db;
+        WBSEntities1 db; 
 
         public CarEditForm()
         {

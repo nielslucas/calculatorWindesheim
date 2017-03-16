@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{553C0048-8468-4702-8F6A-59FE6677EC79}</ProjectGuid>
+    <ProjectGuid>{41537EAB-A208-4743-992D-CB1964EEDE4D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WBS</RootNamespace>
-    <AssemblyName>WBS</AssemblyName>
+    <RootNamespace>DBTest</RootNamespace>
+    <AssemblyName>DBTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -57,59 +57,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs">
-      <DependentUpon>WBSModel.tt</DependentUpon>
+    <Compile Include="Cours.cs">
+      <DependentUpon>WindesheimModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CarTemp.cs" />
-    <Compile Include="CarEditForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CarEditForm.Designer.cs">
-      <DependentUpon>CarEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GPSCoordinates.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Person.cs">
-      <DependentUpon>WBSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PersonTemp.cs" />
-    <Compile Include="PersonEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PersonEditForm.Designer.cs">
-      <DependentUpon>PersonEditForm.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WBSModel.Context.cs">
+    <Compile Include="Student.cs">
+      <DependentUpon>WindesheimModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher.cs">
+      <DependentUpon>WindesheimModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WindesheimModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WBSModel.Context.tt</DependentUpon>
+      <DependentUpon>WindesheimModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="WBSModel.cs" />
-    <Compile Include="WBSModel.Designer.cs">
-      <DependentUpon>WBSModel.edmx</DependentUpon>
+    <Compile Include="WindesheimModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>WindesheimModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="WBSModel1.cs">
+    <Compile Include="WindesheimModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WBSModel.tt</DependentUpon>
+      <DependentUpon>WindesheimModel.edmx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CarEditForm.resx">
-      <DependentUpon>CarEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PersonEditForm.resx">
-      <DependentUpon>PersonEditForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,7 +101,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -131,24 +111,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="WBSModel.edmx">
+    <EntityDeploy Include="WindesheimModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WBSModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>WindesheimModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="WBSModel.edmx.diagram">
-      <DependentUpon>WBSModel.edmx</DependentUpon>
+    <None Include="WindesheimModel.edmx.diagram">
+      <DependentUpon>WindesheimModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WBSModel.Context.tt">
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WindesheimModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WBSModel.edmx</DependentUpon>
-      <LastGenOutput>WBSModel.Context.cs</LastGenOutput>
+      <DependentUpon>WindesheimModel.edmx</DependentUpon>
+      <LastGenOutput>WindesheimModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="WBSModel.tt">
+    <Content Include="WindesheimModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WBSModel.edmx</DependentUpon>
-      <LastGenOutput>WBSModel1.cs</LastGenOutput>
+      <DependentUpon>WindesheimModel.edmx</DependentUpon>
+      <LastGenOutput>WindesheimModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
