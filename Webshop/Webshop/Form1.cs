@@ -21,9 +21,6 @@ namespace Webshop
             FillCBCategories();
         }
 
-
-
-
         public void reset()
         {
             LVArticles.Items.Clear();
@@ -146,6 +143,28 @@ namespace Webshop
         private void Form1_Activated(object sender, EventArgs e)
         {
             reset();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dictionary<int, Article> cartItems = new Dictionary<int, Article>();
+            foreach(ListViewItem cartitems in LVCart.Items)
+            {
+                cartItems.Add(int.Parse(cartitems.SubItems[3].Text), db.Articles.Find(int.Parse(cartitems.Name)));
+                
+            }
+            if (cartItems.Count > 0)
+            {
+                CustomerForm cForm = new CustomerForm(cartItems);
+            }
+        }
+
+        private void ButAddToCart_Click(object sender, EventArgs e)
+        {
+            ListViewItem cartItem = (ListViewItem)LVArticles.SelectedItems[0].Clone();
+            cartItem.SubItems.Add(TBAmount.Text);
+            LVCart.Items.Add(cartItem);
+            
         }
     }
 }

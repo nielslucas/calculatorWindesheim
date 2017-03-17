@@ -48,25 +48,23 @@
             this.TBBankAccount = new System.Windows.Forms.TextBox();
             this.TBMoneyOwed = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.CBDriverslicense = new System.Windows.Forms.CheckBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LVCar = new System.Windows.Forms.ListView();
+            this.CHBrand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DTPBirthday = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.TBGender = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.DTPBirthday = new System.Windows.Forms.DateTimePicker();
-            this.LVCar = new System.Windows.Forms.ListView();
-            this.CHBrand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -234,16 +232,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(30, 80);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Add New Person";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // CBDriverslicense
             // 
             this.CBDriverslicense.AutoSize = true;
@@ -306,6 +294,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal info";
             // 
+            // LVCar
+            // 
+            this.LVCar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CHBrand,
+            this.columnHeader1,
+            this.columnHeader2});
+            this.LVCar.Location = new System.Drawing.Point(285, 45);
+            this.LVCar.Name = "LVCar";
+            this.LVCar.Size = new System.Drawing.Size(121, 97);
+            this.LVCar.TabIndex = 34;
+            this.LVCar.UseCompatibleStateImageBehavior = false;
+            this.LVCar.View = System.Windows.Forms.View.Details;
+            // 
+            // CHBrand
+            // 
+            this.CHBrand.Text = "Brand";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "LicensePlate";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Parkinglocation";
+            // 
+            // DTPBirthday
+            // 
+            this.DTPBirthday.Location = new System.Drawing.Point(26, 308);
+            this.DTPBirthday.Name = "DTPBirthday";
+            this.DTPBirthday.Size = new System.Drawing.Size(195, 20);
+            this.DTPBirthday.TabIndex = 33;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -347,45 +367,12 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Location = new System.Drawing.Point(423, 225);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(146, 169);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add new Person";
-            // 
-            // DTPBirthday
-            // 
-            this.DTPBirthday.Location = new System.Drawing.Point(26, 308);
-            this.DTPBirthday.Name = "DTPBirthday";
-            this.DTPBirthday.Size = new System.Drawing.Size(195, 20);
-            this.DTPBirthday.TabIndex = 33;
-            // 
-            // LVCar
-            // 
-            this.LVCar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.CHBrand,
-            this.columnHeader1,
-            this.columnHeader2});
-            this.LVCar.Location = new System.Drawing.Point(285, 45);
-            this.LVCar.Name = "LVCar";
-            this.LVCar.Size = new System.Drawing.Size(121, 97);
-            this.LVCar.TabIndex = 34;
-            this.LVCar.UseCompatibleStateImageBehavior = false;
-            this.LVCar.View = System.Windows.Forms.View.Details;
-            // 
-            // CHBrand
-            // 
-            this.CHBrand.Text = "Brand";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "LicensePlate";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Parkinglocation";
             // 
             // PersonEditForm
             // 
@@ -412,7 +399,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,7 +426,6 @@
         private System.Windows.Forms.TextBox TBBankAccount;
         private System.Windows.Forms.TextBox TBMoneyOwed;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckBox CBDriverslicense;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox9;

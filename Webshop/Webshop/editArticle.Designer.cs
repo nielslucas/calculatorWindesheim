@@ -110,6 +110,7 @@
             // 
             // CBCategory
             // 
+            this.CBCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCategory.FormattingEnabled = true;
             this.CBCategory.Location = new System.Drawing.Point(151, 20);
             this.CBCategory.Name = "CBCategory";

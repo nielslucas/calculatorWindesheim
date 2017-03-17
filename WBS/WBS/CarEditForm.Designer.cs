@@ -45,7 +45,6 @@
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,10 +72,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.AddCar = new System.Windows.Forms.Button();
+            this.DTPMaintenance = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -208,13 +206,6 @@
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(100, 20);
             this.textBox16.TabIndex = 36;
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(202, 510);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(100, 20);
-            this.textBox17.TabIndex = 38;
             // 
             // label1
             // 
@@ -420,6 +411,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.DTPMaintenance);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.button2);
@@ -432,7 +424,6 @@
             this.groupBox1.Controls.Add(this.textBox13);
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox17);
             this.groupBox1.Controls.Add(this.textBox14);
             this.groupBox1.Controls.Add(this.textBox16);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
@@ -476,7 +467,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.AddCar);
             this.groupBox2.Location = new System.Drawing.Point(479, 439);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
@@ -484,15 +474,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // AddCar
+            // DTPMaintenance
             // 
-            this.AddCar.Location = new System.Drawing.Point(7, 60);
-            this.AddCar.Name = "AddCar";
-            this.AddCar.Size = new System.Drawing.Size(75, 23);
-            this.AddCar.TabIndex = 0;
-            this.AddCar.Text = "Add Car";
-            this.AddCar.UseVisualStyleBackColor = true;
-            this.AddCar.Click += new System.EventHandler(this.AddCar_Click);
+            this.DTPMaintenance.Location = new System.Drawing.Point(202, 499);
+            this.DTPMaintenance.Name = "DTPMaintenance";
+            this.DTPMaintenance.Size = new System.Drawing.Size(200, 20);
+            this.DTPMaintenance.TabIndex = 68;
             // 
             // CarEditForm
             // 
@@ -534,7 +521,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,7 +545,6 @@
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -587,7 +572,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button AddCar;
+        private System.Windows.Forms.DateTimePicker DTPMaintenance;
     }
 }
 

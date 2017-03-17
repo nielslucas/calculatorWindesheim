@@ -14,20 +14,15 @@ namespace WBS
     {
         Car car = new Car();
         //public MainForm Hoofdmenu;
-        WBSEntities1 db;
+
 
         public CarEditForm()
         {
             InitializeComponent();
 
         }
-        public CarEditForm(WBSEntities1 db)//add car constructor
-        {
-            InitializeComponent();
-            this.db = db;
-            button19.Hide();
-        }
-        public CarEditForm(Car car, WBSEntities1 db)//edit car constructor
+
+        public CarEditForm(Car car)//edit car constructor
         {
             InitializeComponent();
             AddCar.Hide();
@@ -49,9 +44,11 @@ namespace WBS
             textBox14.Text = this.car.GPSLatitude.ToString();
             textBox15.Text = this.car.GPSLongtitude.ToString();
             textBox16.Text = this.car.ParkingLocation.ToString();
-            textBox17.Text = this.car.LastMaintenanceDate.ToString();
+            if (this.car.LastMaintenanceDate != null) {
+                DTPMaintenance.Value = this.car.LastMaintenanceDate.Value;
+            }
             //   Hoofdmenu = hoofdmenu;
-            this.db = db;
+
         }
         //Niels
         private void AddCar_Click(object sender, EventArgs e)
@@ -69,14 +66,14 @@ namespace WBS
                 textBox6.Text, //Licenseplate
                 Int32.Parse(textBox12.Text), //SeatBets
                 textBox13.Text, //SeatColor
-                DateTime.Parse(textBox17.Text), //LastMaintence
+                DTPMaintenance.Value, //LastMaintence
                 Int32.Parse(textBox16.Text), //ParkingLocation
                 true,
                 false,
                 Int32.Parse(textBox4.Text) //KM
                 );
-            db.Cars.Add(tempCar);
-            db.SaveChanges();
+            Program.db.Cars.Add(tempCar);
+            Program.db.SaveChanges();
         }
         private void button19_Click(object sender, EventArgs e)
         {
@@ -154,10 +151,10 @@ namespace WBS
 
 
             //int.TryParse(textBox17.Text, out outcome);
-            car.LastMaintenanceDate = DateTime.Parse(textBox17.Text);
-            textBox17.Text = car.LastMaintenanceDate.ToString();
+            car.LastMaintenanceDate = DTPMaintenance.Value;
 
-            db.SaveChanges();
+            Program.db.SaveChanges();
+            Close();
         }
         /////////////////////////List Driven KM///////////////////////////////////////////
 

@@ -18,36 +18,40 @@ namespace WBS
         //List<Car> cars = new List<Car>();
         //List<Person> persons = new List<Person>();
 
-        WBSEntities1 db = new WBSEntities1();
+        
 
         public MainForm()
         {
             InitializeComponent();
-            foreach (Car car in db.Cars)
+            foreach (Car car in Program.db.Cars)
             {
                 ListCar(car);
             }
 
-            foreach (Person person in db.Persons)
+            foreach (Person person in Program.db.Persons)
             {
                 ListPerson(person);
             }
         }
         private void button1_Click(object sender, System.EventArgs e)
         {
-            CarEditForm form = new CarEditForm(db);
+            Car car = new Car();
+            Program.db.Cars.Add(car);
+            CarEditForm form = new CarEditForm(car);
             form.Show();
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            PersonEditForm form = new PersonEditForm(db);
+            Person person = new Person();
+            Program.db.Persons.Add(person);
+            PersonEditForm form = new PersonEditForm(person);
             form.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             LVCars.Items.Clear();
-            foreach (Car car in db.Cars)
+            foreach (Car car in Program.db.Cars)
             {
                 ListCar(car);
             }
@@ -56,7 +60,7 @@ namespace WBS
         private void button8_Click(object sender, EventArgs e)
         {
             LVPersons.Items.Clear();
-            foreach (Person person in db.Persons)
+            foreach (Person person in Program.db.Persons)
             {
                 ListPerson(person);
             }
@@ -67,8 +71,8 @@ namespace WBS
             {
                 int outcome = 1;
                 int.TryParse(LVPersons.SelectedItems[0].Name, out outcome);
-                Person person = db.Persons.Find(outcome);
-                PersonEditForm form = new PersonEditForm(person, db);
+                Person person = Program.db.Persons.Find(outcome);
+                PersonEditForm form = new PersonEditForm(person);
                 form.Show();
             }
         }
@@ -103,7 +107,7 @@ namespace WBS
         {
             
                 string carLicensePlate = "";
-                var car = (from cars in db.Cars
+                var car = (from cars in Program.db.Cars
                            where cars.Owner == person.id
                            select cars);
                 if (car.Count() > 0)
@@ -139,7 +143,7 @@ namespace WBS
         //}
         private void button3_Click(object sender, EventArgs e)//Name filter - Laurens
         {
-            var personquery = from persons in db.Persons
+            var personquery = from persons in Program.db.Persons
                               orderby persons.Name
                               select persons;
 
@@ -154,7 +158,7 @@ namespace WBS
 
         private void button5_Click(object sender, EventArgs e)//Brand Car - Laurens
         {
-            var caronquery = from crs in db.Cars
+            var caronquery = from crs in Program.db.Cars
                              orderby crs.Brand
                              select crs;
             LVCars.Items.Clear();
@@ -167,7 +171,7 @@ namespace WBS
         private void button4_Click(object sender, EventArgs e)//Licenseplate - Laurens
         {
 
-            var caronquery = from crs in db.Cars
+            var caronquery = from crs in Program.db.Cars
                                  //where crs.LicensePlate.Substring(0,1).ToCharArray()[0] >'e' 
                              orderby crs.LicensePlate
                              select crs;
@@ -180,7 +184,7 @@ namespace WBS
 
         private void button6_Click(object sender, EventArgs e)//parkinglocation - Laurens
         {
-            var caronquery = from crs in db.Cars
+            var caronquery = from crs in Program.db.Cars
                              orderby crs.LicensePlate
                              select crs;
             LVCars.Items.Clear();
@@ -194,8 +198,8 @@ namespace WBS
             if(LVCars.SelectedItems.Count > 0) { 
             int outcome = 1;
             int.TryParse(LVCars.SelectedItems[0].Name, out outcome);
-            Car car = db.Cars.Find(outcome);
-            CarEditForm form = new CarEditForm(car, db);
+            Car car = Program.db.Cars.Find(outcome);
+            CarEditForm form = new CarEditForm(car);
             form.Show();
             }
         }
@@ -234,34 +238,34 @@ namespace WBS
         {
             int outcome = 1;
             int.TryParse(LVCars.SelectedItems[0].Name, out outcome);
-            Car car = db.Cars.Find(outcome);
-            db.Cars.Remove(car);
-            db.SaveChanges();
+            Car car = Program.db.Cars.Find(outcome);
+            Program.db.Cars.Remove(car);
+            Program.db.SaveChanges();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
             int outcome = 1;
             int.TryParse(LVPersons.SelectedItems[0].Name, out outcome);
-            Person person = db.Persons.Find(outcome);
-            var car = from cars in db.Cars
+            Person person = Program.db.Persons.Find(outcome);
+            var car = from cars in Program.db.Cars
                       where cars.Owner == person.id
                       select cars;
             Car thiscar = car.First();
             this.Owner = null;
-            db.Persons.Remove(person);
-            db.SaveChanges();
+            Program.db.Persons.Remove(person);
+            Program.db.SaveChanges();
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
             LVCars.Items.Clear();
-            foreach (Car car in db.Cars)
+            foreach (Car car in Program.db.Cars)
             {
                 ListCar(car);
             }
             LVPersons.Items.Clear();
-            foreach (Person person in db.Persons)
+            foreach (Person person in Program.db.Persons)
             {
                 ListPerson(person);
             }

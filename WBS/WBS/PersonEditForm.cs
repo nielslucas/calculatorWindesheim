@@ -13,37 +13,27 @@ namespace WBS
     public partial class PersonEditForm : Form
     {
         public MainForm Hoofdmenu;
-        WBSEntities1 db;
+        
         Car car;
         ListViewItem carslist;
         public PersonEditForm()
         {
             InitializeComponent();
-
-
         }
         Person person;
-        public PersonEditForm(WBSEntities1 db)//add person constructor
-        {
-            InitializeComponent();
-            button1.Hide();
-            button4.Hide();
-            this.db = db;
-            CBDriverslicense.Checked = true;
-            fillLVCARNoOwners();
-        }
-        public PersonEditForm(Person person, WBSEntities1 db)//edit person constructor
+        
+        public PersonEditForm(Person person)//edit person constructor
         {
             InitializeComponent();
             button2.Hide();
-
             this.person = person;
-            this.db = db;
             TBName.Text = person.Name;
             TBHomeAddress.Text = person.HomeAddress;
             TBWorkAddress.Text = person.WorkAddress;
             TBAge.Text = person.Age.ToString();
+            if (person.Birthday != null) { 
             DTPBirthday.Value = person.Birthday.Value;
+            }
             TBPhoneNumber.Text = person.PhoneNumber.ToString();
             TBCustomerNumber.Text = person.CustomerNumber.ToString();
             CBDriverslicense.Checked = Convert.ToBoolean(person.DriversLicense);
@@ -51,7 +41,7 @@ namespace WBS
             TBMoneyOwed.Text = person.MoneyOwed.ToString();
             TBGender.Text = person.Gender;
 
-            var car = from cars in db.Cars//see if person has hired car
+            var car = from cars in Program.db.Cars//see if person has hired car
                       where cars.Owner == person.id
                       select cars;
             if (car.Count() > 0)//if person already has hired a car
@@ -99,7 +89,11 @@ namespace WBS
             person.Birthday = DTPBirthday.Value;
             DTPBirthday.Value = person.Birthday.Value;
 
-
+            if (TextBoxCheck(TBGender))
+            {
+                person.Gender = TBGender.Text;
+                
+            }
             if (TextBoxCheck(TBPhoneNumber))
             {
                 int value = 0;
@@ -135,7 +129,14 @@ namespace WBS
                 person.MoneyOwed = value;
                 TBMoneyOwed.Text = person.MoneyOwed.ToString();
             }
-            db.SaveChanges();
+            if (LVCar.SelectedItems.Count > 0)//if a car to be hired is selected, hire it
+            {
+                int value = 0;
+                int.TryParse(textBox9.Text, out value);
+                person.HireCar(int.Parse(LVCar.SelectedItems[0].Name), value);
+            }
+            Program.db.SaveChanges();
+            Close();
         }
         private void fillLVCar(Car car)
         {
@@ -147,7 +148,7 @@ namespace WBS
         private void fillLVCARNoOwners()//only make cars that are not hired available for hire
         {
             LVCar.Items.Clear();
-            var cars = (from car in db.Cars
+            var cars = (from car in Program.db.Cars
                        where car.Owner == null
                        select car).ToList();
             foreach (Car car in cars)
@@ -159,24 +160,16 @@ namespace WBS
         {
             int value = 0;
             int.TryParse(textBox9.Text, out value);
+            if (LVCar.SelectedItems.Count > 0) { 
             person.ReturnCar(int.Parse(LVCar.SelectedItems[0].Name), value);
-            db.SaveChanges();
+            Program.db.SaveChanges();
             fillLVCARNoOwners();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Person tempPerson2 = new Person(TBName.Text, TBHomeAddress.Text, TBWorkAddress.Text, Int32.Parse(TBAge.Text), DTPBirthday.Value, "default", Int32.Parse(TBPhoneNumber.Text), Int32.Parse(TBCustomerNumber.Text), TBBankAccount.Text);
-            
-            db.Persons.Add(tempPerson2);
-            db.SaveChanges();
-            if (LVCar.SelectedItems.Count > 0)//if a car to be hired is selected, hire it
-            {
-                int value = 0;
-                int.TryParse(textBox9.Text, out value);
-                tempPerson2.HireCar(int.Parse(LVCar.SelectedItems[0].Name), value);
-            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -184,8 +177,8 @@ namespace WBS
             int value = 0;
             int.TryParse(textBox9.Text, out value);
             person.HireCar(int.Parse(LVCar.SelectedItems[0].Name), value);
-            db.SaveChanges();
-            var car = from cars in db.Cars//see if person has hired car
+            Program.db.SaveChanges();
+            var car = from cars in Program.db.Cars//see if person has hired car
                       where cars.Owner == person.id
                       select cars;
             LVCar.Items.Clear();

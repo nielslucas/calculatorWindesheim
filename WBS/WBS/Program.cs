@@ -11,7 +11,11 @@ namespace WBS
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static WBSEntities1 db = new WBSEntities1();
+
         [STAThread]
+        
         static void Main()
         {
            

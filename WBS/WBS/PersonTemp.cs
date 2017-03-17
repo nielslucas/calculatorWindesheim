@@ -10,7 +10,7 @@ namespace WBS
     {
 
         public Car Car;
-        private WBSEntities1 _db = new WBSEntities1();
+        
         /////////////////////
 
         public Person(string name, string homeAddress, string workAddress, int age, DateTime birthDay, string gender, int phoneNumber, int customerNumber, string bankaccountNumber)
@@ -30,16 +30,16 @@ namespace WBS
 
         public void HireCar(int carID, int carCost)
         {
-            Car car = _db.Cars.Find(carID);
+            Car car = Program.db.Cars.Find(carID);
             car.Owner = id;
-            _db.SaveChanges();
+            Program.db.SaveChanges();
             MoneyOwed += carCost;
         }
         public void ReturnCar(int carID, int payment)
         {
-            Car car = _db.Cars.Find(carID);
+            Car car = Program.db.Cars.Find(carID);
             car.Owner = null;
-            _db.SaveChanges();
+            Program.db.SaveChanges();
             MoneyOwed -= payment;
 
         }
