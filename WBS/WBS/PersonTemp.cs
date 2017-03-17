@@ -8,22 +8,12 @@ namespace WBS
 {
     public partial class Person
     {
-        //public string Name { get; set; }
-        //public string HomeAddress { get; set; }
-        //public string WorkAddress { get; set; }
-        //public int Age { get; set; }
-        //public string BirthDay { get; set; }
-        //public string Gender { get; set; }
-        //public int PhoneNumber { get; set; }
-        //public int CustomerNumber { get; set; }
+
         public Car Car;
-        //public bool DriversLicense { get; set; }
-        //public string BankAccountNumber { get; set; }
-        //public int MoneyOwed { get; set; }
-      
+        private WBSEntities1 _db = new WBSEntities1();
         /////////////////////
-      
-        public Person(string name, string homeAddress, string workAddress, int age, DateTime birthDay, string gender, int phoneNumber, int customerNumber,string bankaccountNumber)
+
+        public Person(string name, string homeAddress, string workAddress, int age, DateTime birthDay, string gender, int phoneNumber, int customerNumber, string bankaccountNumber)
         {
             Name = name;
             HomeAddress = homeAddress;
@@ -37,21 +27,21 @@ namespace WBS
             BankAccountNumber = bankaccountNumber;
             DriversLicense = 1;
         }
-        public void HireCar(Car car, int carCost)
+
+        public void HireCar(int carID, int carCost)
         {
-            Car = car;
+            Car car = _db.Cars.Find(carID);
+            car.Owner = id;
+            _db.SaveChanges();
             MoneyOwed += carCost;
         }
-        public void ReturnCar(Car car, int payment)
+        public void ReturnCar(int carID, int payment)
         {
-            if (Car != null)
-            {
-                if (car.Model == Car.Model && car.Brand == Car.Brand)
-                {
-                    Car = null;
-                    MoneyOwed -= payment;
-                }
-            }
+            Car car = _db.Cars.Find(carID);
+            car.Owner = null;
+            _db.SaveChanges();
+            MoneyOwed -= payment;
+
         }
     }
 }
