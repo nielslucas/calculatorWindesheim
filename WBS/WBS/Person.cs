@@ -27,7 +27,7 @@ namespace WBS
         public Nullable<int> Age { get; set; }
         public Nullable<System.DateTime> Birthday { get; set; }
         public string Gender { get; set; }
-        public int PhoneNumber { get; set; }
+        public Nullable<int> PhoneNumber { get; set; }
         public int CustomerNumber { get; set; }
         public byte DriversLicense { get; set; }
         public string BankAccountNumber { get; set; }

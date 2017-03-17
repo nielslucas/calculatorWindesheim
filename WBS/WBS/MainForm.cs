@@ -244,6 +244,11 @@ namespace WBS
             int outcome = 1;
             int.TryParse(LVPersons.SelectedItems[0].Name, out outcome);
             Person person = db.Persons.Find(outcome);
+            var car = from cars in db.Cars
+                      where cars.Owner == person.id
+                      select cars;
+            Car thiscar = car.First();
+            this.Owner = null;
             db.Persons.Remove(person);
             db.SaveChanges();
         }
