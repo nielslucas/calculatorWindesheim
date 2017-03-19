@@ -13,26 +13,27 @@ namespace WBS
     public partial class PersonEditForm : Form
     {
         public MainForm Hoofdmenu;
-        
-        Car car;
+
+        //  Car car; // personeditform never used - Laurens
         ListViewItem carslist;
         public PersonEditForm()
         {
             InitializeComponent();
         }
         Person person;
-        
+
         public PersonEditForm(Person person)//edit person constructor
         {
             InitializeComponent();
-            button2.Hide();
+            //button2.Hide();
             this.person = person;
             TBName.Text = person.Name;
             TBHomeAddress.Text = person.HomeAddress;
             TBWorkAddress.Text = person.WorkAddress;
             TBAge.Text = person.Age.ToString();
-            if (person.Birthday != null) { 
-            DTPBirthday.Value = person.Birthday.Value;
+            if (person.Birthday != null)
+            {
+                DTPBirthday.Value = person.Birthday.Value;
             }
             TBPhoneNumber.Text = person.PhoneNumber.ToString();
             TBCustomerNumber.Text = person.CustomerNumber.ToString();
@@ -92,7 +93,7 @@ namespace WBS
             if (TextBoxCheck(TBGender))
             {
                 person.Gender = TBGender.Text;
-                
+
             }
             if (TextBoxCheck(TBPhoneNumber))
             {
@@ -149,8 +150,8 @@ namespace WBS
         {
             LVCar.Items.Clear();
             var cars = (from car in Program.db.Cars
-                       where car.Owner == null
-                       select car).ToList();
+                        where car.Owner == null
+                        select car).ToList();
             foreach (Car car in cars)
             {
                 fillLVCar(car);
@@ -160,16 +161,12 @@ namespace WBS
         {
             int value = 0;
             int.TryParse(textBox9.Text, out value);
-            if (LVCar.SelectedItems.Count > 0) { 
-            person.ReturnCar(int.Parse(LVCar.SelectedItems[0].Name), value);
-            Program.db.SaveChanges();
-            fillLVCARNoOwners();
+            if (LVCar.SelectedItems.Count > 0)
+            {
+                person.ReturnCar(int.Parse(LVCar.SelectedItems[0].Name), value);
+                Program.db.SaveChanges();
+                fillLVCARNoOwners();
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button4_Click(object sender, EventArgs e)

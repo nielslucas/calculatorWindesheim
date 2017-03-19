@@ -25,7 +25,7 @@ namespace WBS
         public CarEditForm(Car car)//edit car constructor
         {
             InitializeComponent();
-            AddCar.Hide();
+            //AddCar.Hide();
             this.car = car;
             //this.listCars = cars;
             textBox1.Text = this.car.Brand;
@@ -44,7 +44,8 @@ namespace WBS
             textBox14.Text = this.car.GPSLatitude.ToString();
             textBox15.Text = this.car.GPSLongtitude.ToString();
             textBox16.Text = this.car.ParkingLocation.ToString();
-            if (this.car.LastMaintenanceDate != null) {
+            if (this.car.LastMaintenanceDate != null)
+            {
                 DTPMaintenance.Value = this.car.LastMaintenanceDate.Value;
             }
             //   Hoofdmenu = hoofdmenu;
@@ -125,7 +126,7 @@ namespace WBS
             car.SeatsColor = textBox13.Text;
             textBox13.Text = car.SeatsColor;
 
-            ///checkbox start - Laurens
+            ///checkbox start
             if (checkBox1.Checked)
             {
                 checkBox1.Checked = true;
@@ -148,7 +149,6 @@ namespace WBS
             int.TryParse(textBox16.Text, out outcome);
             car.ParkingLocation = outcome;
             textBox16.Text = car.ParkingLocation.ToString();
-
 
             //int.TryParse(textBox17.Text, out outcome);
             car.LastMaintenanceDate = DTPMaintenance.Value;
@@ -180,44 +180,7 @@ namespace WBS
             textBox15.Text = car.GpsCoords.GPSLongtitude.ToString();
 
         }
-        //////////////////////////JUNK//////////////////////////////////// -Laurens
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox13_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox14_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox15_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
     }

@@ -12,14 +12,6 @@ namespace WBS
 {
     public partial class MainForm : Form
     {
-        //Car car = new Car("BMW", "whatever", 1009, 500, "Red", "Yellow", 5, "sport", 50, "ADSL3", 4, "Purple", 20, 54, true, false, 200);
-        //Person person = new Person("Pietje", "Tikkeltje 12", "Jantjestraat", 4, "2-2-2012", "anders", 061956789, 11, new Car());
-
-        //List<Car> cars = new List<Car>();
-        //List<Person> persons = new List<Person>();
-
-        
-
         public MainForm()
         {
             InitializeComponent();
@@ -80,7 +72,7 @@ namespace WBS
         {
             //bug: does not refresh ownerID after removing owner. Owner still removed in db
             string[] mycar = { car.Brand, car.Model, car.BuildYear.ToString(), car.Kilometers.ToString(), car.GastankLit.ToString(), car.LicensePlate, car.ChassisColorPrimary, car.ChassisColorSecondary, car.Tires.ToString(), car.Seats.ToString(), car.HorsePower.ToString(), car.ParkingLocation.ToString(), car.LastMaintenanceDate.Value.ToShortDateString(), car.GPSLatitude.ToString(), car.GPSLongtitude.ToString(), car.Owner.ToString() };
-            
+
             ListViewItem carlist = new ListViewItem(mycar);
             carlist.Name = car.id.ToString();
             LVCars.Items.Add(carlist);
@@ -105,21 +97,21 @@ namespace WBS
         // }
         public void ListPerson(Person person) ///function - Laurens
         {
-            
-                string carLicensePlate = "";
-                var car = (from cars in Program.db.Cars
-                           where cars.Owner == person.id
-                           select cars);
-                if (car.Count() > 0)
-                {
-                    carLicensePlate = car.First().LicensePlate;
-                }
-                string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString(), person.Birthday.ToString(), person.Gender, person.PhoneNumber.ToString(), person.CustomerNumber.ToString(), person.DriversLicense.ToString(), person.BankAccountNumber, person.MoneyOwed.ToString(), carLicensePlate };
 
-                ListViewItem personlist = new ListViewItem(myperson.ToArray<String>());
-                personlist.Name = person.id.ToString();
-                LVPersons.Items.Add(personlist);
-            
+            string carLicensePlate = "";
+            var car = (from cars in Program.db.Cars
+                       where cars.Owner == person.id
+                       select cars);
+            if (car.Count() > 0)
+            {
+                carLicensePlate = car.First().LicensePlate;
+            }
+            string[] myperson = { person.Name, person.HomeAddress, person.WorkAddress, person.Age.ToString(), person.Birthday.ToString(), person.Gender, person.PhoneNumber.ToString(), person.CustomerNumber.ToString(), person.DriversLicense.ToString(), person.BankAccountNumber, person.MoneyOwed.ToString(), carLicensePlate };
+
+            ListViewItem personlist = new ListViewItem(myperson.ToArray<String>());
+            personlist.Name = person.id.ToString();
+            LVPersons.Items.Add(personlist);
+
         }
         //public void ListPerson(List<Person> persons) ///function - Laurens
         //{
@@ -152,7 +144,7 @@ namespace WBS
             {
                 ListPerson(person);
             }
-            
+
 
         }
 
@@ -195,45 +187,15 @@ namespace WBS
         }
         private void button11_Click(object sender, EventArgs e)
         {
-            if(LVCars.SelectedItems.Count > 0) { 
-            int outcome = 1;
-            int.TryParse(LVCars.SelectedItems[0].Name, out outcome);
-            Car car = Program.db.Cars.Find(outcome);
-            CarEditForm form = new CarEditForm(car);
-            form.Show();
+            if (LVCars.SelectedItems.Count > 0)
+            {
+                int outcome = 1;
+                int.TryParse(LVCars.SelectedItems[0].Name, out outcome);
+                Car car = Program.db.Cars.Find(outcome);
+                CarEditForm form = new CarEditForm(car);
+                form.Show();
             }
         }
-        private void button14_Click_1(object sender, EventArgs e)// exit button - Laurens
-        {
-            Application.Exit();
-        }
-        /////////////////////////TRASH///////////////////////////
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-
-        }
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-        }
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button12_Click(object sender, EventArgs e)
         {
             int outcome = 1;
