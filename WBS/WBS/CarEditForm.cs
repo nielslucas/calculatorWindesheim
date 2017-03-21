@@ -50,6 +50,23 @@ namespace WBS
             }
             //   Hoofdmenu = hoofdmenu;
 
+            //Fill fleet DropDownList
+            Dictionary<int, string> CarFleetList = new Dictionary<int, string>();
+
+            foreach(Fleet fleet in Program.db.Fleets)
+            {
+                CarFleetList.Add(fleet.ID, fleet.Name);
+            }
+
+            cbFleet.DataSource = new BindingSource(CarFleetList, null);
+            cbFleet.ValueMember = "Key";
+            cbFleet.DisplayMember = "Value";
+
+            if(car.FleetID != null)
+            {
+                cbFleet.SelectedValue = car.FleetID;
+            }
+
         }
         //Niels
         private void AddCar_Click(object sender, EventArgs e)
@@ -152,6 +169,8 @@ namespace WBS
 
             //int.TryParse(textBox17.Text, out outcome);
             car.LastMaintenanceDate = DTPMaintenance.Value;
+
+            car.FleetID = (int)cbFleet.SelectedValue;
 
             Program.db.SaveChanges();
             Close();

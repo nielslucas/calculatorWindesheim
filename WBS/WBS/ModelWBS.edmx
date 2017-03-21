@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WBSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="WBSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Car">
           <Key>
             <PropertyRef Name="id" />
@@ -30,6 +30,14 @@
           <Property Name="GPSLongtitude" Type="int" />
           <Property Name="GPSLatitude" Type="int" />
           <Property Name="Owner" Type="int" />
+          <Property Name="FleetID" Type="int" />
+        </EntityType>
+        <EntityType Name="Fleet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Persons">
           <Key>
@@ -48,6 +56,18 @@
           <Property Name="BankAccountNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MoneyOwed" Type="int" />
         </EntityType>
+        <Association Name="Car_Has_Fleet">
+          <End Role="Fleet" Type="Self.Fleet" Multiplicity="0..1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fleet">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="FleetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="CarOwner">
           <End Role="Persons" Type="Self.Persons" Multiplicity="0..1" />
           <End Role="Car" Type="Self.Car" Multiplicity="*" />
@@ -62,24 +82,22 @@
         </Association>
         <EntityContainer Name="WBSModelStoreContainer">
           <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fleet" EntityType="Self.Fleet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Car_Has_Fleet" Association="Self.Car_Has_Fleet">
+            <End Role="Fleet" EntitySet="Fleet" />
+            <End Role="Car" EntitySet="Car" />
+          </AssociationSet>
           <AssociationSet Name="CarOwner" Association="Self.CarOwner">
             <End Role="Persons" EntitySet="Persons" />
             <End Role="Car" EntitySet="Car" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WBSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="WBSEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Cars" EntityType="WBSModel.Car" />
-          <EntitySet Name="Persons" EntityType="WBSModel.Person" />
-          <AssociationSet Name="CarOwner" Association="WBSModel.CarOwner">
-            <End Role="Person" EntitySet="Persons" />
-            <End Role="Car" EntitySet="Cars" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="Car">
           <Key>
             <PropertyRef Name="id" />
@@ -105,14 +123,24 @@
           <Property Name="GPSLongtitude" Type="Int32" />
           <Property Name="GPSLatitude" Type="Int32" />
           <Property Name="Owner" Type="Int32" />
-          <NavigationProperty Name="Person" Relationship="WBSModel.CarOwner" FromRole="Car" ToRole="Person" />
+          <Property Name="FleetID" Type="Int32" />
+          <NavigationProperty Name="Fleet" Relationship="Self.Car_Has_Fleet" FromRole="Car" ToRole="Fleet" />
+          <NavigationProperty Name="Person" Relationship="Self.CarOwner" FromRole="Car" ToRole="Persons" />
+        </EntityType>
+        <EntityType Name="Fleet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cars" Relationship="Self.Car_Has_Fleet" FromRole="Fleet" ToRole="Car" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="HomeAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="WorkAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Int32" />
@@ -121,15 +149,27 @@
           <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
           <Property Name="CustomerNumber" Type="Int32" Nullable="false" />
           <Property Name="DriversLicense" Type="Byte" Nullable="false" />
-          <Property Name="BankAccountNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MoneyOwed" Type="Int32" />
-          <NavigationProperty Name="Cars" Relationship="WBSModel.CarOwner" FromRole="Person" ToRole="Car" />
+          <NavigationProperty Name="Cars" Relationship="Self.CarOwner" FromRole="Persons" ToRole="Car" />
         </EntityType>
-        <Association Name="CarOwner">
-          <End Type="WBSModel.Person" Role="Person" Multiplicity="0..1" />
-          <End Type="WBSModel.Car" Role="Car" Multiplicity="*" />
+        <Association Name="Car_Has_Fleet">
+          <End Role="Fleet" Type="Self.Fleet" Multiplicity="0..1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Person">
+            <Principal Role="Fleet">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="FleetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CarOwner">
+          <End Role="Persons" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persons">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Car">
@@ -137,54 +177,76 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="WBSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cars" EntityType="Self.Car" />
+          <EntitySet Name="Fleets" EntityType="Self.Fleet" />
+          <EntitySet Name="Persons" EntityType="Self.Person" />
+          <AssociationSet Name="Car_Has_Fleet" Association="Self.Car_Has_Fleet">
+            <End Role="Fleet" EntitySet="Fleets" />
+            <End Role="Car" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="CarOwner" Association="Self.CarOwner">
+            <End Role="Persons" EntitySet="Persons" />
+            <End Role="Car" EntitySet="Cars" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WBSModelStoreContainer" CdmEntityContainer="WBSEntities1">
+        <EntityContainerMapping StorageEntityContainer="WBSModelStoreContainer" CdmEntityContainer="WBSEntities">
           <EntitySetMapping Name="Cars">
             <EntityTypeMapping TypeName="WBSModel.Car">
               <MappingFragment StoreEntitySet="Car">
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="GPSLatitude" ColumnName="GPSLatitude" />
-                <ScalarProperty Name="GPSLongtitude" ColumnName="GPSLongtitude" />
-                <ScalarProperty Name="Kilometers" ColumnName="Kilometers" />
-                <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
-                <ScalarProperty Name="Manual" ColumnName="Manual" />
-                <ScalarProperty Name="ParkingLocation" ColumnName="ParkingLocation" />
-                <ScalarProperty Name="LastMaintenanceDate" ColumnName="LastMaintenanceDate" />
-                <ScalarProperty Name="SeatsColor" ColumnName="SeatsColor" />
-                <ScalarProperty Name="Seats" ColumnName="Seats" />
-                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
-                <ScalarProperty Name="HorsePower" ColumnName="HorsePower" />
-                <ScalarProperty Name="TireType" ColumnName="TireType" />
-                <ScalarProperty Name="Tires" ColumnName="Tires" />
-                <ScalarProperty Name="ChassisColorSecondary" ColumnName="ChassisColorSecondary" />
-                <ScalarProperty Name="ChassisColorPrimary" ColumnName="ChassisColorPrimary" />
-                <ScalarProperty Name="GastankLit" ColumnName="GastankLit" />
-                <ScalarProperty Name="BuildYear" ColumnName="BuildYear" />
-                <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="Brand" ColumnName="Brand" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="BuildYear" ColumnName="BuildYear" />
+                <ScalarProperty Name="GastankLit" ColumnName="GastankLit" />
+                <ScalarProperty Name="ChassisColorPrimary" ColumnName="ChassisColorPrimary" />
+                <ScalarProperty Name="ChassisColorSecondary" ColumnName="ChassisColorSecondary" />
+                <ScalarProperty Name="Tires" ColumnName="Tires" />
+                <ScalarProperty Name="TireType" ColumnName="TireType" />
+                <ScalarProperty Name="HorsePower" ColumnName="HorsePower" />
+                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+                <ScalarProperty Name="Seats" ColumnName="Seats" />
+                <ScalarProperty Name="SeatsColor" ColumnName="SeatsColor" />
+                <ScalarProperty Name="LastMaintenanceDate" ColumnName="LastMaintenanceDate" />
+                <ScalarProperty Name="ParkingLocation" ColumnName="ParkingLocation" />
+                <ScalarProperty Name="Manual" ColumnName="Manual" />
+                <ScalarProperty Name="Maintenance" ColumnName="Maintenance" />
+                <ScalarProperty Name="Kilometers" ColumnName="Kilometers" />
+                <ScalarProperty Name="GPSLongtitude" ColumnName="GPSLongtitude" />
+                <ScalarProperty Name="GPSLatitude" ColumnName="GPSLatitude" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="FleetID" ColumnName="FleetID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fleets">
+            <EntityTypeMapping TypeName="WBSModel.Fleet">
+              <MappingFragment StoreEntitySet="Fleet">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Persons">
             <EntityTypeMapping TypeName="WBSModel.Person">
               <MappingFragment StoreEntitySet="Persons">
-                <ScalarProperty Name="MoneyOwed" ColumnName="MoneyOwed" />
-                <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
-                <ScalarProperty Name="DriversLicense" ColumnName="DriversLicense" />
-                <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
-                <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="HomeAddress" ColumnName="HomeAddress" />
+                <ScalarProperty Name="WorkAddress" ColumnName="WorkAddress" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+                <ScalarProperty Name="DriversLicense" ColumnName="DriversLicense" />
+                <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+                <ScalarProperty Name="MoneyOwed" ColumnName="MoneyOwed" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

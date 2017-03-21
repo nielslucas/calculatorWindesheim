@@ -13,10 +13,10 @@ namespace WBS
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WBSEntities1 : DbContext
+    public partial class WBSEntities : DbContext
     {
-        public WBSEntities1()
-            : base("name=WBSEntities1")
+        public WBSEntities()
+            : base("name=WBSEntities")
         {
         }
     
@@ -26,6 +26,7 @@ namespace WBS
         }
     
         public virtual DbSet<Car> Cars { get; set; }
+        public virtual DbSet<Fleet> Fleets { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
     }
 }
