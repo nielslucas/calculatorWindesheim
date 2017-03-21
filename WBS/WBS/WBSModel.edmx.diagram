@@ -8,8 +8,8 @@
         <EntityTypeShape EntityType="WBSModel.Car" Width="1.5" PointX="3" PointY="1.125" />
         <EntityTypeShape EntityType="WBSModel.Person" Width="1.5" PointX="0.75" PointY="2" />
         <AssociationConnector Association="WBSModel.CarOwner" />
-        <EntityTypeShape EntityType="WBSModel.Fleet" Width="1.5" PointX="5.875" PointY="2.875" />
-        <AssociationConnector Association="WBSModel.FK_Car_FleetID" />
+        <EntityTypeShape EntityType="WBSModel.Fleet" Width="1.5" PointX="5.375" PointY="0.875" />
+        <AssociationConnector Association="WBSModel.Car_Has_Fleet" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

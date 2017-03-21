@@ -50,12 +50,24 @@
           <Property Name="Age" Type="int" />
           <Property Name="Birthday" Type="date" />
           <Property Name="Gender" Type="nvarchar" MaxLength="50" />
-          <Property Name="PhoneNumber" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber" Type="int" />
           <Property Name="CustomerNumber" Type="int" Nullable="false" />
           <Property Name="DriversLicense" Type="tinyint" Nullable="false" />
           <Property Name="BankAccountNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MoneyOwed" Type="int" />
         </EntityType>
+        <Association Name="Car_Has_Fleet">
+          <End Role="Fleet" Type="Self.Fleet" Multiplicity="0..1" />
+          <End Role="Car" Type="Self.Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fleet">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="FleetID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="CarOwner">
           <End Role="Persons" Type="Self.Persons" Multiplicity="0..1" />
           <End Role="Car" Type="Self.Car" Multiplicity="*" />
@@ -68,28 +80,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Car_FleetID">
-          <End Role="Fleet" Type="Self.Fleet" Multiplicity="0..1" />
-          <End Role="Car" Type="Self.Car" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Fleet">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Car">
-              <PropertyRef Name="FleetID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="WBSModelStoreContainer">
           <EntitySet Name="Car" EntityType="Self.Car" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fleet" EntityType="Self.Fleet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="CarOwner" Association="Self.CarOwner">
-            <End Role="Persons" EntitySet="Persons" />
+          <AssociationSet Name="Car_Has_Fleet" Association="Self.Car_Has_Fleet">
+            <End Role="Fleet" EntitySet="Fleet" />
             <End Role="Car" EntitySet="Car" />
           </AssociationSet>
-          <AssociationSet Name="FK_Car_FleetID" Association="Self.FK_Car_FleetID">
-            <End Role="Fleet" EntitySet="Fleet" />
+          <AssociationSet Name="CarOwner" Association="Self.CarOwner">
+            <End Role="Persons" EntitySet="Persons" />
             <End Role="Car" EntitySet="Car" />
           </AssociationSet>
         </EntityContainer>
@@ -105,7 +105,7 @@
             <End Role="Car" EntitySet="Cars" />
           </AssociationSet>
           <EntitySet Name="Fleets" EntityType="WBSModel.Fleet" />
-          <AssociationSet Name="FK_Car_FleetID" Association="WBSModel.FK_Car_FleetID">
+          <AssociationSet Name="Car_Has_Fleet" Association="WBSModel.Car_Has_Fleet">
             <End Role="Fleet" EntitySet="Fleets" />
             <End Role="Car" EntitySet="Cars" />
           </AssociationSet>
@@ -137,7 +137,7 @@
           <Property Name="Owner" Type="Int32" />
           <NavigationProperty Name="Person" Relationship="WBSModel.CarOwner" FromRole="Car" ToRole="Person" />
           <Property Name="FleetID" Type="Int32" />
-          <NavigationProperty Name="Fleet" Relationship="WBSModel.FK_Car_FleetID" FromRole="Car" ToRole="Fleet" />
+          <NavigationProperty Name="Fleet" Relationship="WBSModel.Car_Has_Fleet" FromRole="Car" ToRole="Fleet" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -150,7 +150,7 @@
           <Property Name="Age" Type="Int32" />
           <Property Name="Birthday" Type="DateTime" Precision="0" />
           <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumber" Type="Int32" />
           <Property Name="CustomerNumber" Type="Int32" Nullable="false" />
           <Property Name="DriversLicense" Type="Byte" Nullable="false" />
           <Property Name="BankAccountNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -175,9 +175,9 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Cars" Relationship="WBSModel.FK_Car_FleetID" FromRole="Fleet" ToRole="Car" />
-        </EntityType>
-        <Association Name="FK_Car_FleetID">
+          <NavigationProperty Name="Cars" Relationship="WBSModel.Car_Has_Fleet" FromRole="Fleet" ToRole="Car" />
+          </EntityType>
+        <Association Name="Car_Has_Fleet">
           <End Type="WBSModel.Fleet" Role="Fleet" Multiplicity="0..1" />
           <End Type="WBSModel.Car" Role="Car" Multiplicity="*" />
           <ReferentialConstraint>
