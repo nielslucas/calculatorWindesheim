@@ -12,26 +12,16 @@ namespace WBS
     using System;
     using System.Collections.Generic;
     
-    public partial class Person
+    public partial class Fleet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Person()
+        public Fleet()
         {
             this.Cars = new HashSet<Car>();
         }
     
-        public int id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
-        public string HomeAddress { get; set; }
-        public string WorkAddress { get; set; }
-        public Nullable<int> Age { get; set; }
-        public Nullable<System.DateTime> Birthday { get; set; }
-        public string Gender { get; set; }
-        public Nullable<int> PhoneNumber { get; set; }
-        public int CustomerNumber { get; set; }
-        public byte DriversLicense { get; set; }
-        public string BankAccountNumber { get; set; }
-        public Nullable<int> MoneyOwed { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Car> Cars { get; set; }

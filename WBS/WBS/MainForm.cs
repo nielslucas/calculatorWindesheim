@@ -232,6 +232,12 @@ namespace WBS
                 ListPerson(person);
             }
         }
+
+        private void AddFleet_Click(object sender, EventArgs e)
+        {
+            FleetForm form = new FleetForm();
+            form.Show();
+        }
     }
 }
 

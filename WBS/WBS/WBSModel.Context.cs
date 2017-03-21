@@ -27,5 +27,6 @@ namespace WBS
     
         public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Fleet> Fleets { get; set; }
     }
 }

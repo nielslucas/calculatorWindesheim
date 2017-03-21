@@ -75,8 +75,10 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AddFleet = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -126,7 +128,6 @@
             this.LVCars.TabIndex = 34;
             this.LVCars.UseCompatibleStateImageBehavior = false;
             this.LVCars.View = System.Windows.Forms.View.Details;
-        
             // 
             // columnHeader1
             // 
@@ -200,9 +201,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(847, 42);
+            this.button3.Location = new System.Drawing.Point(6, 98);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(221, 64);
+            this.button3.Size = new System.Drawing.Size(159, 28);
             this.button3.TabIndex = 36;
             this.button3.Text = "Sort Person by Name";
             this.button3.UseVisualStyleBackColor = false;
@@ -211,9 +212,9 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(847, 124);
+            this.button4.Location = new System.Drawing.Point(6, 132);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(221, 64);
+            this.button4.Size = new System.Drawing.Size(159, 27);
             this.button4.TabIndex = 37;
             this.button4.Text = "Sort Cars licenseplates with \"f\" or bigger";
             this.button4.UseVisualStyleBackColor = false;
@@ -222,9 +223,9 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button6.Location = new System.Drawing.Point(620, 124);
+            this.button6.Location = new System.Drawing.Point(6, 32);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(221, 64);
+            this.button6.Size = new System.Drawing.Size(159, 27);
             this.button6.TabIndex = 39;
             this.button6.Text = "Sort Cars by ParkingLocation";
             this.button6.UseVisualStyleBackColor = false;
@@ -233,9 +234,9 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button5.Location = new System.Drawing.Point(620, 42);
+            this.button5.Location = new System.Drawing.Point(6, 65);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(221, 64);
+            this.button5.Size = new System.Drawing.Size(159, 27);
             this.button5.TabIndex = 38;
             this.button5.Text = "Sort Cars by Brand";
             this.button5.UseVisualStyleBackColor = false;
@@ -413,18 +414,38 @@
             this.button9.Text = "Edit Selected Person";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-           
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(0, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox1.Location = new System.Drawing.Point(613, 25);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Location = new System.Drawing.Point(896, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(462, 182);
+            this.groupBox1.Size = new System.Drawing.Size(179, 182);
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters";
+            // 
+            // AddFleet
+            // 
+            this.AddFleet.Location = new System.Drawing.Point(671, 103);
+            this.AddFleet.Name = "AddFleet";
+            this.AddFleet.Size = new System.Drawing.Size(75, 23);
+            this.AddFleet.TabIndex = 45;
+            this.AddFleet.Text = "Fleets";
+            this.AddFleet.UseVisualStyleBackColor = true;
+            this.AddFleet.Click += new System.EventHandler(this.AddFleet_Click);
             // 
             // MainForm
             // 
@@ -432,11 +453,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1200, 700);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.AddFleet);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -448,6 +466,7 @@
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -500,5 +519,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ColumnHeader columnHeader27;
         private System.Windows.Forms.ColumnHeader columnHeader28;
+        private System.Windows.Forms.Button AddFleet;
     }
 }

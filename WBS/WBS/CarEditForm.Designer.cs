@@ -72,6 +72,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbFleet = new System.Windows.Forms.Label();
+            this.cbFleet = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -384,6 +386,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbFleet);
+            this.groupBox1.Controls.Add(this.lbFleet);
             this.groupBox1.Controls.Add(this.DTPMaintenance);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label18);
@@ -455,6 +459,24 @@
             this.groupBox2.TabIndex = 65;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
+            // 
+            // lbFleet
+            // 
+            this.lbFleet.AutoSize = true;
+            this.lbFleet.Location = new System.Drawing.Point(343, 83);
+            this.lbFleet.Name = "lbFleet";
+            this.lbFleet.Size = new System.Drawing.Size(30, 13);
+            this.lbFleet.TabIndex = 74;
+            this.lbFleet.Text = "Fleet";
+            // 
+            // cbFleet
+            // 
+            this.cbFleet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFleet.FormattingEnabled = true;
+            this.cbFleet.Location = new System.Drawing.Point(343, 108);
+            this.cbFleet.Name = "cbFleet";
+            this.cbFleet.Size = new System.Drawing.Size(102, 21);
+            this.cbFleet.TabIndex = 75;
             // 
             // CarEditForm
             // 
@@ -544,6 +566,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker DTPMaintenance;
+        private System.Windows.Forms.ComboBox cbFleet;
+        private System.Windows.Forms.Label lbFleet;
     }
 }
 
