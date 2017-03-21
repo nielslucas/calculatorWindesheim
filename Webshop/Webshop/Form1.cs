@@ -156,12 +156,14 @@ namespace Webshop
             if (cartItems.Count > 0)
             {
                 CustomerForm cForm = new CustomerForm(cartItems);
+                cForm.Show();
             }
         }
 
         private void ButAddToCart_Click(object sender, EventArgs e)
         {
             ListViewItem cartItem = (ListViewItem)LVArticles.SelectedItems[0].Clone();
+            cartItem.Name = LVArticles.SelectedItems[0].Name;
             cartItem.SubItems.Add(TBAmount.Text);
             LVCart.Items.Add(cartItem);
             

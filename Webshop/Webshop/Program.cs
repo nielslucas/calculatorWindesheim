@@ -11,6 +11,8 @@ namespace Webshop
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static WebshopEntities db = new WebshopEntities();
         [STAThread]
         static void Main()
         {
