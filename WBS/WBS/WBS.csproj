@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs">
-      <DependentUpon>WBSModel.tt</DependentUpon>
+      <DependentUpon>ModelWBS.tt</DependentUpon>
     </Compile>
     <Compile Include="CarTemp.cs" />
     <Compile Include="CarEditForm.cs">
@@ -68,7 +68,7 @@
       <DependentUpon>CarEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Fleet.cs">
-      <DependentUpon>WBSModel.tt</DependentUpon>
+      <DependentUpon>ModelWBS.tt</DependentUpon>
     </Compile>
     <Compile Include="FleetForm.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,23 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelWBS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelWBS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelWBS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelWBS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelWBS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelWBS.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs">
-      <DependentUpon>WBSModel.tt</DependentUpon>
+      <DependentUpon>ModelWBS.tt</DependentUpon>
     </Compile>
     <Compile Include="PersonTemp.cs" />
     <Compile Include="PersonEditForm.cs">
@@ -96,22 +111,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WBSModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WBSModel.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="WBSModel.cs" />
-    <Compile Include="WBSModel.Designer.cs">
-      <DependentUpon>WBSModel.edmx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="WBSModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WBSModel.tt</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CarEditForm.resx">
       <DependentUpon>CarEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,6 +134,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <EntityDeploy Include="ModelWBS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelWBS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelWBS.edmx.diagram">
+      <DependentUpon>ModelWBS.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -144,31 +151,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="WBSModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WBSModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="WBSModel.edmx.diagram">
-      <DependentUpon>WBSModel.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="WBSModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WBSModel.edmx</DependentUpon>
-      <LastGenOutput>WBSModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="WBSModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WBSModel.edmx</DependentUpon>
-      <LastGenOutput>WBSModel1.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelWBS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelWBS.edmx</DependentUpon>
+      <LastGenOutput>ModelWBS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelWBS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelWBS.edmx</DependentUpon>
+      <LastGenOutput>ModelWBS.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
